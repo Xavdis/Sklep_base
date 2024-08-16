@@ -138,7 +138,7 @@
             lbl_confirm.BackColor = Color.Transparent;
             lbl_confirm.Font = new Font("Comic Sans MS", 15F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_confirm.ForeColor = Color.SeaGreen;
-            lbl_confirm.Location = new Point(199, 52);
+            lbl_confirm.Location = new Point(193, 52);
             lbl_confirm.Name = "lbl_confirm";
             lbl_confirm.Size = new Size(296, 30);
             lbl_confirm.TabIndex = 9;

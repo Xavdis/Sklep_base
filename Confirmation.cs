@@ -24,6 +24,8 @@ namespace Sklep_base
 
             btn_yes.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_yes.MouseLeave += new EventHandler(Button_MouseLeave);
+            btn_yes.MouseEnter += new EventHandler(Button_MouseEnter);
+            btn_yes.MouseLeave += new EventHandler(Button_MouseLeave);
         }
 
         private void Button_MouseEnter(object sender, EventArgs e)
@@ -50,8 +52,6 @@ namespace Sklep_base
         {
             Confirm = false;    
             this.Close();
-            
-            
         }
 
         private void btn_yes_Click(object sender, EventArgs e)
