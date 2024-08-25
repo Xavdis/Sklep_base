@@ -54,7 +54,7 @@
             btn_yes.Location = new Point(240, 94);
             btn_yes.Name = "btn_yes";
             btn_yes.Size = new Size(100, 37);
-            btn_yes.TabIndex = 6;
+            btn_yes.TabIndex = 2;
             btn_yes.Text = "Yes";
             btn_yes.UseVisualStyleBackColor = false;
             btn_yes.Click += btn_yes_Click;
@@ -71,7 +71,7 @@
             btn_no.Location = new Point(346, 94);
             btn_no.Name = "btn_no";
             btn_no.Size = new Size(100, 37);
-            btn_no.TabIndex = 7;
+            btn_no.TabIndex = 1;
             btn_no.Text = "No";
             btn_no.UseVisualStyleBackColor = false;
             btn_no.Click += btn_no_Click;
@@ -142,6 +142,7 @@
             lbl_confirm.Name = "lbl_confirm";
             lbl_confirm.Size = new Size(296, 30);
             lbl_confirm.TabIndex = 9;
+            lbl_confirm.TabStop = false;
             lbl_confirm.Text = " Are you sure you want to leave?";
             // 
             // panel1

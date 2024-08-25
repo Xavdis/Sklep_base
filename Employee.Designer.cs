@@ -377,7 +377,7 @@
             // btn_exit
             // 
             btn_exit.AutoSize = true;
-            btn_exit.BackColor = Color.MediumSeaGreen;
+            btn_exit.BackColor = Color.SeaGreen;
             btn_exit.Cursor = Cursors.Hand;
             btn_exit.FlatAppearance.BorderColor = Color.Honeydew;
             btn_exit.FlatAppearance.BorderSize = 2;
@@ -493,6 +493,7 @@
             lbl_employee.ForeColor = Color.White;
             lbl_employee.Location = new Point(539, 86);
             lbl_employee.Name = "lbl_employee";
+            lbl_employee.Padding = new Padding(0, 0, 0, 4);
             lbl_employee.Size = new Size(127, 53);
             lbl_employee.TabIndex = 53;
             lbl_employee.Text = "Employee";
@@ -500,7 +501,6 @@
             // 
             // btn_departmants
             // 
-            btn_departmants.AutoSize = true;
             btn_departmants.BackColor = Color.Honeydew;
             btn_departmants.Cursor = Cursors.Hand;
             btn_departmants.FlatAppearance.BorderColor = Color.SeaGreen;
@@ -509,7 +509,6 @@
             btn_departmants.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_departmants.ForeColor = Color.SeaGreen;
             btn_departmants.Location = new Point(672, 86);
-            btn_departmants.Margin = new Padding(3, 0, 3, 0);
             btn_departmants.Name = "btn_departmants";
             btn_departmants.Size = new Size(127, 53);
             btn_departmants.TabIndex = 31;
@@ -552,7 +551,7 @@
             btn_salary.Text = "Salary";
             btn_salary.TextAlign = ContentAlignment.BottomCenter;
             btn_salary.UseVisualStyleBackColor = false;
-            btn_salary.MouseEnter += this.btn_salary_MouseEnter;
+            btn_salary.MouseEnter += btn_salary_MouseEnter;
             btn_salary.MouseLeave += btn_salary_MouseLeave;
             // 
             // Employee
