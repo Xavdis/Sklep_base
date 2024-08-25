@@ -46,8 +46,8 @@
             lbl_name = new Label();
             btn_salary = new Button();
             btn_logout = new Button();
-            btn_departmants = new Button();
-            lbl_employee = new Label();
+            btn_employee = new Button();
+            lbl_departmants = new Label();
             ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             pan_top.SuspendLayout();
             pan_left.SuspendLayout();
@@ -278,35 +278,35 @@
             btn_logout.TextAlign = ContentAlignment.BottomCenter;
             btn_logout.UseVisualStyleBackColor = false;
             // 
-            // btn_departmants
+            // btn_employee
             // 
-            btn_departmants.BackColor = Color.Honeydew;
-            btn_departmants.Cursor = Cursors.Hand;
-            btn_departmants.FlatAppearance.BorderColor = Color.SeaGreen;
-            btn_departmants.FlatAppearance.BorderSize = 0;
-            btn_departmants.FlatStyle = FlatStyle.Flat;
-            btn_departmants.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            btn_departmants.ForeColor = Color.SeaGreen;
-            btn_departmants.Location = new Point(539, 86);
-            btn_departmants.Name = "btn_departmants";
-            btn_departmants.Size = new Size(127, 53);
-            btn_departmants.TabIndex = 58;
-            btn_departmants.Text = "Employee";
-            btn_departmants.TextAlign = ContentAlignment.BottomCenter;
-            btn_departmants.UseVisualStyleBackColor = false;
+            btn_employee.BackColor = Color.Honeydew;
+            btn_employee.Cursor = Cursors.Hand;
+            btn_employee.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_employee.FlatAppearance.BorderSize = 0;
+            btn_employee.FlatStyle = FlatStyle.Flat;
+            btn_employee.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_employee.ForeColor = Color.SeaGreen;
+            btn_employee.Location = new Point(539, 86);
+            btn_employee.Name = "btn_employee";
+            btn_employee.Size = new Size(127, 53);
+            btn_employee.TabIndex = 58;
+            btn_employee.Text = "Employee";
+            btn_employee.TextAlign = ContentAlignment.BottomCenter;
+            btn_employee.UseVisualStyleBackColor = false;
             // 
-            // lbl_employee
+            // lbl_departmants
             // 
-            lbl_employee.BackColor = Color.SeaGreen;
-            lbl_employee.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
-            lbl_employee.ForeColor = Color.White;
-            lbl_employee.Location = new Point(672, 86);
-            lbl_employee.Name = "lbl_employee";
-            lbl_employee.Padding = new Padding(0, 0, 0, 4);
-            lbl_employee.Size = new Size(127, 53);
-            lbl_employee.TabIndex = 59;
-            lbl_employee.Text = "Departmants";
-            lbl_employee.TextAlign = ContentAlignment.BottomCenter;
+            lbl_departmants.BackColor = Color.SeaGreen;
+            lbl_departmants.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_departmants.ForeColor = Color.White;
+            lbl_departmants.Location = new Point(672, 86);
+            lbl_departmants.Name = "lbl_departmants";
+            lbl_departmants.Padding = new Padding(0, 0, 0, 4);
+            lbl_departmants.Size = new Size(127, 53);
+            lbl_departmants.TabIndex = 59;
+            lbl_departmants.Text = "Departmants";
+            lbl_departmants.TextAlign = ContentAlignment.BottomCenter;
             // 
             // Departmants
             // 
@@ -316,8 +316,8 @@
             ClientSize = new Size(1200, 502);
             Controls.Add(btn_salary);
             Controls.Add(btn_logout);
-            Controls.Add(btn_departmants);
-            Controls.Add(lbl_employee);
+            Controls.Add(btn_employee);
+            Controls.Add(lbl_departmants);
             Controls.Add(guna2DataGridView1);
             Controls.Add(pan_down);
             Controls.Add(pan_top);
@@ -352,7 +352,7 @@
         private Label lbl_name;
         private Button btn_salary;
         private Button btn_logout;
-        private Button btn_departmants;
-        private Label lbl_employee;
+        private Button btn_employee;
+        private Label lbl_departmants;
     }
 }
