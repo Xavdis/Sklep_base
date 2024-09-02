@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             pan_down = new Panel();
             pan_top = new Panel();
@@ -55,26 +55,26 @@
             // 
             // guna2DataGridView1
             // 
-            dataGridViewCellStyle4.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle5.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle10.BackColor = Color.White;
+            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle11.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle11.ForeColor = Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
+            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             guna2DataGridView1.ColumnHeadersHeight = 4;
             guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.White;
-            dataGridViewCellStyle6.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle6.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = Color.White;
+            dataGridViewCellStyle12.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
+            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
             guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
             guna2DataGridView1.Location = new Point(377, 161);
             guna2DataGridView1.Name = "guna2DataGridView1";
@@ -126,6 +126,7 @@
             // 
             btn_exit.AutoSize = true;
             btn_exit.BackColor = Color.SeaGreen;
+            btn_exit.Cursor = Cursors.Hand;
             btn_exit.FlatAppearance.BorderColor = Color.White;
             btn_exit.FlatAppearance.BorderSize = 2;
             btn_exit.FlatStyle = FlatStyle.Flat;
@@ -137,6 +138,7 @@
             btn_exit.TabIndex = 8;
             btn_exit.Text = "X";
             btn_exit.UseVisualStyleBackColor = false;
+            btn_exit.Click += btn_exit_Click;
             // 
             // lbl_system
             // 
@@ -166,6 +168,7 @@
             // 
             btn_update.AutoSize = true;
             btn_update.BackColor = Color.Honeydew;
+            btn_update.Cursor = Cursors.Hand;
             btn_update.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_update.FlatAppearance.BorderSize = 2;
             btn_update.FlatStyle = FlatStyle.Popup;
@@ -177,11 +180,14 @@
             btn_update.TabIndex = 30;
             btn_update.Text = "Update";
             btn_update.UseVisualStyleBackColor = false;
+            btn_update.MouseEnter += btn_update_MouseEnter;
+            btn_update.MouseLeave += btn_update_MouseLeave;
             // 
             // btn_save
             // 
             btn_save.AutoSize = true;
             btn_save.BackColor = Color.SeaGreen;
+            btn_save.Cursor = Cursors.Hand;
             btn_save.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_save.FlatAppearance.BorderSize = 2;
             btn_save.FlatStyle = FlatStyle.Flat;
@@ -193,6 +199,8 @@
             btn_save.TabIndex = 29;
             btn_save.Text = "Save";
             btn_save.UseVisualStyleBackColor = false;
+            btn_save.MouseEnter += btn_save_MouseEnter;
+            btn_save.MouseLeave += btn_save_MouseLeave;
             // 
             // lbl_new
             // 
@@ -209,7 +217,7 @@
             // txtbox_name
             // 
             txtbox_name.BackColor = Color.White;
-            txtbox_name.CustomizableEdges = customizableEdges3;
+            txtbox_name.CustomizableEdges = customizableEdges7;
             txtbox_name.DefaultText = "";
             txtbox_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtbox_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -225,7 +233,7 @@
             txtbox_name.PasswordChar = '\0';
             txtbox_name.PlaceholderText = "";
             txtbox_name.SelectedText = "";
-            txtbox_name.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtbox_name.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtbox_name.Size = new Size(171, 36);
             txtbox_name.TabIndex = 25;
             // 
@@ -259,6 +267,7 @@
             btn_salary.Text = "Salary";
             btn_salary.TextAlign = ContentAlignment.BottomCenter;
             btn_salary.UseVisualStyleBackColor = false;
+            btn_salary.Click += btn_salary_Click;
             // 
             // btn_logout
             // 
@@ -277,6 +286,7 @@
             btn_logout.Text = "Logout";
             btn_logout.TextAlign = ContentAlignment.BottomCenter;
             btn_logout.UseVisualStyleBackColor = false;
+            btn_logout.Click += btn_logout_Click;
             // 
             // btn_employee
             // 
@@ -294,6 +304,7 @@
             btn_employee.Text = "Employee";
             btn_employee.TextAlign = ContentAlignment.BottomCenter;
             btn_employee.UseVisualStyleBackColor = false;
+            btn_employee.Click += btn_employee_Click;
             // 
             // lbl_departmants
             // 

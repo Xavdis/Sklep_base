@@ -33,7 +33,7 @@
             lbl_server = new Label();
             lbl_version = new Label();
             lbl_net = new Label();
-            btn_login = new Button();
+            btn_createAccount = new Button();
             txt_password = new TextBox();
             txt_login = new TextBox();
             lbl_login = new Label();
@@ -42,7 +42,7 @@
             btn_cencel = new Button();
             lbl_clear = new Label();
             lbl_pasw = new Label();
-            txt_password_again = new TextBox();
+            txt_code = new TextBox();
             pan_left.SuspendLayout();
             SuspendLayout();
             // 
@@ -65,7 +65,7 @@
             lbl_employee.Location = new Point(46, 131);
             lbl_employee.Name = "lbl_employee";
             lbl_employee.Size = new Size(100, 23);
-            lbl_employee.TabIndex = 2;
+            lbl_employee.TabIndex = 0;
             lbl_employee.Text = "Employee MS";
             lbl_employee.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -76,7 +76,7 @@
             lbl_server.Location = new Point(46, 167);
             lbl_server.Name = "lbl_server";
             lbl_server.Size = new Size(100, 23);
-            lbl_server.TabIndex = 1;
+            lbl_server.TabIndex = 0;
             lbl_server.Text = "SQL Server";
             lbl_server.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -103,22 +103,22 @@
             lbl_net.Text = "C#.NET";
             lbl_net.TextAlign = ContentAlignment.MiddleCenter;
             // 
-            // btn_login
+            // btn_createAccount
             // 
-            btn_login.AutoSize = true;
-            btn_login.Cursor = Cursors.Hand;
-            btn_login.FlatAppearance.BorderColor = Color.SeaGreen;
-            btn_login.FlatAppearance.BorderSize = 2;
-            btn_login.FlatStyle = FlatStyle.Flat;
-            btn_login.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_login.ForeColor = Color.SeaGreen;
-            btn_login.Location = new Point(284, 280);
-            btn_login.Name = "btn_login";
-            btn_login.Size = new Size(137, 37);
-            btn_login.TabIndex = 14;
-            btn_login.Text = "Create Account";
-            btn_login.UseVisualStyleBackColor = false;
-            btn_login.Click += btn_cencel_Click;
+            btn_createAccount.AutoSize = true;
+            btn_createAccount.Cursor = Cursors.Hand;
+            btn_createAccount.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_createAccount.FlatAppearance.BorderSize = 2;
+            btn_createAccount.FlatStyle = FlatStyle.Flat;
+            btn_createAccount.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_createAccount.ForeColor = Color.SeaGreen;
+            btn_createAccount.Location = new Point(284, 280);
+            btn_createAccount.Name = "btn_createAccount";
+            btn_createAccount.Size = new Size(137, 37);
+            btn_createAccount.TabIndex = 4;
+            btn_createAccount.Text = "Create Account";
+            btn_createAccount.UseVisualStyleBackColor = false;
+            btn_createAccount.Click += btn_createAccount_Click;
             // 
             // txt_password
             // 
@@ -128,7 +128,7 @@
             txt_password.Location = new Point(367, 163);
             txt_password.Name = "txt_password";
             txt_password.Size = new Size(171, 30);
-            txt_password.TabIndex = 11;
+            txt_password.TabIndex = 2;
             // 
             // txt_login
             // 
@@ -138,7 +138,7 @@
             txt_login.Location = new Point(367, 127);
             txt_login.Name = "txt_login";
             txt_login.Size = new Size(171, 30);
-            txt_login.TabIndex = 10;
+            txt_login.TabIndex = 1;
             // 
             // lbl_login
             // 
@@ -172,7 +172,7 @@
             lbl_welcome.Name = "lbl_welcome";
             lbl_welcome.Padding = new Padding(0, 10, 0, 10);
             lbl_welcome.Size = new Size(402, 66);
-            lbl_welcome.TabIndex = 9;
+            lbl_welcome.TabIndex = 0;
             lbl_welcome.Text = "Create new account";
             lbl_welcome.TextAlign = ContentAlignment.MiddleCenter;
             // 
@@ -188,7 +188,7 @@
             btn_cencel.Location = new Point(427, 280);
             btn_cencel.Name = "btn_cencel";
             btn_cencel.Size = new Size(100, 37);
-            btn_cencel.TabIndex = 15;
+            btn_cencel.TabIndex = 5;
             btn_cencel.Text = "Cencel";
             btn_cencel.UseVisualStyleBackColor = false;
             btn_cencel.Click += btn_cencel_Click;
@@ -202,7 +202,7 @@
             lbl_clear.Name = "lbl_clear";
             lbl_clear.Padding = new Padding(0, 0, 0, 8);
             lbl_clear.Size = new Size(49, 29);
-            lbl_clear.TabIndex = 12;
+            lbl_clear.TabIndex = 0;
             lbl_clear.Text = "Clear";
             // 
             // lbl_pasw
@@ -217,15 +217,15 @@
             lbl_pasw.Text = "Code:";
             lbl_pasw.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // txt_password_again
+            // txt_code
             // 
-            txt_password_again.Cursor = Cursors.IBeam;
-            txt_password_again.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txt_password_again.ForeColor = Color.SeaGreen;
-            txt_password_again.Location = new Point(367, 199);
-            txt_password_again.Name = "txt_password_again";
-            txt_password_again.Size = new Size(171, 30);
-            txt_password_again.TabIndex = 11;
+            txt_code.Cursor = Cursors.IBeam;
+            txt_code.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txt_code.ForeColor = Color.SeaGreen;
+            txt_code.Location = new Point(367, 199);
+            txt_code.Name = "txt_code";
+            txt_code.Size = new Size(171, 30);
+            txt_code.TabIndex = 3;
             // 
             // Signup_window
             // 
@@ -235,8 +235,8 @@
             BackColor = Color.White;
             ClientSize = new Size(609, 360);
             Controls.Add(pan_left);
-            Controls.Add(btn_login);
-            Controls.Add(txt_password_again);
+            Controls.Add(btn_createAccount);
+            Controls.Add(txt_code);
             Controls.Add(txt_password);
             Controls.Add(txt_login);
             Controls.Add(lbl_pasw);
@@ -250,7 +250,6 @@
             RightToLeftLayout = true;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign up";
-            Load += Signup_window_Load;
             pan_left.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();
@@ -263,7 +262,7 @@
         private Label lbl_server;
         private Label lbl_version;
         private Label lbl_net;
-        private Button btn_login;
+        private Button btn_createAccount;
         private TextBox txt_password;
         private TextBox txt_login;
         private Label lbl_login;
@@ -272,6 +271,6 @@
         private Button btn_cencel;
         private Label lbl_clear;
         private Label lbl_pasw;
-        private TextBox txt_password_again;
+        private TextBox txt_code;
     }
 }

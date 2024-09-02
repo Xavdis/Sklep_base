@@ -110,7 +110,7 @@ namespace Sklep_base
 
                 if (user == "" || pass == "") 
                 {
-                    MessageBox.Show("Invalid login detalis", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_login.Focus();
                 }
                 else if (user == username && pass == password)
@@ -122,7 +122,7 @@ namespace Sklep_base
                 }
                 else
                 {
-                    MessageBox.Show("Invalid login detalis", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_login.Clear();
                     txt_password.Clear();
                 }

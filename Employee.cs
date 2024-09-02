@@ -22,7 +22,8 @@ namespace Sklep_base
                 this.Close();
             }
         }
-
+         
+        #region Change color of button 
         private void btn_salary_MouseLeave(object sender, EventArgs e)
         {
             btn_salary.BackColor = Color.Honeydew;
@@ -59,6 +60,41 @@ namespace Sklep_base
             btn_exit.ForeColor = Color.Honeydew;
         }
 
+        private void btn_logout_MouseEnter(object sender, EventArgs e)
+        {
+            btn_logout.BackColor = Color.MediumSeaGreen;
+            btn_logout.ForeColor = Color.Honeydew;
+        }
+
+        private void btn_logout_MouseLeave(object sender, EventArgs e)
+        {
+            btn_logout.BackColor = Color.Honeydew;
+            btn_logout.ForeColor = Color.SeaGreen;
+        }
+
+        private void btn_save_MouseEnter(object sender, EventArgs e)
+        {
+            btn_save.BackColor = Color.MediumSeaGreen;
+        }
+
+        private void btn_save_MouseLeave(object sender, EventArgs e)
+        {
+            btn_save.BackColor = Color.SeaGreen;
+        }
+        
+        private void btn_update_MouseEnter(object sender, EventArgs e)
+        {
+            btn_update.BackColor = Color.MediumSeaGreen;
+            btn_update.ForeColor = Color.Honeydew;
+        }
+
+        private void btn_update_MouseLeave(object sender, EventArgs e)
+        {
+            btn_update.BackColor = Color.Honeydew;
+            btn_update.ForeColor = Color.SeaGreen;
+        }
+        #endregion
+
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -66,13 +102,13 @@ namespace Sklep_base
 
         private void btn_salary_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             new Salaries().Show();
         }
 
         private void btn_departmants_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            this.Close();
             new Departmants().Show();
         }
 

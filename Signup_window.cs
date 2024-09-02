@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Data.SqlClient;
 
 namespace Sklep_base
 {
     public partial class Signup_window : Form
     {
+        string code = "adm_adm";//add code for add new account
+        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9F97L89;Initial Catalog=login_base;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        SqlCommand cmd = new SqlCommand();
+        SqlDataAdapter adapter = new SqlDataAdapter();
         public Signup_window()
         {
+
             InitializeComponent();
 
-            btn_login.MouseEnter += new EventHandler(Button_MouseEnter);
-            btn_login.MouseLeave += new EventHandler(Button_MouseLeave);
+            btn_createAccount.MouseEnter += new EventHandler(Button_MouseEnter);
+            btn_createAccount.MouseLeave += new EventHandler(Button_MouseLeave);
 
             btn_cencel.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_cencel.MouseLeave += new EventHandler(Button_MouseLeave);
@@ -26,6 +23,7 @@ namespace Sklep_base
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
         }
 
+        #region Changed color of button
         private void Lable_MouseEnter(object sender, EventArgs e)
         {
             Label hoveredButton = sender as Label;
@@ -62,16 +60,43 @@ namespace Sklep_base
                 hoveredButton.ForeColor = Color.SeaGreen;
             }
         }
-
-        private void Signup_window_Load(object sender, EventArgs e)
-        {
-
-        }
+        #endregion
 
         private void btn_cencel_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
 
+        private void btn_createAccount_Click(object sender, EventArgs e)
+        {
+            if (txt_login.Text == "" || txt_password.Text == "" || txt_code.Text == "")
+            {
+                MessageBox.Show("Invalid register details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_login.Focus();
+            }
+            else if (txt_code.Text != code)
+            {
+                MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_login.Focus();
+            }
+            else if (txt_code.Text == code)
+            {
+                conn.Open();
+                string register = "INSERT INTO Login_new VALUES ('" + txt_login.Text + "','" + txt_password.Text + "')";
+                cmd = new SqlCommand(register, conn);
+                cmd .ExecuteNonQuery();
+                conn.Close();
+
+                MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txt_code.Clear();
+                txt_login.Clear();
+                txt_password.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txt_code.Focus();
+            }
         }
     }
 }
