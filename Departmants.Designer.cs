@@ -28,81 +28,81 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle10 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle11 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle12 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DGV_DepList = new Guna.UI2.WinForms.Guna2DataGridView();
             pan_down = new Panel();
             pan_top = new Panel();
             btn_exit = new Button();
             lbl_system = new Label();
             pan_left = new Panel();
             btn_update = new Button();
-            btn_save = new Button();
+            btn_add = new Button();
             lbl_new = new Label();
-            txtbox_name = new Guna.UI2.WinForms.Guna2TextBox();
+            txtBox_DepName = new Guna.UI2.WinForms.Guna2TextBox();
             lbl_name = new Label();
             btn_salary = new Button();
             btn_logout = new Button();
             btn_employee = new Button();
             lbl_departmants = new Label();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGV_DepList).BeginInit();
             pan_top.SuspendLayout();
             pan_left.SuspendLayout();
             SuspendLayout();
             // 
-            // guna2DataGridView1
+            // DGV_DepList
             // 
-            dataGridViewCellStyle10.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
-            dataGridViewCellStyle11.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle11.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle11.ForeColor = Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
-            guna2DataGridView1.ColumnHeadersHeight = 4;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle12.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = Color.White;
-            dataGridViewCellStyle12.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle12.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle12.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle12.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle12;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(377, 161);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowTemplate.Height = 25;
-            guna2DataGridView1.Size = new Size(819, 327);
-            guna2DataGridView1.TabIndex = 30;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.BackColor = Color.White;
+            DGV_DepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
+            dataGridViewCellStyle8.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
+            DGV_DepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            DGV_DepList.ColumnHeadersHeight = 4;
+            DGV_DepList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = Color.White;
+            dataGridViewCellStyle9.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.DefaultCellStyle = dataGridViewCellStyle9;
+            DGV_DepList.GridColor = Color.FromArgb(231, 229, 255);
+            DGV_DepList.Location = new Point(377, 161);
+            DGV_DepList.Name = "DGV_DepList";
+            DGV_DepList.RowHeadersVisible = false;
+            DGV_DepList.RowTemplate.Height = 25;
+            DGV_DepList.Size = new Size(819, 327);
+            DGV_DepList.TabIndex = 30;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            DGV_DepList.ThemeStyle.BackColor = Color.White;
+            DGV_DepList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            DGV_DepList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            DGV_DepList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGV_DepList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DGV_DepList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            DGV_DepList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DGV_DepList.ThemeStyle.HeaderStyle.Height = 4;
+            DGV_DepList.ThemeStyle.ReadOnly = false;
+            DGV_DepList.ThemeStyle.RowsStyle.BackColor = Color.White;
+            DGV_DepList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DGV_DepList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DGV_DepList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            DGV_DepList.ThemeStyle.RowsStyle.Height = 25;
+            DGV_DepList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            DGV_DepList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
             // pan_down
             // 
@@ -155,9 +155,9 @@
             // 
             pan_left.BackColor = Color.Honeydew;
             pan_left.Controls.Add(btn_update);
-            pan_left.Controls.Add(btn_save);
+            pan_left.Controls.Add(btn_add);
             pan_left.Controls.Add(lbl_new);
-            pan_left.Controls.Add(txtbox_name);
+            pan_left.Controls.Add(txtBox_DepName);
             pan_left.Controls.Add(lbl_name);
             pan_left.Location = new Point(-6, 86);
             pan_left.Name = "pan_left";
@@ -183,24 +183,25 @@
             btn_update.MouseEnter += btn_update_MouseEnter;
             btn_update.MouseLeave += btn_update_MouseLeave;
             // 
-            // btn_save
+            // btn_add
             // 
-            btn_save.AutoSize = true;
-            btn_save.BackColor = Color.SeaGreen;
-            btn_save.Cursor = Cursors.Hand;
-            btn_save.FlatAppearance.BorderColor = Color.SeaGreen;
-            btn_save.FlatAppearance.BorderSize = 2;
-            btn_save.FlatStyle = FlatStyle.Flat;
-            btn_save.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_save.ForeColor = Color.White;
-            btn_save.Location = new Point(110, 131);
-            btn_save.Name = "btn_save";
-            btn_save.Size = new Size(83, 37);
-            btn_save.TabIndex = 29;
-            btn_save.Text = "Save";
-            btn_save.UseVisualStyleBackColor = false;
-            btn_save.MouseEnter += btn_save_MouseEnter;
-            btn_save.MouseLeave += btn_save_MouseLeave;
+            btn_add.AutoSize = true;
+            btn_add.BackColor = Color.SeaGreen;
+            btn_add.Cursor = Cursors.Hand;
+            btn_add.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_add.FlatAppearance.BorderSize = 2;
+            btn_add.FlatStyle = FlatStyle.Flat;
+            btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_add.ForeColor = Color.White;
+            btn_add.Location = new Point(110, 131);
+            btn_add.Name = "btn_add";
+            btn_add.Size = new Size(83, 37);
+            btn_add.TabIndex = 29;
+            btn_add.Text = "Add";
+            btn_add.UseVisualStyleBackColor = false;
+            btn_add.Click += btn_add_Click;
+            btn_add.MouseEnter += btn_save_MouseEnter;
+            btn_add.MouseLeave += btn_save_MouseLeave;
             // 
             // lbl_new
             // 
@@ -214,28 +215,28 @@
             lbl_new.TabIndex = 14;
             lbl_new.Text = "Add new employee or update";
             // 
-            // txtbox_name
+            // txtBox_DepName
             // 
-            txtbox_name.BackColor = Color.White;
-            txtbox_name.CustomizableEdges = customizableEdges7;
-            txtbox_name.DefaultText = "";
-            txtbox_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtbox_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtbox_name.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtbox_name.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtbox_name.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_name.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtbox_name.ForeColor = Color.SeaGreen;
-            txtbox_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_name.Location = new Point(198, 75);
-            txtbox_name.Margin = new Padding(4, 5, 4, 5);
-            txtbox_name.Name = "txtbox_name";
-            txtbox_name.PasswordChar = '\0';
-            txtbox_name.PlaceholderText = "";
-            txtbox_name.SelectedText = "";
-            txtbox_name.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            txtbox_name.Size = new Size(171, 36);
-            txtbox_name.TabIndex = 25;
+            txtBox_DepName.BackColor = Color.White;
+            txtBox_DepName.CustomizableEdges = customizableEdges5;
+            txtBox_DepName.DefaultText = "";
+            txtBox_DepName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtBox_DepName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtBox_DepName.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtBox_DepName.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtBox_DepName.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtBox_DepName.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtBox_DepName.ForeColor = Color.SeaGreen;
+            txtBox_DepName.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtBox_DepName.Location = new Point(198, 75);
+            txtBox_DepName.Margin = new Padding(4, 5, 4, 5);
+            txtBox_DepName.Name = "txtBox_DepName";
+            txtBox_DepName.PasswordChar = '\0';
+            txtBox_DepName.PlaceholderText = "";
+            txtBox_DepName.SelectedText = "";
+            txtBox_DepName.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtBox_DepName.Size = new Size(171, 36);
+            txtBox_DepName.TabIndex = 25;
             // 
             // lbl_name
             // 
@@ -329,7 +330,7 @@
             Controls.Add(btn_logout);
             Controls.Add(btn_employee);
             Controls.Add(lbl_departmants);
-            Controls.Add(guna2DataGridView1);
+            Controls.Add(DGV_DepList);
             Controls.Add(pan_down);
             Controls.Add(pan_top);
             Controls.Add(pan_left);
@@ -339,7 +340,7 @@
             Name = "Departmants";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Departmants";
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGV_DepList).EndInit();
             pan_top.ResumeLayout(false);
             pan_top.PerformLayout();
             pan_left.ResumeLayout(false);
@@ -350,7 +351,7 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
+        private Guna.UI2.WinForms.Guna2DataGridView DGV_DepList;
         private Panel pan_down;
         private Panel pan_top;
         private Label lbl_system;
@@ -358,8 +359,8 @@
         private Panel pan_left;
         private Label lbl_new;
         private Button btn_update;
-        private Button btn_save;
-        private Guna.UI2.WinForms.Guna2TextBox txtbox_name;
+        private Button btn_add;
+        private Guna.UI2.WinForms.Guna2TextBox txtBox_DepName;
         private Label lbl_name;
         private Button btn_salary;
         private Button btn_logout;

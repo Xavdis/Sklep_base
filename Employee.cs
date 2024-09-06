@@ -24,6 +24,7 @@ namespace Sklep_base
         }
          
         #region Change color of button 
+
         private void btn_salary_MouseLeave(object sender, EventArgs e)
         {
             btn_salary.BackColor = Color.Honeydew;

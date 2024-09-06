@@ -1,20 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-
-namespace Sklep_base
+﻿namespace Sklep_base
 {
     public partial class Departmants : Form
     {
+
         public Departmants()
         {
             InitializeComponent();
+            conn = new Functions();
+            ShowDepartmants();
             btn_salary.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_salary.MouseLeave += new EventHandler(Button_MouseLeave);
 
@@ -58,6 +51,7 @@ namespace Sklep_base
             this.Close();
             new Salaries().Show();
         }
+
         #region Change color of button
         private void Button_MouseEnter(object sender, EventArgs e)
         {
@@ -78,17 +72,17 @@ namespace Sklep_base
                 hoveredButton.ForeColor = Color.SeaGreen;
             }
         }
-        
+
         private void btn_save_MouseEnter(object sender, EventArgs e)
         {
-            btn_save.BackColor = Color.MediumSeaGreen;
-            btn_save.ForeColor = Color.Honeydew;
+            btn_add.BackColor = Color.MediumSeaGreen;
+            btn_add.ForeColor = Color.Honeydew;
         }
 
         private void btn_save_MouseLeave(object sender, EventArgs e)
         {
-            btn_save.BackColor = Color.SeaGreen;
-            btn_save.ForeColor = Color.Honeydew;
+            btn_add.BackColor = Color.SeaGreen;
+            btn_add.ForeColor = Color.Honeydew;
         }
 
         private void btn_update_MouseEnter(object sender, EventArgs e)
@@ -105,5 +99,37 @@ namespace Sklep_base
 
         #endregion
 
+        Functions conn;
+        private void ShowDepartmants()
+        {
+            string Query = "SELECT * FROM DepartmantTbl";
+            DGV_DepList.DataSource = conn.GetData(Query);
+
+        }
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBox_DepName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Dep = txtBox_DepName.Text;
+                    string Query = "INSERT INTO DepartmantTbl values ('{0 }')";
+                    Query = string.Format(txtBox_DepName.Text);
+                    conn.SetData(Query);
+                    ShowDepartmants();
+                    MessageBox.Show("Departmant Added!!!");
+                    txtBox_DepName.Text = "";
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
