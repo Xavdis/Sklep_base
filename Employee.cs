@@ -96,11 +96,6 @@ namespace Sklep_base
         }
         #endregion
 
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void btn_salary_Click(object sender, EventArgs e)
         {
             this.Close();

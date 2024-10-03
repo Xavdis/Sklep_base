@@ -53,6 +53,18 @@
         }
 
         #region Change color of button
+        private void btn_delete_MouseEnter(object sender, EventArgs e)
+        {
+            btn_delete.BackColor = Color.MediumSeaGreen;
+            btn_delete.ForeColor = Color.Honeydew;
+        }
+
+        private void btn_delete_MouseLeave(object sender, EventArgs e)
+        {
+            btn_delete.BackColor = Color.Honeydew;
+            btn_delete.ForeColor = Color.SeaGreen;
+        }
+
         private void Button_MouseEnter(object sender, EventArgs e)
         {
             Button hoveredButton = sender as Button;
@@ -118,11 +130,78 @@
                 else
                 {
                     string Dep = txtBox_DepName.Text;
-                    string Query = "INSERT INTO DepartmantTbl values ('{0 }')";
-                    Query = string.Format(txtBox_DepName.Text);
+                    string Query = "INSERT INTO DepartmantTbl values ('{0}')";
+                    Query = string.Format(Query, txtBox_DepName.Text);
                     conn.SetData(Query);
                     ShowDepartmants();
                     MessageBox.Show("Departmant Added!!!");
+                    txtBox_DepName.Text = "";
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+        }
+
+        int Key = 0;
+
+        private void DGV_DepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtBox_DepName.Text = DGV_DepList.SelectedRows[0].Cells[1].Value.ToString();
+            if (txtBox_DepName.Text == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(DGV_DepList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBox_DepName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Dep = txtBox_DepName.Text;
+                    string Query = "UPDATE DepartmantTbl SET DepName = '{0}' WHERE DepId = '{1}'";
+                    Query = string.Format(Query, txtBox_DepName.Text, Key);
+                    conn.SetData(Query);
+                    ShowDepartmants();
+                    MessageBox.Show("Departmant Update!!!");
+                    txtBox_DepName.Text = "";
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtBox_DepName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Dep = txtBox_DepName.Text;
+                    string Query = "DELETE FROM DepartmantTbl WHERE DepId = '{0}'";
+                    Query = string.Format(Query, Key);
+                    conn.SetData(Query);
+                    ShowDepartmants();
+                    MessageBox.Show("Departmant Delete!!!");
                     txtBox_DepName.Text = "";
                 }
             }

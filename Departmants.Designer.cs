@@ -28,17 +28,19 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DGV_DepList = new Guna.UI2.WinForms.Guna2DataGridView();
             pan_down = new Panel();
             pan_top = new Panel();
             btn_exit = new Button();
             lbl_system = new Label();
             pan_left = new Panel();
+            btn_delete = new Button();
             btn_update = new Button();
             btn_add = new Button();
             lbl_new = new Label();
@@ -55,54 +57,69 @@
             // 
             // DGV_DepList
             // 
-            dataGridViewCellStyle7.BackColor = Color.White;
-            DGV_DepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle8.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.True;
-            DGV_DepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
-            DGV_DepList.ColumnHeadersHeight = 4;
+            dataGridViewCellStyle1.BackColor = Color.Honeydew;
+            dataGridViewCellStyle1.NullValue = null;
+            DGV_DepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DGV_DepList.ColumnHeadersHeight = 30;
             DGV_DepList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle9.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = Color.White;
-            dataGridViewCellStyle9.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle9.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle9.WrapMode = DataGridViewTriState.False;
-            DGV_DepList.DefaultCellStyle = dataGridViewCellStyle9;
-            DGV_DepList.GridColor = Color.FromArgb(231, 229, 255);
-            DGV_DepList.Location = new Point(377, 161);
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.DefaultCellStyle = dataGridViewCellStyle3;
+            DGV_DepList.GridColor = Color.SeaGreen;
+            DGV_DepList.ImeMode = ImeMode.NoControl;
+            DGV_DepList.Location = new Point(376, 161);
+            DGV_DepList.MultiSelect = false;
             DGV_DepList.Name = "DGV_DepList";
+            DGV_DepList.ReadOnly = true;
+            DGV_DepList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGV_DepList.RowHeadersVisible = false;
             DGV_DepList.RowTemplate.Height = 25;
-            DGV_DepList.Size = new Size(819, 327);
+            DGV_DepList.Size = new Size(819, 328);
             DGV_DepList.TabIndex = 30;
-            DGV_DepList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            DGV_DepList.TabStop = false;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.Honeydew;
             DGV_DepList.ThemeStyle.AlternatingRowsStyle.Font = null;
             DGV_DepList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            DGV_DepList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            DGV_DepList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.SeaGreen;
             DGV_DepList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
             DGV_DepList.ThemeStyle.BackColor = Color.White;
-            DGV_DepList.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            DGV_DepList.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
+            DGV_DepList.ThemeStyle.GridColor = Color.SeaGreen;
+            DGV_DepList.ThemeStyle.HeaderStyle.BackColor = Color.Sienna;
             DGV_DepList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            DGV_DepList.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DGV_DepList.ThemeStyle.HeaderStyle.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DGV_DepList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
             DGV_DepList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            DGV_DepList.ThemeStyle.HeaderStyle.Height = 4;
-            DGV_DepList.ThemeStyle.ReadOnly = false;
-            DGV_DepList.ThemeStyle.RowsStyle.BackColor = Color.White;
+            DGV_DepList.ThemeStyle.HeaderStyle.Height = 30;
+            DGV_DepList.ThemeStyle.ReadOnly = true;
+            DGV_DepList.ThemeStyle.RowsStyle.BackColor = Color.Honeydew;
             DGV_DepList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            DGV_DepList.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            DGV_DepList.ThemeStyle.RowsStyle.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             DGV_DepList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
             DGV_DepList.ThemeStyle.RowsStyle.Height = 25;
-            DGV_DepList.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            DGV_DepList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             DGV_DepList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DGV_DepList.CellContentClick += DGV_DepList_CellContentClick;
             // 
             // pan_down
             // 
@@ -154,6 +171,7 @@
             // pan_left
             // 
             pan_left.BackColor = Color.Honeydew;
+            pan_left.Controls.Add(btn_delete);
             pan_left.Controls.Add(btn_update);
             pan_left.Controls.Add(btn_add);
             pan_left.Controls.Add(lbl_new);
@@ -163,6 +181,26 @@
             pan_left.Name = "pan_left";
             pan_left.Size = new Size(378, 419);
             pan_left.TabIndex = 28;
+            // 
+            // btn_delete
+            // 
+            btn_delete.AutoSize = true;
+            btn_delete.BackColor = Color.Honeydew;
+            btn_delete.Cursor = Cursors.Hand;
+            btn_delete.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_delete.FlatAppearance.BorderSize = 2;
+            btn_delete.FlatStyle = FlatStyle.Popup;
+            btn_delete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_delete.ForeColor = Color.SeaGreen;
+            btn_delete.Location = new Point(156, 174);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(83, 37);
+            btn_delete.TabIndex = 30;
+            btn_delete.Text = "Delete";
+            btn_delete.UseVisualStyleBackColor = false;
+            btn_delete.Click += btn_delete_Click;
+            btn_delete.MouseEnter += btn_delete_MouseEnter;
+            btn_delete.MouseLeave += btn_delete_MouseLeave;
             // 
             // btn_update
             // 
@@ -180,6 +218,7 @@
             btn_update.TabIndex = 30;
             btn_update.Text = "Update";
             btn_update.UseVisualStyleBackColor = false;
+            btn_update.Click += btn_update_Click;
             btn_update.MouseEnter += btn_update_MouseEnter;
             btn_update.MouseLeave += btn_update_MouseLeave;
             // 
@@ -196,7 +235,7 @@
             btn_add.Location = new Point(110, 131);
             btn_add.Name = "btn_add";
             btn_add.Size = new Size(83, 37);
-            btn_add.TabIndex = 29;
+            btn_add.TabIndex = 1;
             btn_add.Text = "Add";
             btn_add.UseVisualStyleBackColor = false;
             btn_add.Click += btn_add_Click;
@@ -218,7 +257,7 @@
             // txtBox_DepName
             // 
             txtBox_DepName.BackColor = Color.White;
-            txtBox_DepName.CustomizableEdges = customizableEdges5;
+            txtBox_DepName.CustomizableEdges = customizableEdges1;
             txtBox_DepName.DefaultText = "";
             txtBox_DepName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtBox_DepName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -234,7 +273,7 @@
             txtBox_DepName.PasswordChar = '\0';
             txtBox_DepName.PlaceholderText = "";
             txtBox_DepName.SelectedText = "";
-            txtBox_DepName.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            txtBox_DepName.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtBox_DepName.Size = new Size(171, 36);
             txtBox_DepName.TabIndex = 25;
             // 
@@ -350,8 +389,6 @@
         }
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2DataGridView DGV_DepList;
         private Panel pan_down;
         private Panel pan_top;
         private Label lbl_system;
@@ -366,5 +403,7 @@
         private Button btn_logout;
         private Button btn_employee;
         private Label lbl_departmants;
+        public Guna.UI2.WinForms.Guna2DataGridView DGV_DepList;
+        private Button btn_delete;
     }
 }
