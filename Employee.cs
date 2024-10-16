@@ -26,7 +26,6 @@ namespace Sklep_base
             combox_employeeDepartment.DisplayMember = conn.GetData(Query).Columns["DepName"].ToString();
             combox_employeeDepartment.ValueMember = conn.GetData(Query).Columns["DepId"].ToString();
             combox_employeeDepartment.DataSource = conn.GetData(Query);
-
         }
 
         #endregion 
@@ -143,5 +142,42 @@ namespace Sklep_base
             }
         }
 
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtbox_name.Text == "" || txtbox_surname.Text == "" 
+                    || combox_employeeGender.SelectedIndex == -1 || txbox_salary.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Name = txtbox_name.Text;
+                    string Surname = txtbox_surname.Text;
+                    string Gender = combox_employeeGender.SelectedItem.ToString();
+                    int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
+                    string DateOfBith = timpic_dateOfBith.Text;
+                    string JoinDate = timpic_joinDate.Text;
+                    int Salary = Convert.ToInt32(txbox_salary.Text);
+
+                    string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,EmpDepart,EmpBornDate,EmpJoingDate,EmpSalary) VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}',{Salary})";
+                    conn.SetData(Query);
+                    conn.RefreashDataBase(2);
+                    ShowEmployee();
+                    MessageBox.Show("Employee Added!!!");
+                    txtbox_name.Text = "";
+                    txtbox_surname.Text = "";   
+                    combox_employeeGender.SelectedIndex = -1;
+                    combox_employeeDepartment.SelectedIndex = -1;
+                    txbox_salary.Text = "";
+
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
     }
 }
