@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             DGV_DepList = new Guna.UI2.WinForms.Guna2DataGridView();
             pan_down = new Panel();
             pan_top = new Panel();
@@ -57,27 +57,27 @@
             // 
             // DGV_DepList
             // 
-            dataGridViewCellStyle1.BackColor = Color.Honeydew;
-            dataGridViewCellStyle1.NullValue = null;
-            DGV_DepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.SeaGreen;
-            dataGridViewCellStyle2.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = Color.SeaGreen;
-            dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
-            DGV_DepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.BackColor = Color.Honeydew;
+            dataGridViewCellStyle5.NullValue = null;
+            DGV_DepList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle6.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle6.ForeColor = Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle6.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             DGV_DepList.ColumnHeadersHeight = 30;
             DGV_DepList.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            DGV_DepList.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.DefaultCellStyle = dataGridViewCellStyle7;
             DGV_DepList.GridColor = Color.SeaGreen;
             DGV_DepList.ImeMode = ImeMode.NoControl;
             DGV_DepList.Location = new Point(376, 161);
@@ -85,14 +85,14 @@
             DGV_DepList.Name = "DGV_DepList";
             DGV_DepList.ReadOnly = true;
             DGV_DepList.RowHeadersBorderStyle = DataGridViewHeaderBorderStyle.Sunken;
-            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = Color.SeaGreen;
-            dataGridViewCellStyle4.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = Color.Honeydew;
-            dataGridViewCellStyle4.SelectionBackColor = Color.SeaGreen;
-            dataGridViewCellStyle4.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
-            DGV_DepList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle8.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = Color.Honeydew;
+            dataGridViewCellStyle8.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle8.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
+            DGV_DepList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             DGV_DepList.RowHeadersVisible = false;
             DGV_DepList.RowTemplate.Height = 25;
             DGV_DepList.Size = new Size(819, 328);
@@ -257,7 +257,7 @@
             // txtBox_DepName
             // 
             txtBox_DepName.BackColor = Color.White;
-            txtBox_DepName.CustomizableEdges = customizableEdges1;
+            txtBox_DepName.CustomizableEdges = customizableEdges3;
             txtBox_DepName.DefaultText = "";
             txtBox_DepName.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtBox_DepName.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -273,7 +273,7 @@
             txtBox_DepName.PasswordChar = '\0';
             txtBox_DepName.PlaceholderText = "";
             txtBox_DepName.SelectedText = "";
-            txtBox_DepName.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtBox_DepName.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtBox_DepName.Size = new Size(171, 36);
             txtBox_DepName.TabIndex = 25;
             // 

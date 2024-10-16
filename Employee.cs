@@ -2,10 +2,34 @@ namespace Sklep_base
 {
     public partial class Employee : Form
     {
+        Functions conn;
         public Employee()
         {
             InitializeComponent();
+            conn = new Functions();
+            conn.RefreashDataBase(2);
+            ShowEmployee();
+            GetDepartmentBase();
         }
+
+        #region SQL DataBase Command
+
+        private void ShowEmployee()
+        {
+            string Query = "SELECT * FROM EmployeeTbl";
+            DGV_EmplList.DataSource = conn.GetData(Query);
+        }
+
+        private void GetDepartmentBase()
+        {
+            string Query = "SELECT * FROM DepartmantTbl";
+            combox_employeeDepartment.DisplayMember = conn.GetData(Query).Columns["DepName"].ToString();
+            combox_employeeDepartment.ValueMember = conn.GetData(Query).Columns["DepId"].ToString();
+            combox_employeeDepartment.DataSource = conn.GetData(Query);
+
+        }
+
+        #endregion 
 
         private void Menu_Load(object sender, EventArgs e)
         {
@@ -22,7 +46,7 @@ namespace Sklep_base
                 this.Close();
             }
         }
-         
+
         #region Change color of button 
 
         private void btn_salary_MouseLeave(object sender, EventArgs e)
@@ -75,14 +99,14 @@ namespace Sklep_base
 
         private void btn_save_MouseEnter(object sender, EventArgs e)
         {
-            btn_save.BackColor = Color.MediumSeaGreen;
+            btn_add.BackColor = Color.MediumSeaGreen;
         }
 
         private void btn_save_MouseLeave(object sender, EventArgs e)
         {
-            btn_save.BackColor = Color.SeaGreen;
+            btn_add.BackColor = Color.SeaGreen;
         }
-        
+
         private void btn_update_MouseEnter(object sender, EventArgs e)
         {
             btn_update.BackColor = Color.MediumSeaGreen;

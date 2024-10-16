@@ -7,6 +7,7 @@
         {
             InitializeComponent();
             conn = new Functions();
+            conn.RefreashDataBase(1);
             ShowDepartmants();
             btn_salary.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_salary.MouseLeave += new EventHandler(Button_MouseLeave);
@@ -196,10 +197,9 @@
                 }
                 else
                 {
-                    string Dep = txtBox_DepName.Text;
-                    string Query = "DELETE FROM DepartmantTbl WHERE DepId = '{0}'";
-                    Query = string.Format(Query, Key);
+                    string Query = $"DELETE FROM DepartmantTbl WHERE DepName = '{txtBox_DepName.Text}'";
                     conn.SetData(Query);
+                    conn.RefreashDataBase(1);
                     ShowDepartmants();
                     MessageBox.Show("Departmant Delete!!!");
                     txtBox_DepName.Text = "";

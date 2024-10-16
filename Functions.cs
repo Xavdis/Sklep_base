@@ -39,5 +39,41 @@ namespace Sklep_base
             cnt = cmd.ExecuteNonQuery();
             return cnt;
         }
+
+        public void RefreashDataBase(int value)
+        {
+            string Query;
+            string whatBase = value switch
+            {
+                1 => "DepartmantTbl",
+                2 => "EmployeeTbl",
+                3 => "SalaryTbl"
+            };
+
+            Query = $"SELECT * INTO Temporary{whatBase} FROM {whatBase};"; SetData(Query);
+            Query = $"Delete from {whatBase};"; SetData(Query);
+            Query = $"DBCC CHECKIDENT ('{whatBase}', RESEED, 0);"; SetData(Query);
+
+            if (value == 1)
+            {
+                Query = $"INSERT INTO {whatBase} (DepName) " +
+                    $"SELECT DepName " +
+                    $"FROM Temporary{whatBase};"; SetData(Query);
+            }
+            else if (value == 2)
+            {
+                Query = $"INSERT INTO {whatBase} (EmpName,EmpSurname,EmpGender,EmpDepart,EmpBornDate,EmpJoingDate,EmpSalary) " +
+                    $"SELECT EmpName,EmpSurname,EmpGender,EmpDepart,EmpBornDate,EmpJoingDate,EmpSalary " +
+                    $"FROM Temporary{whatBase};"; SetData(Query);
+            }
+            else if (value == 3)
+            {
+                Query = $"INSERT INTO {whatBase} (Employee,Attendance,Period,Amount,PayDate) " +
+                    $"SELECT Employee,Attendance,Period,Amount,PayDate " +
+                    $"FROM Temporary{whatBase};"; SetData(Query);
+            }
+
+            Query = $"DROP TABLE Temporary{whatBase};"; SetData(Query);
+        }
     }
 }
