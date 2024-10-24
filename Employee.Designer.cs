@@ -73,6 +73,7 @@
             btn_logout = new Button();
             btn_salary = new Button();
             DGV_EmplList = new Guna.UI2.WinForms.Guna2DataGridView();
+            btn_delete = new Button();
             pan_top.SuspendLayout();
             pan_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_EmplList).BeginInit();
@@ -88,12 +89,13 @@
             btn_update.FlatStyle = FlatStyle.Flat;
             btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_update.ForeColor = Color.SeaGreen;
-            btn_update.Location = new Point(286, 365);
+            btn_update.Location = new Point(155, 368);
             btn_update.Name = "btn_update";
             btn_update.Size = new Size(83, 37);
             btn_update.TabIndex = 30;
             btn_update.Text = "Update";
             btn_update.UseVisualStyleBackColor = false;
+            btn_update.Click += btn_update_Click;
             btn_update.MouseEnter += btn_update_MouseEnter;
             btn_update.MouseLeave += btn_update_MouseLeave;
             // 
@@ -107,7 +109,7 @@
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(198, 365);
+            btn_add.Location = new Point(66, 368);
             btn_add.Name = "btn_add";
             btn_add.Size = new Size(83, 37);
             btn_add.TabIndex = 29;
@@ -422,9 +424,10 @@
             // 
             pan_left.BackColor = Color.Honeydew;
             pan_left.Controls.Add(btn_update);
-            pan_left.Controls.Add(btn_add);
             pan_left.Controls.Add(timpic_joinDate);
+            pan_left.Controls.Add(btn_add);
             pan_left.Controls.Add(lbl_new);
+            pan_left.Controls.Add(btn_delete);
             pan_left.Controls.Add(lbl_department);
             pan_left.Controls.Add(timpic_dateOfBith);
             pan_left.Controls.Add(lbl_bith);
@@ -583,6 +586,25 @@
             DGV_EmplList.ThemeStyle.RowsStyle.Height = 25;
             DGV_EmplList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             DGV_EmplList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DGV_EmplList.CellContentClick += DGV_EmplList_CellContentClick;
+            // 
+            // btn_delete
+            // 
+            btn_delete.AutoSize = true;
+            btn_delete.BackColor = Color.Honeydew;
+            btn_delete.Cursor = Cursors.Hand;
+            btn_delete.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_delete.FlatAppearance.BorderSize = 2;
+            btn_delete.FlatStyle = FlatStyle.Flat;
+            btn_delete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_delete.ForeColor = Color.SeaGreen;
+            btn_delete.Location = new Point(244, 368);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(83, 37);
+            btn_delete.TabIndex = 31;
+            btn_delete.Text = "Delete";
+            btn_delete.UseVisualStyleBackColor = false;
+            btn_delete.Click += btn_delete_Click;
             // 
             // Employee
             // 
@@ -643,5 +665,6 @@
         private Button btn_logout;
         private Button btn_salary;
         public Guna.UI2.WinForms.Guna2DataGridView DGV_EmplList;
+        private Button btn_delete;
     }
 }

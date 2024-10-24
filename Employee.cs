@@ -146,7 +146,7 @@ namespace Sklep_base
         {
             try
             {
-                if (txtbox_name.Text == "" || txtbox_surname.Text == "" 
+                if (txtbox_name.Text == "" || txtbox_surname.Text == ""
                     || combox_employeeGender.SelectedIndex == -1 || txbox_salary.Text == "")
                 {
                     MessageBox.Show("Missing Data!!!");
@@ -167,7 +167,7 @@ namespace Sklep_base
                     ShowEmployee();
                     MessageBox.Show("Employee Added!!!");
                     txtbox_name.Text = "";
-                    txtbox_surname.Text = "";   
+                    txtbox_surname.Text = "";
                     combox_employeeGender.SelectedIndex = -1;
                     combox_employeeDepartment.SelectedIndex = -1;
                     txbox_salary.Text = "";
@@ -177,6 +177,92 @@ namespace Sklep_base
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Key == 0)
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Query = $"DELETE FROM EmployeeTbl WHERE EmpId = {Key}";
+                    conn.SetData(Query);
+                    conn.RefreashDataBase(2);
+                    ShowEmployee();
+                    MessageBox.Show("Employee Deleted!!!");
+                    txtbox_name.Text = "";
+                    txtbox_surname.Text = "";
+                    combox_employeeGender.SelectedIndex = -1;
+                    combox_employeeDepartment.SelectedIndex = -1;
+                    txbox_salary.Text = "";
+
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtbox_name.Text == "" || txtbox_surname.Text == ""
+                    || combox_employeeGender.SelectedIndex == -1 || txbox_salary.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Name = txtbox_name.Text;
+                    string Surname = txtbox_surname.Text;
+                    string Gender = combox_employeeGender.SelectedItem.ToString();
+                    int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
+                    string DateOfBith = timpic_dateOfBith.Text;
+                    string JoinDate = timpic_joinDate.Text;
+                    int Salary = Convert.ToInt32(txbox_salary.Text);
+
+                    string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',EmpDepart = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}',EmpSalary = '{Salary}' WHERE EmpId = {Key}";
+                    conn.SetData(Query);
+                    conn.RefreashDataBase(2);
+                    ShowEmployee();
+                    MessageBox.Show("Employee Update!!!");
+                    txtbox_name.Text = "";
+                    txtbox_surname.Text = "";
+                    combox_employeeGender.SelectedIndex = -1;
+                    combox_employeeDepartment.SelectedIndex = -1;
+                    txbox_salary.Text = "";
+
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+        int Key = 0;
+        private void DGV_EmplList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
+            txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
+            combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
+            combox_employeeDepartment.SelectedValue = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
+            timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
+            timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
+            txbox_salary.Text = DGV_EmplList.SelectedRows[0].Cells[7].Value.ToString();
+            if (txtbox_name.Text == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
             }
         }
     }
