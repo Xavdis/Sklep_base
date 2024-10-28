@@ -177,7 +177,7 @@ namespace Sklep_base
         {
             if (txtbox_daysAttended.Text == "")
             {
-                txtbox_salaryAmount.Text = "Set 'Days Attended'" ;
+                txtbox_salaryAmount.Text = "Set 'Days Attended'";
             }
             else if (Convert.ToInt32(txtbox_daysAttended.Text) > 31)
             {
