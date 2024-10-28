@@ -189,5 +189,10 @@ namespace Sklep_base
                 txtbox_salaryAmount.Text = "$ " + (day * DaySalary);
             }
         }
+
+        private void txtbox_daysAttended_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
     }
 }

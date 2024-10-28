@@ -103,6 +103,7 @@
             txtbox_salaryAmount.Name = "txtbox_salaryAmount";
             txtbox_salaryAmount.PasswordChar = '\0';
             txtbox_salaryAmount.PlaceholderText = "";
+            txtbox_salaryAmount.ReadOnly = true;
             txtbox_salaryAmount.SelectedText = "";
             txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtbox_salaryAmount.Size = new Size(171, 34);
@@ -167,6 +168,7 @@
             txtbox_daysAttended.Size = new Size(171, 34);
             txtbox_daysAttended.TabIndex = 2;
             txtbox_daysAttended.TextChanged += txtbox_daysAttended_TextChanged;
+            txtbox_daysAttended.KeyPress += txtbox_daysAttended_KeyPress;
             // 
             // combox_Employee
             // 
