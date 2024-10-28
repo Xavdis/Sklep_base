@@ -39,17 +39,19 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pan_left = new Panel();
-            guna2TextBox1 = new Guna.UI2.WinForms.Guna2TextBox();
-            guna2ComboBox1 = new Guna.UI2.WinForms.Guna2ComboBox();
-            timpic_joinDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            txtbox_salaryAmount = new Guna.UI2.WinForms.Guna2TextBox();
+            btn_update = new Button();
+            btn_add = new Button();
+            txtbox_daysAttended = new Guna.UI2.WinForms.Guna2TextBox();
+            combox_Employee = new Guna.UI2.WinForms.Guna2ComboBox();
             lbl_new = new Label();
             lbl_department = new Label();
-            timpic_dateOfBith = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            timpic_period = new Guna.UI2.WinForms.Guna2DateTimePicker();
             lbl_joinDate = new Label();
             lbl_gender = new Label();
             lbl_name = new Label();
-            guna2DataGridView1 = new Guna.UI2.WinForms.Guna2DataGridView();
             pan_down = new Panel();
             lbl_system = new Label();
             btn_exit = new Button();
@@ -58,20 +60,23 @@
             btn_logout = new Button();
             btn_departmants = new Button();
             lbl_salary = new Label();
+            DGV_SalaryList = new Guna.UI2.WinForms.Guna2DataGridView();
             pan_left.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).BeginInit();
             pan_top.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)DGV_SalaryList).BeginInit();
             SuspendLayout();
             // 
             // pan_left
             // 
             pan_left.BackColor = Color.Honeydew;
-            pan_left.Controls.Add(guna2TextBox1);
-            pan_left.Controls.Add(guna2ComboBox1);
-            pan_left.Controls.Add(timpic_joinDate);
+            pan_left.Controls.Add(txtbox_salaryAmount);
+            pan_left.Controls.Add(btn_update);
+            pan_left.Controls.Add(btn_add);
+            pan_left.Controls.Add(txtbox_daysAttended);
+            pan_left.Controls.Add(combox_Employee);
             pan_left.Controls.Add(lbl_new);
             pan_left.Controls.Add(lbl_department);
-            pan_left.Controls.Add(timpic_dateOfBith);
+            pan_left.Controls.Add(timpic_period);
             pan_left.Controls.Add(lbl_joinDate);
             pan_left.Controls.Add(lbl_gender);
             pan_left.Controls.Add(lbl_name);
@@ -80,67 +85,108 @@
             pan_left.Size = new Size(378, 419);
             pan_left.TabIndex = 38;
             // 
-            // guna2TextBox1
+            // txtbox_salaryAmount
             // 
-            guna2TextBox1.BackColor = Color.White;
-            guna2TextBox1.CustomizableEdges = customizableEdges1;
-            guna2TextBox1.DefaultText = "";
-            guna2TextBox1.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            guna2TextBox1.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            guna2TextBox1.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            guna2TextBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2TextBox1.ForeColor = Color.SeaGreen;
-            guna2TextBox1.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2TextBox1.Location = new Point(198, 118);
-            guna2TextBox1.Margin = new Padding(4, 5, 4, 5);
-            guna2TextBox1.Name = "guna2TextBox1";
-            guna2TextBox1.PasswordChar = '\0';
-            guna2TextBox1.PlaceholderText = "";
-            guna2TextBox1.SelectedText = "";
-            guna2TextBox1.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            guna2TextBox1.Size = new Size(171, 34);
-            guna2TextBox1.TabIndex = 32;
+            txtbox_salaryAmount.BackColor = Color.White;
+            txtbox_salaryAmount.CustomizableEdges = customizableEdges1;
+            txtbox_salaryAmount.DefaultText = "";
+            txtbox_salaryAmount.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtbox_salaryAmount.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtbox_salaryAmount.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtbox_salaryAmount.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtbox_salaryAmount.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtbox_salaryAmount.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtbox_salaryAmount.ForeColor = Color.SeaGreen;
+            txtbox_salaryAmount.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtbox_salaryAmount.Location = new Point(198, 202);
+            txtbox_salaryAmount.Margin = new Padding(4, 5, 4, 5);
+            txtbox_salaryAmount.Name = "txtbox_salaryAmount";
+            txtbox_salaryAmount.PasswordChar = '\0';
+            txtbox_salaryAmount.PlaceholderText = "";
+            txtbox_salaryAmount.SelectedText = "";
+            txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtbox_salaryAmount.Size = new Size(171, 34);
+            txtbox_salaryAmount.TabIndex = 4;
             // 
-            // guna2ComboBox1
+            // btn_update
             // 
-            guna2ComboBox1.BackColor = Color.White;
-            guna2ComboBox1.Cursor = Cursors.Hand;
-            guna2ComboBox1.CustomizableEdges = customizableEdges3;
-            guna2ComboBox1.DrawMode = DrawMode.OwnerDrawFixed;
-            guna2ComboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
-            guna2ComboBox1.FocusedColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            guna2ComboBox1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2ComboBox1.ForeColor = Color.SeaGreen;
-            guna2ComboBox1.ItemHeight = 30;
-            guna2ComboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            guna2ComboBox1.Location = new Point(198, 75);
-            guna2ComboBox1.Name = "guna2ComboBox1";
-            guna2ComboBox1.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            guna2ComboBox1.Size = new Size(171, 36);
-            guna2ComboBox1.TabIndex = 31;
+            btn_update.AutoSize = true;
+            btn_update.BackColor = Color.Honeydew;
+            btn_update.Cursor = Cursors.Hand;
+            btn_update.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_update.FlatAppearance.BorderSize = 2;
+            btn_update.FlatStyle = FlatStyle.Flat;
+            btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_update.ForeColor = Color.SeaGreen;
+            btn_update.Location = new Point(286, 244);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(83, 37);
+            btn_update.TabIndex = 6;
+            btn_update.Text = "Update";
+            btn_update.UseVisualStyleBackColor = false;
+            btn_update.Click += btn_update_Click;
             // 
-            // timpic_joinDate
+            // btn_add
             // 
-            timpic_joinDate.BorderColor = Color.White;
-            timpic_joinDate.Checked = true;
-            timpic_joinDate.Cursor = Cursors.Hand;
-            timpic_joinDate.CustomizableEdges = customizableEdges5;
-            timpic_joinDate.FillColor = Color.SeaGreen;
-            timpic_joinDate.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            timpic_joinDate.ForeColor = Color.White;
-            timpic_joinDate.Format = DateTimePickerFormat.Short;
-            timpic_joinDate.Location = new Point(198, 200);
-            timpic_joinDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            timpic_joinDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            timpic_joinDate.Name = "timpic_joinDate";
-            timpic_joinDate.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            timpic_joinDate.Size = new Size(171, 34);
-            timpic_joinDate.TabIndex = 26;
-            timpic_joinDate.TextAlign = HorizontalAlignment.Right;
-            timpic_joinDate.Value = new DateTime(2024, 9, 2, 0, 0, 0, 0);
+            btn_add.AutoSize = true;
+            btn_add.BackColor = Color.SeaGreen;
+            btn_add.Cursor = Cursors.Hand;
+            btn_add.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_add.FlatAppearance.BorderSize = 2;
+            btn_add.FlatStyle = FlatStyle.Flat;
+            btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_add.ForeColor = Color.White;
+            btn_add.Location = new Point(197, 244);
+            btn_add.Name = "btn_add";
+            btn_add.Size = new Size(83, 37);
+            btn_add.TabIndex = 5;
+            btn_add.Text = "Add";
+            btn_add.UseVisualStyleBackColor = false;
+            btn_add.Click += btn_add_Click;
+            // 
+            // txtbox_daysAttended
+            // 
+            txtbox_daysAttended.BackColor = Color.White;
+            txtbox_daysAttended.CustomizableEdges = customizableEdges3;
+            txtbox_daysAttended.DefaultText = "";
+            txtbox_daysAttended.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtbox_daysAttended.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtbox_daysAttended.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtbox_daysAttended.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtbox_daysAttended.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtbox_daysAttended.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtbox_daysAttended.ForeColor = Color.SeaGreen;
+            txtbox_daysAttended.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtbox_daysAttended.Location = new Point(198, 118);
+            txtbox_daysAttended.Margin = new Padding(4, 5, 4, 5);
+            txtbox_daysAttended.Name = "txtbox_daysAttended";
+            txtbox_daysAttended.PasswordChar = '\0';
+            txtbox_daysAttended.PlaceholderText = "max. 31";
+            txtbox_daysAttended.SelectedText = "";
+            txtbox_daysAttended.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            txtbox_daysAttended.Size = new Size(171, 34);
+            txtbox_daysAttended.TabIndex = 2;
+            txtbox_daysAttended.TextChanged += txtbox_daysAttended_TextChanged;
+            // 
+            // combox_Employee
+            // 
+            combox_Employee.BackColor = Color.White;
+            combox_Employee.Cursor = Cursors.Hand;
+            combox_Employee.CustomizableEdges = customizableEdges5;
+            combox_Employee.DrawMode = DrawMode.OwnerDrawFixed;
+            combox_Employee.DropDownStyle = ComboBoxStyle.DropDownList;
+            combox_Employee.FocusedColor = Color.FromArgb(94, 148, 255);
+            combox_Employee.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            combox_Employee.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            combox_Employee.ForeColor = Color.SeaGreen;
+            combox_Employee.ItemHeight = 30;
+            combox_Employee.Items.AddRange(new object[] { "Male", "Female" });
+            combox_Employee.Location = new Point(198, 75);
+            combox_Employee.Name = "combox_Employee";
+            combox_Employee.ShadowDecoration.CustomizableEdges = customizableEdges6;
+            combox_Employee.Size = new Size(171, 36);
+            combox_Employee.TabIndex = 1;
+            combox_Employee.SelectedValueChanged += combox_Employee_SelectedValueChanged;
             // 
             // lbl_new
             // 
@@ -167,25 +213,25 @@
             lbl_department.Text = "Period:";
             lbl_department.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // timpic_dateOfBith
+            // timpic_period
             // 
-            timpic_dateOfBith.BorderColor = Color.White;
-            timpic_dateOfBith.Checked = true;
-            timpic_dateOfBith.Cursor = Cursors.Hand;
-            timpic_dateOfBith.CustomizableEdges = customizableEdges7;
-            timpic_dateOfBith.FillColor = Color.SeaGreen;
-            timpic_dateOfBith.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            timpic_dateOfBith.ForeColor = Color.White;
-            timpic_dateOfBith.Format = DateTimePickerFormat.Short;
-            timpic_dateOfBith.Location = new Point(198, 160);
-            timpic_dateOfBith.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
-            timpic_dateOfBith.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
-            timpic_dateOfBith.Name = "timpic_dateOfBith";
-            timpic_dateOfBith.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            timpic_dateOfBith.Size = new Size(171, 34);
-            timpic_dateOfBith.TabIndex = 26;
-            timpic_dateOfBith.TextAlign = HorizontalAlignment.Right;
-            timpic_dateOfBith.Value = new DateTime(2024, 9, 2, 0, 0, 0, 0);
+            timpic_period.BorderColor = Color.White;
+            timpic_period.Checked = true;
+            timpic_period.Cursor = Cursors.Hand;
+            timpic_period.CustomizableEdges = customizableEdges7;
+            timpic_period.FillColor = Color.SeaGreen;
+            timpic_period.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            timpic_period.ForeColor = Color.White;
+            timpic_period.Format = DateTimePickerFormat.Short;
+            timpic_period.Location = new Point(198, 160);
+            timpic_period.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            timpic_period.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            timpic_period.Name = "timpic_period";
+            timpic_period.ShadowDecoration.CustomizableEdges = customizableEdges8;
+            timpic_period.Size = new Size(171, 34);
+            timpic_period.TabIndex = 3;
+            timpic_period.TextAlign = HorizontalAlignment.Right;
+            timpic_period.Value = new DateTime(2024, 9, 2, 0, 0, 0, 0);
             // 
             // lbl_joinDate
             // 
@@ -197,7 +243,7 @@
             lbl_joinDate.Padding = new Padding(0, 7, 0, 0);
             lbl_joinDate.Size = new Size(132, 27);
             lbl_joinDate.TabIndex = 20;
-            lbl_joinDate.Text = "Slary amount:";
+            lbl_joinDate.Text = "Salary amount:";
             lbl_joinDate.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lbl_gender
@@ -226,57 +272,6 @@
             lbl_name.Text = "Employee:";
             lbl_name.TextAlign = ContentAlignment.MiddleRight;
             // 
-            // guna2DataGridView1
-            // 
-            dataGridViewCellStyle1.BackColor = Color.White;
-            guna2DataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = Color.FromArgb(100, 88, 255);
-            dataGridViewCellStyle2.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
-            guna2DataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            guna2DataGridView1.ColumnHeadersHeight = 4;
-            guna2DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            guna2DataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
-            guna2DataGridView1.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.Location = new Point(377, 161);
-            guna2DataGridView1.Name = "guna2DataGridView1";
-            guna2DataGridView1.RowHeadersVisible = false;
-            guna2DataGridView1.RowTemplate.Height = 25;
-            guna2DataGridView1.Size = new Size(819, 329);
-            guna2DataGridView1.TabIndex = 40;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.Font = null;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
-            guna2DataGridView1.ThemeStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BackColor = Color.FromArgb(100, 88, 255);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DataGridView1.ThemeStyle.HeaderStyle.ForeColor = Color.White;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
-            guna2DataGridView1.ThemeStyle.HeaderStyle.Height = 4;
-            guna2DataGridView1.ThemeStyle.ReadOnly = false;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BackColor = Color.White;
-            guna2DataGridView1.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
-            guna2DataGridView1.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2DataGridView1.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
-            guna2DataGridView1.ThemeStyle.RowsStyle.Height = 25;
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            guna2DataGridView1.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            // 
             // pan_down
             // 
             pan_down.BackColor = Color.SeaGreen;
@@ -293,7 +288,7 @@
             lbl_system.Name = "lbl_system";
             lbl_system.Size = new Size(1211, 91);
             lbl_system.TabIndex = 0;
-            lbl_system.Text = "Emplojee managment system version 1.0";
+            lbl_system.Text = "Employee managment system version 1.0";
             lbl_system.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // btn_exit
@@ -309,7 +304,7 @@
             btn_exit.Location = new Point(1166, 9);
             btn_exit.Name = "btn_exit";
             btn_exit.Size = new Size(36, 37);
-            btn_exit.TabIndex = 8;
+            btn_exit.TabIndex = 7;
             btn_exit.Text = "X";
             btn_exit.UseVisualStyleBackColor = false;
             btn_exit.Click += btn_exit_Click;
@@ -395,17 +390,83 @@
             lbl_salary.Text = "Salary";
             lbl_salary.TextAlign = ContentAlignment.BottomCenter;
             // 
+            // DGV_SalaryList
+            // 
+            dataGridViewCellStyle1.BackColor = Color.Honeydew;
+            dataGridViewCellStyle1.NullValue = null;
+            DGV_SalaryList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            DGV_SalaryList.Anchor = AnchorStyles.None;
+            DGV_SalaryList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
+            DGV_SalaryList.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DGV_SalaryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DGV_SalaryList.ColumnHeadersHeight = 25;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DGV_SalaryList.DefaultCellStyle = dataGridViewCellStyle3;
+            DGV_SalaryList.GridColor = Color.SeaGreen;
+            DGV_SalaryList.ImeMode = ImeMode.NoControl;
+            DGV_SalaryList.Location = new Point(378, 161);
+            DGV_SalaryList.MultiSelect = false;
+            DGV_SalaryList.Name = "DGV_SalaryList";
+            DGV_SalaryList.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DGV_SalaryList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            DGV_SalaryList.RowHeadersVisible = false;
+            DGV_SalaryList.RowTemplate.Height = 25;
+            DGV_SalaryList.Size = new Size(818, 329);
+            DGV_SalaryList.TabIndex = 62;
+            DGV_SalaryList.TabStop = false;
+            DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.Honeydew;
+            DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.SeaGreen;
+            DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            DGV_SalaryList.ThemeStyle.BackColor = Color.White;
+            DGV_SalaryList.ThemeStyle.GridColor = Color.SeaGreen;
+            DGV_SalaryList.ThemeStyle.HeaderStyle.BackColor = Color.Sienna;
+            DGV_SalaryList.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DGV_SalaryList.ThemeStyle.HeaderStyle.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DGV_SalaryList.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            DGV_SalaryList.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            DGV_SalaryList.ThemeStyle.HeaderStyle.Height = 25;
+            DGV_SalaryList.ThemeStyle.ReadOnly = true;
+            DGV_SalaryList.ThemeStyle.RowsStyle.BackColor = Color.Honeydew;
+            DGV_SalaryList.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
+            DGV_SalaryList.ThemeStyle.RowsStyle.Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            DGV_SalaryList.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            DGV_SalaryList.ThemeStyle.RowsStyle.Height = 25;
+            DGV_SalaryList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
+            DGV_SalaryList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
             // Salaries
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1200, 502);
+            Controls.Add(DGV_SalaryList);
             Controls.Add(btn_employee);
             Controls.Add(btn_logout);
             Controls.Add(btn_departmants);
             Controls.Add(lbl_salary);
-            Controls.Add(guna2DataGridView1);
             Controls.Add(pan_down);
             Controls.Add(pan_top);
             Controls.Add(pan_left);
@@ -416,9 +477,10 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Salaries";
             pan_left.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)guna2DataGridView1).EndInit();
+            pan_left.PerformLayout();
             pan_top.ResumeLayout(false);
             pan_top.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)DGV_SalaryList).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -426,23 +488,25 @@
         #endregion
 
         private Panel pan_left;
-        private Guna.UI2.WinForms.Guna2DateTimePicker timpic_joinDate;
         private Label lbl_new;
         private Label lbl_department;
-        private Guna.UI2.WinForms.Guna2DateTimePicker timpic_dateOfBith;
+        private Guna.UI2.WinForms.Guna2DateTimePicker timpic_period;
         private Label lbl_joinDate;
         private Label lbl_gender;
         private Label lbl_name;
-        private Guna.UI2.WinForms.Guna2DataGridView guna2DataGridView1;
         private Panel pan_down;
         private Label lbl_system;
         private Button btn_exit;
         private Panel pan_top;
-        private Guna.UI2.WinForms.Guna2ComboBox guna2ComboBox1;
-        private Guna.UI2.WinForms.Guna2TextBox guna2TextBox1;
+        private Guna.UI2.WinForms.Guna2ComboBox combox_Employee;
+        private Guna.UI2.WinForms.Guna2TextBox txtbox_daysAttended;
         private Button btn_employee;
         private Button btn_logout;
         private Button btn_departmants;
         private Label lbl_salary;
+        public Guna.UI2.WinForms.Guna2DataGridView DGV_SalaryList;
+        private Button btn_update;
+        private Button btn_add;
+        private Guna.UI2.WinForms.Guna2TextBox txtbox_salaryAmount;
     }
 }

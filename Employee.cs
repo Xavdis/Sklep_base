@@ -14,7 +14,7 @@ namespace Sklep_base
 
         #region SQL DataBase Command
 
-        private void ShowEmployee()
+        private void ShowEmployee() 
         {
             string Query = "SELECT * FROM EmployeeTbl";
             DGV_EmplList.DataSource = conn.GetData(Query);
