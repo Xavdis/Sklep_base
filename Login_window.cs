@@ -34,7 +34,7 @@ namespace Sklep_base
 
         private void login_window_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Lable_MouseEnter(object sender, EventArgs e)
@@ -108,7 +108,7 @@ namespace Sklep_base
                     Debug.WriteLine(test);
                 }
 
-                if (user == "" || pass == "") 
+                if (user == "" || pass == "")
                 {
                     MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_login.Focus();
@@ -127,9 +127,9 @@ namespace Sklep_base
                     txt_password.Clear();
                 }
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Error");
+                MessageBox.Show("Error: " + ex.Message);
                 txt_login.Clear();
                 txt_password.Clear();
                 txt_login.Focus();
@@ -156,6 +156,18 @@ namespace Sklep_base
             txt_login.Clear();
             txt_password.Clear();
             txt_login.Focus();
+        }
+
+        private void chbox_Visible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbox_Visible.Checked == true)
+            {
+                txt_password.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_password.PasswordChar = '*';
+            }
         }
     }
 }

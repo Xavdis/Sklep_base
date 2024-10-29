@@ -44,6 +44,7 @@
             lbl_server = new Label();
             lbl_version = new Label();
             lbl_net = new Label();
+            chbox_Visible = new CheckBox();
             pan_left.SuspendLayout();
             SuspendLayout();
             // 
@@ -100,6 +101,7 @@
             txt_password.ForeColor = Color.SeaGreen;
             txt_password.Location = new Point(367, 184);
             txt_password.Name = "txt_password";
+            txt_password.PasswordChar = '*';
             txt_password.Size = new Size(171, 30);
             txt_password.TabIndex = 2;
             // 
@@ -227,6 +229,20 @@
             lbl_net.Text = "C#.NET";
             lbl_net.TextAlign = ContentAlignment.MiddleCenter;
             // 
+            // chbox_Visible
+            // 
+            chbox_Visible.AutoSize = true;
+            chbox_Visible.FlatStyle = FlatStyle.Flat;
+            chbox_Visible.Font = new Font("Comic Sans MS", 12F, FontStyle.Underline, GraphicsUnit.Point);
+            chbox_Visible.ForeColor = Color.SeaGreen;
+            chbox_Visible.Location = new Point(460, 215);
+            chbox_Visible.Name = "chbox_Visible";
+            chbox_Visible.Size = new Size(78, 27);
+            chbox_Visible.TabIndex = 15;
+            chbox_Visible.Text = "Vidible";
+            chbox_Visible.UseVisualStyleBackColor = true;
+            chbox_Visible.CheckedChanged += chbox_Visible_CheckedChanged;
+            // 
             // login_window
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -234,6 +250,7 @@
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
             ClientSize = new Size(609, 360);
+            Controls.Add(chbox_Visible);
             Controls.Add(pan_left);
             Controls.Add(lbl_clear);
             Controls.Add(btn_exit);
@@ -272,5 +289,6 @@
         private Label lbl_server;
         private Label lbl_version;
         private Label lbl_net;
+        private CheckBox chbox_Visible;
     }
 }
