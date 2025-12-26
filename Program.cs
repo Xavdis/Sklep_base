@@ -1,3 +1,8 @@
+using System.Data;
+using System.Data.Sql;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
+
 namespace Sklep_base
 {
     internal static class Program
@@ -14,6 +19,8 @@ namespace Sklep_base
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new login_window());
+
+
         }
     }
 }

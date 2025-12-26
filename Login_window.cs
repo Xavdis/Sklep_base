@@ -12,8 +12,6 @@ namespace Sklep_base
 
     public partial class login_window : Form
     {
-
-
         public login_window()
         {
             InitializeComponent();
@@ -30,11 +28,11 @@ namespace Sklep_base
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
         }
 
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9F97L89;Initial Catalog=login_base;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        Functions functions = new Functions();
 
         private void login_window_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void Lable_MouseEnter(object sender, EventArgs e)
@@ -80,14 +78,20 @@ namespace Sklep_base
             string
                 username = txt_login.Text,
                 password = txt_password.Text,
-                user = string.Empty,
-                pass = string.Empty,
-                test = $"\n\n****************** {user} {pass} {username} {password}\n\n";
+                sqluser = string.Empty,
+                sqlpass = string.Empty,
+                test = $"\n\n****************** {sqluser} {sqlpass} {username} {password}\n\n";
 
             Debug.WriteLine(test);
 
             try
             {
+
+                SqlConnection conn = new SqlConnection(functions.ConnStr);
+                SqlCommand cmdOpen = new SqlCommand(functions.ConnStr, );
+                cmdOpen.Parameters.AddWithValue("@userID", new Functions().User);
+                cmdOpen.Parameters.AddWithValue("@password", new Functions().Password);
+
                 conn.Open();
 
                 // Параметризований SQL-запит для уникнення SQL-ін'єкцій
@@ -102,18 +106,24 @@ namespace Sklep_base
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read()) // Перевіряємо, чи є результати
                 {
-                    user = dr["username"].ToString();
-                    pass = dr["password"].ToString();
+                    sqluser = dr["username"].ToString();
+                    sqlpass = dr["password"].ToString();
+
 
                     Debug.WriteLine(test);
                 }
-
-                if (user == "" || pass == "")
+                else
                 {
-                    MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("i can`t read!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
+                if (username == string.Empty || password == string.Empty)
+                {
+                    MessageBox.Show("Please, enter your username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_login.Focus();
                 }
-                else if (user == username && pass == password)
+                else if (sqluser == username && sqlpass == password)
                 {
 
                     new Employee().Show();

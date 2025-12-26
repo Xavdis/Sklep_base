@@ -5,16 +5,26 @@ namespace Sklep_base
 {
     internal class Functions
     {
+        private string userID = "sa", password = "admin!23";
         private SqlConnection conn;
         private SqlCommand cmd;
         private DataTable dt;
         private SqlDataAdapter sda;
-        private string connStr;
-
-
+        private string connStr = @"Data Source=100.105.83.111;Persist Security Info=True;User ID=@userID;Password=@password;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
+        public string ConnStr
+        {
+            get { return connStr; }
+        }
+        public string User
+        {
+            get { return userID; }
+        }
+        public string Password
+        {
+            get { return  password; }
+        }
         public Functions()
         {
-            connStr = @"Data Source = DESKTOP-9F97L89;Initial Catalog=Employee;Integrated Security=True;Encrypt=True;TrustServerCertificate=True";
             conn = new SqlConnection(connStr);
             cmd = new SqlCommand();
             cmd.Connection = conn;
