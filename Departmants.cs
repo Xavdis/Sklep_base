@@ -6,8 +6,7 @@
         public Departmants()
         {
             InitializeComponent();
-            conn = new Functions();
-            conn.RefreashDataBase(1);
+            conn = new SQLFunctions();
             ShowDepartmants();
             btn_salary.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_salary.MouseLeave += new EventHandler(Button_MouseLeave);
@@ -112,7 +111,7 @@
 
         #endregion
 
-        Functions conn;
+        SQLFunctions conn;
         private void ShowDepartmants()
         {
             string Query = "SELECT * FROM DepartmantTbl";
@@ -199,7 +198,6 @@
                 {
                     string Query = $"DELETE FROM DepartmantTbl WHERE DepName = '{txtBox_DepName.Text}'";
                     conn.SetData(Query);
-                    conn.RefreashDataBase(1);
                     ShowDepartmants();
                     MessageBox.Show("Departmant Delete!!!");
                     txtBox_DepName.Text = "";

@@ -172,7 +172,7 @@
             lbl_clear.Location = new Point(419, 289);
             lbl_clear.Name = "lbl_clear";
             lbl_clear.Padding = new Padding(0, 0, 0, 11);
-            lbl_clear.Size = new Size(56, 39);
+            lbl_clear.Size = new Size(67, 39);
             lbl_clear.TabIndex = 3;
             lbl_clear.Text = "Clear";
             lbl_clear.Click += lbl_clear_Click;

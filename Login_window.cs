@@ -80,7 +80,7 @@ namespace Sklep_base
                 sqluser = string.Empty,
                 sqlpass = string.Empty;
 
-            using (SqlConnection conn = new SqlConnection(new Functions().ConnStr))
+            using (SqlConnection conn = new SqlConnection(new SQLFunctions().ConnStr))
             {
                 try
                 {

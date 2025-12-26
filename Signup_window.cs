@@ -5,7 +5,7 @@ namespace Sklep_base
     public partial class Signup_window : Form
     {
         string code = "adm_adm";//add code for add new account 
-        SqlConnection conn = new SqlConnection(new Functions().ConnStr);
+        SqlConnection conn = new SqlConnection(new SQLFunctions().ConnStr);
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter adapter = new SqlDataAdapter();
         public Signup_window()

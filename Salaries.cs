@@ -4,11 +4,10 @@ namespace Sklep_base
 {
     public partial class Salaries : Form
     {
-        Functions functions = new Functions();
+        SQLFunctions functions = new SQLFunctions();
         public Salaries()
         {
             InitializeComponent();
-            functions.RefreashDataBase(3);
             ShowSalary();
             GetEmployeeBase();
             btn_departmants.MouseEnter += new EventHandler(Button_MouseEnter);
@@ -144,7 +143,6 @@ namespace Sklep_base
                     string Query = $"INSERT INTO SalaryTbl (Employee,Attendance,Period,Amount,PayDate) " +
                         $"VALUES ({combox_Employee.SelectedValue},{Days},'{Period}',{Amount},'{today}')";
                     functions.SetData(Query);
-                    functions.RefreashDataBase(3);
                     ShowSalary();
                     MessageBox.Show("Salary Paid!!!");
 

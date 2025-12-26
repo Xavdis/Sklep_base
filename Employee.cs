@@ -2,14 +2,21 @@ namespace Sklep_base
 {
     public partial class Employee : Form
     {
-        Functions conn;
+        SQLFunctions conn;
         public Employee()
         {
-            InitializeComponent();
-            conn = new Functions();
-            conn.RefreashDataBase(2);
-            ShowEmployee();
-            GetDepartmentBase();
+            try
+            {
+
+                InitializeComponent();
+                conn = new SQLFunctions();
+                ShowEmployee();
+                GetDepartmentBase();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
         }
 
         #region SQL DataBase Command
@@ -24,7 +31,7 @@ namespace Sklep_base
         {
             string Query = "SELECT * FROM DepartmantTbl";
             combox_employeeDepartment.DisplayMember = conn.GetData(Query).Columns["DepName"].ToString();
-            combox_employeeDepartment.ValueMember = conn.GetData(Query).Columns["DepId"].ToString();
+            combox_employeeDepartment.ValueMember = conn.GetData(Query).Columns["ID"].ToString();
             combox_employeeDepartment.DataSource = conn.GetData(Query);
         }
 
@@ -161,9 +168,9 @@ namespace Sklep_base
                     string JoinDate = timpic_joinDate.Text;
                     int Salary = Convert.ToInt32(txbox_salary.Text);
 
-                    string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,EmpDepart,EmpBornDate,EmpJoingDate,EmpSalary) VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}',{Salary})";
+                    string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,EmpDepart,EmpBornDate,EmpJoingDate) " +
+                        $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
                     conn.SetData(Query);
-                    conn.RefreashDataBase(2);
                     ShowEmployee();
                     MessageBox.Show("Employee Added!!!");
                     txtbox_name.Text = "";
@@ -192,7 +199,6 @@ namespace Sklep_base
                 {
                     string Query = $"DELETE FROM EmployeeTbl WHERE EmpId = {Key}";
                     conn.SetData(Query);
-                    conn.RefreashDataBase(2);
                     ShowEmployee();
                     MessageBox.Show("Employee Deleted!!!");
                     txtbox_name.Text = "";
@@ -230,7 +236,6 @@ namespace Sklep_base
 
                     string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',EmpDepart = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}',EmpSalary = '{Salary}' WHERE EmpId = {Key}";
                     conn.SetData(Query);
-                    conn.RefreashDataBase(2);
                     ShowEmployee();
                     MessageBox.Show("Employee Update!!!");
                     txtbox_name.Text = "";
