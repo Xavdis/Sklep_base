@@ -1,27 +1,19 @@
-﻿using System.Data;
+﻿using Microsoft.VisualBasic.ApplicationServices;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Sklep_base
 {
     internal class Functions
     {
-        private string userID = "sa", password = "admin!23";
         private SqlConnection conn;
         private SqlCommand cmd;
         private DataTable dt;
         private SqlDataAdapter sda;
-        private string connStr = @"Data Source=100.105.83.111;Persist Security Info=True;User ID=@userID;Password=@password;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
+        private string connStr = $"Data Source=100.105.83.111;Persist Security Info=True;User ID=sa;Password=admin!23;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
         public string ConnStr
         {
             get { return connStr; }
-        }
-        public string User
-        {
-            get { return userID; }
-        }
-        public string Password
-        {
-            get { return  password; }
         }
         public Functions()
         {

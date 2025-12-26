@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Reflection.Metadata;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Button = System.Windows.Forms.Button;
@@ -27,8 +28,6 @@ namespace Sklep_base
             lbl_clear.MouseEnter += new EventHandler(Lable_MouseEnter);
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
         }
-
-        Functions functions = new Functions();
 
         private void login_window_Load(object sender, EventArgs e)
         {
@@ -79,75 +78,63 @@ namespace Sklep_base
                 username = txt_login.Text,
                 password = txt_password.Text,
                 sqluser = string.Empty,
-                sqlpass = string.Empty,
-                test = $"\n\n****************** {sqluser} {sqlpass} {username} {password}\n\n";
+                sqlpass = string.Empty;
 
-            Debug.WriteLine(test);
-
-            try
+            using (SqlConnection conn = new SqlConnection(new Functions().ConnStr))
             {
-
-                SqlConnection conn = new SqlConnection(functions.ConnStr);
-                SqlCommand cmdOpen = new SqlCommand(functions.ConnStr, );
-                cmdOpen.Parameters.AddWithValue("@userID", new Functions().User);
-                cmdOpen.Parameters.AddWithValue("@password", new Functions().Password);
-
-                conn.Open();
-
-                // Параметризований SQL-запит для уникнення SQL-ін'єкцій
-                string selectQuery = "SELECT username, password FROM Login_new WHERE username = @username AND password = @password";
-                SqlCommand cmd = new SqlCommand(selectQuery, conn);
-
-                // Передаємо значення з TextBox до параметрів SQL-запиту
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
-
-                // Виконуємо запит і зчитуємо дані
-                SqlDataReader dr = cmd.ExecuteReader();
-                if (dr.Read()) // Перевіряємо, чи є результати
+                try
                 {
-                    sqluser = dr["username"].ToString();
-                    sqlpass = dr["password"].ToString();
+                    conn.Open();
 
+                    // Параметризований SQL-запит для уникнення SQL-ін'єкцій
+                    string selectQuery = "SELECT username, password FROM Login_new WHERE username = @username AND password = @password";
+                    SqlCommand cmd = new SqlCommand(selectQuery, conn);
 
-                    Debug.WriteLine(test);
+                    // Передаємо значення з TextBox до параметрів SQL-запиту
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+
+                    // Виконуємо запит і зчитуємо дані
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    if (dr.Read()) // Перевіряємо, чи є результати
+                    {
+                        sqluser = dr["username"].ToString();
+                        sqlpass = dr["password"].ToString();
+
+                    }
+
+                    if (username == string.Empty || password == string.Empty)
+                    {
+                        MessageBox.Show("Please, enter your username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txt_login.Focus();
+                    }
+                    else if (sqluser == username && sqlpass == password)
+                    {
+
+                        new Employee().Show();
+                        this.Hide();
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        txt_login.Clear();
+                        txt_password.Clear();
+                    }
                 }
-                else
+                catch (Exception ex)
                 {
-                    MessageBox.Show("i can`t read!!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-                }
-
-                if (username == string.Empty || password == string.Empty)
-                {
-                    MessageBox.Show("Please, enter your username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    txt_login.Focus();
-                }
-                else if (sqluser == username && sqlpass == password)
-                {
-
-                    new Employee().Show();
-                    this.Hide();
-
-                }
-                else
-                {
-                    MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Error: " + ex.Message);
                     txt_login.Clear();
                     txt_password.Clear();
+                    txt_login.Focus();
+                }
+                finally
+                {
+                    conn.Close();
                 }
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message);
-                txt_login.Clear();
-                txt_password.Clear();
-                txt_login.Focus();
-            }
-            finally
-            {
-                conn.Close();
-            }
+                
         }
 
         private void btn_createLogin_Click(object sender, EventArgs e)

@@ -4,8 +4,8 @@ namespace Sklep_base
 {
     public partial class Signup_window : Form
     {
-        string code = "adm_adm";//add code for add new account
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-9F97L89;Initial Catalog=login_base;Integrated Security=True;Encrypt=True;TrustServerCertificate=True");
+        string code = "adm_adm";//add code for add new account 
+        SqlConnection conn = new SqlConnection(new Functions().ConnStr);
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter adapter = new SqlDataAdapter();
         public Signup_window()
@@ -69,33 +69,34 @@ namespace Sklep_base
 
         private void btn_createAccount_Click(object sender, EventArgs e)
         {
-            if (txt_login.Text == "" || txt_password.Text == "" || txt_code.Text == "")
+            using (conn)
             {
-                MessageBox.Show("Invalid register details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_login.Focus();
-            }
-            else if (txt_code.Text != code)
-            {
-                MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_login.Focus();
-            }
-            else if (txt_code.Text == code)
-            {
-                conn.Open();
-                string register = "INSERT INTO Login_new VALUES ('" + txt_login.Text + "','" + txt_password.Text + "')";
-                cmd = new SqlCommand(register, conn);
-                cmd .ExecuteNonQuery();
-                conn.Close();
+                if (txt_login.Text == "" || txt_password.Text == "" || txt_code.Text == "")
+                {
+                    MessageBox.Show("Invalid register details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_login.Focus();
+                }
+                else if (txt_code.Text != code)
+                {
+                    MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_login.Focus();
+                }
+                else if (txt_code.Text == code)
+                {
+                    string register = "INSERT INTO Login_new VALUES ('" + txt_login.Text + "','" + txt_password.Text + "')";
+                    cmd = new SqlCommand(register, conn);
+                    cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txt_code.Clear();
-                txt_login.Clear();
-                txt_password.Clear();
-            }
-            else
-            {
-                MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txt_code.Focus();
+                    MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txt_code.Clear();
+                    txt_login.Clear();
+                    txt_password.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    txt_code.Focus();
+                }
             }
         }
     }

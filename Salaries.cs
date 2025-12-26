@@ -4,12 +4,11 @@ namespace Sklep_base
 {
     public partial class Salaries : Form
     {
-        Functions conn;
+        Functions functions = new Functions();
         public Salaries()
         {
             InitializeComponent();
-            conn = new Functions();
-            conn.RefreashDataBase(3);
+            functions.RefreashDataBase(3);
             ShowSalary();
             GetEmployeeBase();
             btn_departmants.MouseEnter += new EventHandler(Button_MouseEnter);
@@ -30,7 +29,7 @@ namespace Sklep_base
         {
 
             string Query = $"SELECT EmpId, EmpSalary FROM EmployeeTbl WHERE EmpId = {Key}";
-            foreach (DataRow dr in conn.GetData(Query).Rows)
+            foreach (DataRow dr in functions.GetData(Query).Rows)
             {
                 DaySalary = Convert.ToInt32(dr["EmpSalary"].ToString());
             }
@@ -41,14 +40,14 @@ namespace Sklep_base
         private void ShowSalary()
         {
             string Query = "SELECT * FROM SalaryTbl";
-            DGV_SalaryList.DataSource = conn.GetData(Query);
+            DGV_SalaryList.DataSource = functions.GetData(Query);
         }
         private void GetEmployeeBase()
         {
             string Query = "SELECT EmpId, EmpName + ' ' + EmpSurname AS FullName FROM EmployeeTbl";
-            combox_Employee.DisplayMember = conn.GetData(Query).Columns["FullName"].ToString();
-            combox_Employee.ValueMember = conn.GetData(Query).Columns["EmpId"].ToString();
-            combox_Employee.DataSource = conn.GetData(Query);
+            combox_Employee.DisplayMember = functions.GetData(Query).Columns["FullName"].ToString();
+            combox_Employee.ValueMember = functions.GetData(Query).Columns["EmpId"].ToString();
+            combox_Employee.DataSource = functions.GetData(Query);
         }
 
         #endregion 
@@ -144,8 +143,8 @@ namespace Sklep_base
 
                     string Query = $"INSERT INTO SalaryTbl (Employee,Attendance,Period,Amount,PayDate) " +
                         $"VALUES ({combox_Employee.SelectedValue},{Days},'{Period}',{Amount},'{today}')";
-                    conn.SetData(Query);
-                    conn.RefreashDataBase(3);
+                    functions.SetData(Query);
+                    functions.RefreashDataBase(3);
                     ShowSalary();
                     MessageBox.Show("Salary Paid!!!");
 

@@ -68,12 +68,12 @@
             pan_down = new Panel();
             pan_top = new Panel();
             pan_left = new Panel();
+            btn_delete = new Button();
             lbl_employee = new Label();
             btn_departmants = new Button();
             btn_logout = new Button();
             btn_salary = new Button();
             DGV_EmplList = new Guna.UI2.WinForms.Guna2DataGridView();
-            btn_delete = new Button();
             pan_top.SuspendLayout();
             pan_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_EmplList).BeginInit();
@@ -91,7 +91,7 @@
             btn_update.ForeColor = Color.SeaGreen;
             btn_update.Location = new Point(155, 368);
             btn_update.Name = "btn_update";
-            btn_update.Size = new Size(83, 37);
+            btn_update.Size = new Size(93, 42);
             btn_update.TabIndex = 30;
             btn_update.Text = "Update";
             btn_update.UseVisualStyleBackColor = false;
@@ -111,7 +111,7 @@
             btn_add.ForeColor = Color.White;
             btn_add.Location = new Point(66, 368);
             btn_add.Name = "btn_add";
-            btn_add.Size = new Size(83, 37);
+            btn_add.Size = new Size(83, 42);
             btn_add.TabIndex = 29;
             btn_add.Text = "Add";
             btn_add.UseVisualStyleBackColor = false;
@@ -145,9 +145,9 @@
             lbl_new.BackColor = Color.Honeydew;
             lbl_new.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_new.ForeColor = Color.SeaGreen;
-            lbl_new.Location = new Point(71, 25);
+            lbl_new.Location = new Point(59, 18);
             lbl_new.Name = "lbl_new";
-            lbl_new.Size = new Size(248, 28);
+            lbl_new.Size = new Size(312, 35);
             lbl_new.TabIndex = 14;
             lbl_new.Text = "Add new employee or update";
             // 
@@ -394,7 +394,7 @@
             btn_exit.ForeColor = Color.Honeydew;
             btn_exit.Location = new Point(1315, 10);
             btn_exit.Name = "btn_exit";
-            btn_exit.Size = new Size(36, 37);
+            btn_exit.Size = new Size(40, 42);
             btn_exit.TabIndex = 8;
             btn_exit.Text = "X";
             btn_exit.UseVisualStyleBackColor = false;
@@ -445,6 +445,24 @@
             pan_left.Name = "pan_left";
             pan_left.Size = new Size(378, 419);
             pan_left.TabIndex = 33;
+            // 
+            // btn_delete
+            // 
+            btn_delete.AutoSize = true;
+            btn_delete.BackColor = Color.Honeydew;
+            btn_delete.Cursor = Cursors.Hand;
+            btn_delete.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_delete.FlatAppearance.BorderSize = 2;
+            btn_delete.FlatStyle = FlatStyle.Flat;
+            btn_delete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_delete.ForeColor = Color.SeaGreen;
+            btn_delete.Location = new Point(244, 368);
+            btn_delete.Name = "btn_delete";
+            btn_delete.Size = new Size(86, 42);
+            btn_delete.TabIndex = 31;
+            btn_delete.Text = "Delete";
+            btn_delete.UseVisualStyleBackColor = false;
+            btn_delete.Click += btn_delete_Click;
             // 
             // lbl_employee
             // 
@@ -561,6 +579,7 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             DGV_EmplList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGV_EmplList.RowHeadersVisible = false;
+            DGV_EmplList.RowHeadersWidth = 51;
             DGV_EmplList.RowTemplate.Height = 25;
             DGV_EmplList.Size = new Size(969, 329);
             DGV_EmplList.TabIndex = 58;
@@ -588,27 +607,9 @@
             DGV_EmplList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             DGV_EmplList.CellContentClick += DGV_EmplList_CellContentClick;
             // 
-            // btn_delete
-            // 
-            btn_delete.AutoSize = true;
-            btn_delete.BackColor = Color.Honeydew;
-            btn_delete.Cursor = Cursors.Hand;
-            btn_delete.FlatAppearance.BorderColor = Color.SeaGreen;
-            btn_delete.FlatAppearance.BorderSize = 2;
-            btn_delete.FlatStyle = FlatStyle.Flat;
-            btn_delete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_delete.ForeColor = Color.SeaGreen;
-            btn_delete.Location = new Point(244, 368);
-            btn_delete.Name = "btn_delete";
-            btn_delete.Size = new Size(83, 37);
-            btn_delete.TabIndex = 31;
-            btn_delete.Text = "Delete";
-            btn_delete.UseVisualStyleBackColor = false;
-            btn_delete.Click += btn_delete_Click;
-            // 
             // Employee
             // 
-            AutoScaleDimensions = new SizeF(10F, 23F);
+            AutoScaleDimensions = new SizeF(12F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1350, 502);
