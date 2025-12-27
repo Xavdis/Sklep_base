@@ -42,7 +42,6 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pan_left = new Panel();
             txtbox_salaryAmount = new Guna.UI2.WinForms.Guna2TextBox();
-            btn_update = new Button();
             btn_add = new Button();
             txtbox_daysAttended = new Guna.UI2.WinForms.Guna2TextBox();
             combox_Employee = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -61,9 +60,12 @@
             btn_departmants = new Button();
             lbl_salary = new Label();
             DGV_SalaryList = new Guna.UI2.WinForms.Guna2DataGridView();
+            panel1 = new Panel();
+            btn_update = new Button();
             pan_left.SuspendLayout();
             pan_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_SalaryList).BeginInit();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // pan_left
@@ -98,7 +100,7 @@
             txtbox_salaryAmount.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtbox_salaryAmount.ForeColor = Color.SeaGreen;
             txtbox_salaryAmount.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_salaryAmount.Location = new Point(198, 202);
+            txtbox_salaryAmount.Location = new Point(198, 198);
             txtbox_salaryAmount.Margin = new Padding(4, 5, 4, 5);
             txtbox_salaryAmount.Name = "txtbox_salaryAmount";
             txtbox_salaryAmount.PasswordChar = '\0';
@@ -106,26 +108,8 @@
             txtbox_salaryAmount.ReadOnly = true;
             txtbox_salaryAmount.SelectedText = "";
             txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtbox_salaryAmount.Size = new Size(171, 34);
+            txtbox_salaryAmount.Size = new Size(171, 36);
             txtbox_salaryAmount.TabIndex = 4;
-            // 
-            // btn_update
-            // 
-            btn_update.AutoSize = true;
-            btn_update.BackColor = Color.Honeydew;
-            btn_update.Cursor = Cursors.Hand;
-            btn_update.FlatAppearance.BorderColor = Color.SeaGreen;
-            btn_update.FlatAppearance.BorderSize = 2;
-            btn_update.FlatStyle = FlatStyle.Flat;
-            btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_update.ForeColor = Color.SeaGreen;
-            btn_update.Location = new Point(286, 244);
-            btn_update.Name = "btn_update";
-            btn_update.Size = new Size(83, 37);
-            btn_update.TabIndex = 6;
-            btn_update.Text = "Update";
-            btn_update.UseVisualStyleBackColor = false;
-            btn_update.Click += btn_update_Click;
             // 
             // btn_add
             // 
@@ -137,9 +121,9 @@
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(197, 244);
+            btn_add.Location = new Point(94, 277);
             btn_add.Name = "btn_add";
-            btn_add.Size = new Size(83, 37);
+            btn_add.Size = new Size(93, 42);
             btn_add.TabIndex = 5;
             btn_add.Text = "Add";
             btn_add.UseVisualStyleBackColor = false;
@@ -158,14 +142,14 @@
             txtbox_daysAttended.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtbox_daysAttended.ForeColor = Color.SeaGreen;
             txtbox_daysAttended.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_daysAttended.Location = new Point(198, 118);
+            txtbox_daysAttended.Location = new Point(198, 116);
             txtbox_daysAttended.Margin = new Padding(4, 5, 4, 5);
             txtbox_daysAttended.Name = "txtbox_daysAttended";
             txtbox_daysAttended.PasswordChar = '\0';
             txtbox_daysAttended.PlaceholderText = "max. 31";
             txtbox_daysAttended.SelectedText = "";
             txtbox_daysAttended.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtbox_daysAttended.Size = new Size(171, 34);
+            txtbox_daysAttended.Size = new Size(171, 36);
             txtbox_daysAttended.TabIndex = 2;
             txtbox_daysAttended.TextChanged += txtbox_daysAttended_TextChanged;
             txtbox_daysAttended.KeyPress += txtbox_daysAttended_KeyPress;
@@ -207,10 +191,10 @@
             lbl_department.BackColor = Color.Honeydew;
             lbl_department.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_department.ForeColor = Color.SeaGreen;
-            lbl_department.Location = new Point(8, 167);
+            lbl_department.Location = new Point(0, 157);
             lbl_department.Name = "lbl_department";
             lbl_department.Padding = new Padding(0, 7, 0, 0);
-            lbl_department.Size = new Size(184, 27);
+            lbl_department.Size = new Size(190, 36);
             lbl_department.TabIndex = 16;
             lbl_department.Text = "Period:";
             lbl_department.TextAlign = ContentAlignment.MiddleRight;
@@ -225,12 +209,12 @@
             timpic_period.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_period.ForeColor = Color.White;
             timpic_period.Format = DateTimePickerFormat.Short;
-            timpic_period.Location = new Point(198, 160);
+            timpic_period.Location = new Point(198, 157);
             timpic_period.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_period.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_period.Name = "timpic_period";
             timpic_period.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            timpic_period.Size = new Size(171, 34);
+            timpic_period.Size = new Size(171, 36);
             timpic_period.TabIndex = 3;
             timpic_period.TextAlign = HorizontalAlignment.Right;
             timpic_period.Value = new DateTime(2024, 9, 2, 0, 0, 0, 0);
@@ -240,10 +224,10 @@
             lbl_joinDate.BackColor = Color.Honeydew;
             lbl_joinDate.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_joinDate.ForeColor = Color.SeaGreen;
-            lbl_joinDate.Location = new Point(60, 200);
+            lbl_joinDate.Location = new Point(0, 198);
             lbl_joinDate.Name = "lbl_joinDate";
             lbl_joinDate.Padding = new Padding(0, 7, 0, 0);
-            lbl_joinDate.Size = new Size(132, 27);
+            lbl_joinDate.Size = new Size(190, 36);
             lbl_joinDate.TabIndex = 20;
             lbl_joinDate.Text = "Salary amount:";
             lbl_joinDate.TextAlign = ContentAlignment.MiddleRight;
@@ -253,10 +237,10 @@
             lbl_gender.BackColor = Color.Honeydew;
             lbl_gender.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_gender.ForeColor = Color.SeaGreen;
-            lbl_gender.Location = new Point(51, 125);
+            lbl_gender.Location = new Point(0, 116);
             lbl_gender.Name = "lbl_gender";
             lbl_gender.Padding = new Padding(0, 7, 0, 0);
-            lbl_gender.Size = new Size(141, 27);
+            lbl_gender.Size = new Size(190, 36);
             lbl_gender.TabIndex = 15;
             lbl_gender.Text = "Days attended:";
             lbl_gender.TextAlign = ContentAlignment.MiddleRight;
@@ -266,10 +250,10 @@
             lbl_name.BackColor = Color.Honeydew;
             lbl_name.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_name.ForeColor = Color.SeaGreen;
-            lbl_name.Location = new Point(60, 82);
+            lbl_name.Location = new Point(0, 75);
             lbl_name.Name = "lbl_name";
             lbl_name.Padding = new Padding(0, 7, 0, 0);
-            lbl_name.Size = new Size(132, 29);
+            lbl_name.Size = new Size(190, 36);
             lbl_name.TabIndex = 10;
             lbl_name.Text = "Employee:";
             lbl_name.TextAlign = ContentAlignment.MiddleRight;
@@ -279,7 +263,7 @@
             pan_down.BackColor = Color.SeaGreen;
             pan_down.Location = new Point(-5, 494);
             pan_down.Name = "pan_down";
-            pan_down.Size = new Size(1210, 14);
+            pan_down.Size = new Size(1411, 10);
             pan_down.TabIndex = 39;
             // 
             // lbl_system
@@ -288,7 +272,7 @@
             lbl_system.ForeColor = Color.White;
             lbl_system.Location = new Point(0, 0);
             lbl_system.Name = "lbl_system";
-            lbl_system.Size = new Size(1211, 91);
+            lbl_system.Size = new Size(1411, 91);
             lbl_system.TabIndex = 0;
             lbl_system.Text = "Employee managment system version 1.0";
             lbl_system.TextAlign = ContentAlignment.MiddleCenter;
@@ -303,9 +287,9 @@
             btn_exit.FlatStyle = FlatStyle.Flat;
             btn_exit.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_exit.ForeColor = Color.White;
-            btn_exit.Location = new Point(1166, 9);
+            btn_exit.Location = new Point(1361, 9);
             btn_exit.Name = "btn_exit";
-            btn_exit.Size = new Size(36, 37);
+            btn_exit.Size = new Size(40, 42);
             btn_exit.TabIndex = 7;
             btn_exit.Text = "X";
             btn_exit.UseVisualStyleBackColor = false;
@@ -320,7 +304,7 @@
             pan_top.Controls.Add(lbl_system);
             pan_top.Location = new Point(-6, -5);
             pan_top.Name = "pan_top";
-            pan_top.Size = new Size(1211, 91);
+            pan_top.Size = new Size(1411, 91);
             pan_top.TabIndex = 37;
             // 
             // btn_employee
@@ -328,14 +312,15 @@
             btn_employee.AutoSize = true;
             btn_employee.BackColor = Color.Honeydew;
             btn_employee.Cursor = Cursors.Hand;
+            btn_employee.Dock = DockStyle.Left;
             btn_employee.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_employee.FlatAppearance.BorderSize = 0;
             btn_employee.FlatStyle = FlatStyle.Flat;
             btn_employee.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_employee.ForeColor = Color.SeaGreen;
-            btn_employee.Location = new Point(539, 86);
+            btn_employee.Location = new Point(701, 0);
             btn_employee.Name = "btn_employee";
-            btn_employee.Size = new Size(127, 53);
+            btn_employee.Size = new Size(200, 57);
             btn_employee.TabIndex = 61;
             btn_employee.Text = "Employee";
             btn_employee.TextAlign = ContentAlignment.BottomCenter;
@@ -347,14 +332,15 @@
             btn_logout.AutoSize = true;
             btn_logout.BackColor = Color.Honeydew;
             btn_logout.Cursor = Cursors.Hand;
+            btn_logout.Dock = DockStyle.Left;
             btn_logout.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_logout.FlatAppearance.BorderSize = 0;
             btn_logout.FlatStyle = FlatStyle.Flat;
             btn_logout.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_logout.ForeColor = Color.SeaGreen;
-            btn_logout.Location = new Point(938, 86);
+            btn_logout.Location = new Point(101, 0);
             btn_logout.Name = "btn_logout";
-            btn_logout.Size = new Size(127, 53);
+            btn_logout.Size = new Size(200, 57);
             btn_logout.TabIndex = 60;
             btn_logout.Text = "Logout";
             btn_logout.TextAlign = ContentAlignment.BottomCenter;
@@ -365,14 +351,15 @@
             // 
             btn_departmants.BackColor = Color.Honeydew;
             btn_departmants.Cursor = Cursors.Hand;
+            btn_departmants.Dock = DockStyle.Left;
             btn_departmants.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_departmants.FlatAppearance.BorderSize = 0;
             btn_departmants.FlatStyle = FlatStyle.Flat;
             btn_departmants.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_departmants.ForeColor = Color.SeaGreen;
-            btn_departmants.Location = new Point(672, 86);
+            btn_departmants.Location = new Point(301, 0);
             btn_departmants.Name = "btn_departmants";
-            btn_departmants.Size = new Size(127, 53);
+            btn_departmants.Size = new Size(200, 57);
             btn_departmants.TabIndex = 58;
             btn_departmants.Text = "Departmants";
             btn_departmants.TextAlign = ContentAlignment.BottomCenter;
@@ -382,12 +369,13 @@
             // lbl_salary
             // 
             lbl_salary.BackColor = Color.SeaGreen;
+            lbl_salary.Dock = DockStyle.Left;
             lbl_salary.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_salary.ForeColor = Color.White;
-            lbl_salary.Location = new Point(805, 86);
+            lbl_salary.Location = new Point(501, 0);
             lbl_salary.Name = "lbl_salary";
             lbl_salary.Padding = new Padding(0, 0, 0, 4);
-            lbl_salary.Size = new Size(127, 53);
+            lbl_salary.Size = new Size(200, 57);
             lbl_salary.TabIndex = 59;
             lbl_salary.Text = "Salary";
             lbl_salary.TextAlign = ContentAlignment.BottomCenter;
@@ -419,7 +407,7 @@
             DGV_SalaryList.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_SalaryList.GridColor = Color.SeaGreen;
             DGV_SalaryList.ImeMode = ImeMode.NoControl;
-            DGV_SalaryList.Location = new Point(378, 161);
+            DGV_SalaryList.Location = new Point(378, 147);
             DGV_SalaryList.MultiSelect = false;
             DGV_SalaryList.Name = "DGV_SalaryList";
             DGV_SalaryList.ReadOnly = true;
@@ -432,8 +420,9 @@
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
             DGV_SalaryList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGV_SalaryList.RowHeadersVisible = false;
+            DGV_SalaryList.RowHeadersWidth = 51;
             DGV_SalaryList.RowTemplate.Height = 25;
-            DGV_SalaryList.Size = new Size(818, 329);
+            DGV_SalaryList.Size = new Size(1017, 343);
             DGV_SalaryList.TabIndex = 62;
             DGV_SalaryList.TabStop = false;
             DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.Honeydew;
@@ -458,20 +447,48 @@
             DGV_SalaryList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             DGV_SalaryList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
             // 
+            // panel1
+            // 
+            panel1.BackColor = Color.White;
+            panel1.Controls.Add(btn_employee);
+            panel1.Controls.Add(lbl_salary);
+            panel1.Controls.Add(btn_departmants);
+            panel1.Controls.Add(btn_logout);
+            panel1.Location = new Point(391, 84);
+            panel1.Name = "panel1";
+            panel1.Padding = new Padding(101, 0, 0, 0);
+            panel1.Size = new Size(996, 57);
+            panel1.TabIndex = 63;
+            // 
+            // btn_update
+            // 
+            btn_update.AutoSize = true;
+            btn_update.BackColor = Color.Honeydew;
+            btn_update.Cursor = Cursors.Hand;
+            btn_update.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_update.FlatAppearance.BorderSize = 2;
+            btn_update.FlatStyle = FlatStyle.Flat;
+            btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_update.ForeColor = Color.SeaGreen;
+            btn_update.Location = new Point(198, 277);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(93, 42);
+            btn_update.TabIndex = 6;
+            btn_update.Text = "Update";
+            btn_update.UseVisualStyleBackColor = false;
+            btn_update.Click += btn_update_Click;
+            // 
             // Salaries
             // 
-            AutoScaleDimensions = new SizeF(10F, 28F);
+            AutoScaleDimensions = new SizeF(13F, 35F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
-            ClientSize = new Size(1200, 502);
+            ClientSize = new Size(1400, 502);
             Controls.Add(DGV_SalaryList);
-            Controls.Add(btn_employee);
-            Controls.Add(btn_logout);
-            Controls.Add(btn_departmants);
-            Controls.Add(lbl_salary);
             Controls.Add(pan_down);
             Controls.Add(pan_top);
             Controls.Add(pan_left);
+            Controls.Add(panel1);
             Font = new Font("Segoe Print", 12F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(4, 6, 4, 6);
@@ -483,8 +500,9 @@
             pan_top.ResumeLayout(false);
             pan_top.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_SalaryList).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
-            PerformLayout();
         }
 
         #endregion
@@ -507,8 +525,9 @@
         private Button btn_departmants;
         private Label lbl_salary;
         public Guna.UI2.WinForms.Guna2DataGridView DGV_SalaryList;
-        private Button btn_update;
         private Button btn_add;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_salaryAmount;
+        private Panel panel1;
+        private Button btn_update;
     }
 }

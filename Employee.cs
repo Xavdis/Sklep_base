@@ -168,7 +168,7 @@ namespace Sklep_base
                     string JoinDate = timpic_joinDate.Text;
                     int Salary = Convert.ToInt32(txbox_salary.Text);
 
-                    string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,EmpDepart,EmpBornDate,EmpJoingDate) " +
+                    string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,DepID,EmpBornDate,EmpJoingDate) " +
                         $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
                     conn.SetData(Query);
                     ShowEmployee();
