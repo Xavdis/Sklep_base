@@ -2,6 +2,7 @@
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
@@ -13,6 +14,7 @@ namespace Sklep_base
 
     public partial class login_window : Form
     {
+
         public login_window()
         {
             InitializeComponent();
@@ -31,7 +33,7 @@ namespace Sklep_base
 
         private void login_window_Load(object sender, EventArgs e)
         {
-            
+
         }
 
         private void Lable_MouseEnter(object sender, EventArgs e)
@@ -134,7 +136,7 @@ namespace Sklep_base
                     conn.Close();
                 }
             }
-                
+
         }
 
         private void btn_createLogin_Click(object sender, EventArgs e)
@@ -164,6 +166,25 @@ namespace Sklep_base
             else
             {
                 txt_password.PasswordChar = '*';
+            }
+        }
+        private Point lastPoint;
+        private void ClickOnWindow(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left)
+            {
+                lastPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void MoveWindow(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+
             }
         }
     }

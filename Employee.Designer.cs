@@ -383,6 +383,8 @@
             lbl_system.TabIndex = 0;
             lbl_system.Text = "Emplojee managment system version 1.0";
             lbl_system.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_system.MouseDown += ClickOnWindow;
+            lbl_system.MouseMove += MoveWindow;
             // 
             // btn_exit
             // 
@@ -571,7 +573,7 @@
             DGV_EmplList.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_EmplList.GridColor = Color.SeaGreen;
             DGV_EmplList.ImeMode = ImeMode.NoControl;
-            DGV_EmplList.Location = new Point(424, 140);
+            DGV_EmplList.Location = new Point(424, 141);
             DGV_EmplList.MultiSelect = false;
             DGV_EmplList.Name = "DGV_EmplList";
             DGV_EmplList.ReadOnly = true;
@@ -586,7 +588,7 @@
             DGV_EmplList.RowHeadersVisible = false;
             DGV_EmplList.RowHeadersWidth = 51;
             DGV_EmplList.RowTemplate.Height = 25;
-            DGV_EmplList.Size = new Size(969, 349);
+            DGV_EmplList.Size = new Size(969, 348);
             DGV_EmplList.TabIndex = 15;
             DGV_EmplList.TabStop = false;
             DGV_EmplList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.Honeydew;

@@ -21,6 +21,7 @@ namespace Sklep_base
 
             lbl_clear.MouseEnter += new EventHandler(Lable_MouseEnter);
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
+            txt_password.PasswordChar = '*';
         }
 
         #region Changed color of button
@@ -97,6 +98,37 @@ namespace Sklep_base
                     MessageBox.Show("Invalid code", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     txt_code.Focus();
                 }
+            }
+        }
+        private Point lastPoint;
+        private void ClickOnWindow(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left)
+            {
+                lastPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void MoveWindow(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+
+            }
+        }
+
+        private void chbox_Visible_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbox_Visible.Checked == true)
+            {
+                txt_password.PasswordChar = '\0';
+            }
+            else
+            {
+                txt_password.PasswordChar = '*';
             }
         }
     }

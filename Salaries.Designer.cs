@@ -42,6 +42,7 @@
             DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pan_left = new Panel();
             txtbox_salaryAmount = new Guna.UI2.WinForms.Guna2TextBox();
+            btn_update = new Button();
             btn_add = new Button();
             txtbox_daysAttended = new Guna.UI2.WinForms.Guna2TextBox();
             combox_Employee = new Guna.UI2.WinForms.Guna2ComboBox();
@@ -61,7 +62,6 @@
             lbl_salary = new Label();
             DGV_SalaryList = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
-            btn_update = new Button();
             pan_left.SuspendLayout();
             pan_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_SalaryList).BeginInit();
@@ -110,6 +110,24 @@
             txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges2;
             txtbox_salaryAmount.Size = new Size(171, 36);
             txtbox_salaryAmount.TabIndex = 4;
+            // 
+            // btn_update
+            // 
+            btn_update.AutoSize = true;
+            btn_update.BackColor = Color.Honeydew;
+            btn_update.Cursor = Cursors.Hand;
+            btn_update.FlatAppearance.BorderColor = Color.SeaGreen;
+            btn_update.FlatAppearance.BorderSize = 2;
+            btn_update.FlatStyle = FlatStyle.Flat;
+            btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btn_update.ForeColor = Color.SeaGreen;
+            btn_update.Location = new Point(198, 277);
+            btn_update.Name = "btn_update";
+            btn_update.Size = new Size(93, 42);
+            btn_update.TabIndex = 6;
+            btn_update.Text = "Update";
+            btn_update.UseVisualStyleBackColor = false;
+            btn_update.Click += btn_update_Click;
             // 
             // btn_add
             // 
@@ -276,6 +294,8 @@
             lbl_system.TabIndex = 0;
             lbl_system.Text = "Employee managment system version 1.0";
             lbl_system.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_system.MouseDown += ClickOnWindow;
+            lbl_system.MouseMove += MoveWindow;
             // 
             // btn_exit
             // 
@@ -318,7 +338,7 @@
             btn_employee.FlatStyle = FlatStyle.Flat;
             btn_employee.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_employee.ForeColor = Color.SeaGreen;
-            btn_employee.Location = new Point(701, 0);
+            btn_employee.Location = new Point(101, 0);
             btn_employee.Name = "btn_employee";
             btn_employee.Size = new Size(200, 57);
             btn_employee.TabIndex = 61;
@@ -338,7 +358,7 @@
             btn_logout.FlatStyle = FlatStyle.Flat;
             btn_logout.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
             btn_logout.ForeColor = Color.SeaGreen;
-            btn_logout.Location = new Point(101, 0);
+            btn_logout.Location = new Point(701, 0);
             btn_logout.Name = "btn_logout";
             btn_logout.Size = new Size(200, 57);
             btn_logout.TabIndex = 60;
@@ -407,7 +427,7 @@
             DGV_SalaryList.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_SalaryList.GridColor = Color.SeaGreen;
             DGV_SalaryList.ImeMode = ImeMode.NoControl;
-            DGV_SalaryList.Location = new Point(378, 147);
+            DGV_SalaryList.Location = new Point(378, 141);
             DGV_SalaryList.MultiSelect = false;
             DGV_SalaryList.Name = "DGV_SalaryList";
             DGV_SalaryList.ReadOnly = true;
@@ -422,7 +442,7 @@
             DGV_SalaryList.RowHeadersVisible = false;
             DGV_SalaryList.RowHeadersWidth = 51;
             DGV_SalaryList.RowTemplate.Height = 25;
-            DGV_SalaryList.Size = new Size(1017, 343);
+            DGV_SalaryList.Size = new Size(1017, 349);
             DGV_SalaryList.TabIndex = 62;
             DGV_SalaryList.TabStop = false;
             DGV_SalaryList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.Honeydew;
@@ -450,33 +470,15 @@
             // panel1
             // 
             panel1.BackColor = Color.White;
-            panel1.Controls.Add(btn_employee);
+            panel1.Controls.Add(btn_logout);
             panel1.Controls.Add(lbl_salary);
             panel1.Controls.Add(btn_departmants);
-            panel1.Controls.Add(btn_logout);
-            panel1.Location = new Point(391, 84);
+            panel1.Controls.Add(btn_employee);
+            panel1.Location = new Point(365, 78);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(101, 0, 0, 0);
-            panel1.Size = new Size(996, 57);
+            panel1.Size = new Size(1041, 57);
             panel1.TabIndex = 63;
-            // 
-            // btn_update
-            // 
-            btn_update.AutoSize = true;
-            btn_update.BackColor = Color.Honeydew;
-            btn_update.Cursor = Cursors.Hand;
-            btn_update.FlatAppearance.BorderColor = Color.SeaGreen;
-            btn_update.FlatAppearance.BorderSize = 2;
-            btn_update.FlatStyle = FlatStyle.Flat;
-            btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            btn_update.ForeColor = Color.SeaGreen;
-            btn_update.Location = new Point(198, 277);
-            btn_update.Name = "btn_update";
-            btn_update.Size = new Size(93, 42);
-            btn_update.TabIndex = 6;
-            btn_update.Text = "Update";
-            btn_update.UseVisualStyleBackColor = false;
-            btn_update.Click += btn_update_Click;
             // 
             // Salaries
             // 

@@ -82,7 +82,7 @@
             DGV_DepList.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_DepList.GridColor = Color.SeaGreen;
             DGV_DepList.ImeMode = ImeMode.NoControl;
-            DGV_DepList.Location = new Point(376, 161);
+            DGV_DepList.Location = new Point(376, 141);
             DGV_DepList.MultiSelect = false;
             DGV_DepList.Name = "DGV_DepList";
             DGV_DepList.ReadOnly = true;
@@ -98,7 +98,7 @@
             DGV_DepList.RowHeadersVisible = false;
             DGV_DepList.RowHeadersWidth = 51;
             DGV_DepList.RowTemplate.Height = 25;
-            DGV_DepList.Size = new Size(1018, 328);
+            DGV_DepList.Size = new Size(1018, 348);
             DGV_DepList.TabIndex = 30;
             DGV_DepList.TabStop = false;
             DGV_DepList.ThemeStyle.AlternatingRowsStyle.BackColor = Color.Honeydew;
@@ -170,6 +170,8 @@
             lbl_system.TabIndex = 0;
             lbl_system.Text = "Emplojee managment system version 1.0";
             lbl_system.TextAlign = ContentAlignment.MiddleCenter;
+            lbl_system.MouseDown += ClickOnWindow;
+            lbl_system.MouseMove += MoveWindow;
             // 
             // pan_left
             // 
@@ -375,10 +377,10 @@
             panel1.Controls.Add(btn_salary);
             panel1.Controls.Add(lbl_departmants);
             panel1.Controls.Add(btn_employee);
-            panel1.Location = new Point(389, 80);
+            panel1.Location = new Point(365, 78);
             panel1.Name = "panel1";
             panel1.Padding = new Padding(101, 0, 0, 0);
-            panel1.Size = new Size(996, 57);
+            panel1.Size = new Size(1042, 57);
             panel1.TabIndex = 62;
             // 
             // Departmants

@@ -23,7 +23,7 @@ namespace Sklep_base
 
         private void ShowEmployee() 
         {
-            string Query = "SELECT * FROM EmployeeTbl";
+            string Query = "SELECT * FROM EmployeeTbl INNER JOIN DepartmantTbl ON EmployeeTbl.ID = DepartmantTbl.ID WHERE ROW_NUMBER() OVER (ORDER BY ID) AS continous_id";
             DGV_EmplList.DataSource = conn.GetData(Query);
         }
 
@@ -268,6 +268,25 @@ namespace Sklep_base
             else
             {
                 Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+        }
+        private Point lastPoint;
+        private void ClickOnWindow(object sender, MouseEventArgs e)
+        {
+
+            if (e.Button == MouseButtons.Left)
+            {
+                lastPoint = new Point(e.X, e.Y);
+            }
+        }
+
+        private void MoveWindow(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                this.Left += e.X - lastPoint.X;
+                this.Top += e.Y - lastPoint.Y;
+
             }
         }
     }

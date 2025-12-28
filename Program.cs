@@ -7,7 +7,7 @@ namespace Sklep_base
 {
     internal static class Program
     {
-
+        
         public static System.Windows.Forms.FormCollection OpenForms { get; }
         /// <summary>
         ///  The main entry point for the application.
@@ -19,8 +19,7 @@ namespace Sklep_base
             // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
             Application.Run(new login_window());
-
-
+            
         }
     }
 }
