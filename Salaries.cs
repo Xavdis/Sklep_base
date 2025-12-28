@@ -27,7 +27,7 @@ namespace Sklep_base
         private void GetSalary(int Key)
         {
 
-            string Query = $"SELECT EmpId, EmpSalary FROM EmployeeTbl WHERE EmpId = {Key}";
+            string Query = $"SELECT ID, EmpSalary FROM EmployeeTbl WHERE EmpId = {Key}";
             foreach (DataRow dr in functions.GetData(Query).Rows)
             {
                 DaySalary = Convert.ToInt32(dr["EmpSalary"].ToString());
@@ -43,9 +43,9 @@ namespace Sklep_base
         }
         private void GetEmployeeBase()
         {
-            string Query = "SELECT EmpId, EmpName + ' ' + EmpSurname AS FullName FROM EmployeeTbl";
+            string Query = "SELECT ID, EmpName + ' ' + EmpSurname AS FullName FROM EmployeeTbl";
             combox_Employee.DisplayMember = functions.GetData(Query).Columns["FullName"].ToString();
-            combox_Employee.ValueMember = functions.GetData(Query).Columns["EmpId"].ToString();
+            combox_Employee.ValueMember = functions.GetData(Query).Columns["ID"].ToString();
             combox_Employee.DataSource = functions.GetData(Query);
         }
 
