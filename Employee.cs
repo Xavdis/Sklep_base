@@ -21,9 +21,13 @@ namespace Sklep_base
 
         #region SQL DataBase Command
 
-        private void ShowEmployee() 
+        private void ShowEmployee()
         {
-            string Query = "SELECT * FROM EmployeeTbl INNER JOIN DepartmantTbl ON EmployeeTbl.ID = DepartmantTbl.ID WHERE ROW_NUMBER() OVER (ORDER BY ID) AS continous_id";
+            string Query = "select " +
+                "row_number() over (order by EmployeeTbl.ID) as ID, " +
+                "EmployeeTbl.EmpName, EmployeeTbl.EmpSurname, EmployeeTbl.EmpGender, DepartmantTbl.DepName, " +
+                "EmployeeTbl.EmpBornDate, EmployeeTbl.EmpJoingDate " +
+                "FROM EmployeeTbl INNER JOIN DepartmantTbl on EmployeeTbl.DepID = DepartmantTbl.ID;";
             DGV_EmplList.DataSource = conn.GetData(Query);
         }
 

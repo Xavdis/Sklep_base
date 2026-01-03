@@ -9,7 +9,7 @@ namespace Sklep_base
         {
             InitializeComponent();
             ShowSalary();
-            GetEmployeeBase();
+            //GetEmployeeBase();
             btn_departmants.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_departmants.MouseLeave += new EventHandler(Button_MouseLeave);
 
