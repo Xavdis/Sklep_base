@@ -201,7 +201,7 @@ namespace Sklep_base
                 }
                 else
                 {
-                    string Query = $"DELETE FROM EmployeeTbl WHERE EmpId = {Key}";
+                    string Query = $"DELETE FROM EmployeeTbl WHERE ID = {Key}";
                     conn.SetData(Query);
                     ShowEmployee();
                     MessageBox.Show("Employee Deleted!!!");
@@ -258,20 +258,26 @@ namespace Sklep_base
         int Key = 0;
         private void DGV_EmplList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
-            txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
-            combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
-            combox_employeeDepartment.SelectedValue = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
-            timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
-            timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
-            txbox_salary.Text = DGV_EmplList.SelectedRows[0].Cells[7].Value.ToString();
-            if (txtbox_name.Text == "")
+            try
             {
-                Key = 0;
+                txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
+                txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
+                combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
+                combox_employeeDepartment.SelectedText = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
+                timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
+                timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
+                if (txtbox_name.Text == "")
+                {
+                    Key = 0;
+                }
+                else
+                {
+                    Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
+                }
             }
-            else
+            catch (Exception ex)
             {
-                Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
+                MessageBox.Show("Error: " + ex.Message); 
             }
         }
         private Point lastPoint;
