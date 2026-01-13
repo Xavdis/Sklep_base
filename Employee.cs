@@ -24,8 +24,7 @@ namespace Sklep_base
         private void ShowEmployee()
         {
             string Query = "select " +
-                "row_number() over (order by EmployeeTbl.ID) as ID, " +
-                "EmployeeTbl.EmpName, EmployeeTbl.EmpSurname, EmployeeTbl.EmpGender, DepartmantTbl.DepName, " +
+                "EmployeeTbl.ID as Code, EmployeeTbl.EmpName, EmployeeTbl.EmpSurname, EmployeeTbl.EmpGender, DepartmantTbl.DepName, " +
                 "EmployeeTbl.EmpBornDate, EmployeeTbl.EmpJoingDate " +
                 "FROM EmployeeTbl INNER JOIN DepartmantTbl on EmployeeTbl.DepID = DepartmantTbl.ID;";
             DGV_EmplList.DataSource = conn.GetData(Query);
@@ -238,7 +237,7 @@ namespace Sklep_base
                     string JoinDate = timpic_joinDate.Text;
                     int Salary = Convert.ToInt32(txbox_salary.Text);
 
-                    string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',EmpDepart = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}',EmpSalary = '{Salary}' WHERE EmpId = {Key}";
+                    string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',DepID = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}' WHERE ID = {Key}";
                     conn.SetData(Query);
                     ShowEmployee();
                     MessageBox.Show("Employee Update!!!");
@@ -263,7 +262,7 @@ namespace Sklep_base
                 txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
                 txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
                 combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
-                combox_employeeDepartment.SelectedText = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
+                combox_employeeDepartment.Text = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
                 timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
                 timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
                 if (txtbox_name.Text == "")
