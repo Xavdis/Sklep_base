@@ -3,6 +3,7 @@ namespace Sklep_base
     public partial class Employee : Form
     {
         SQLFunctions conn;
+        int? Key = null;
         public Employee()
         {
             try
@@ -157,7 +158,7 @@ namespace Sklep_base
             try
             {
                 if (txtbox_name.Text == "" || txtbox_surname.Text == ""
-                    || combox_employeeGender.SelectedIndex == -1 || txbox_salary.Text == "")
+                    || combox_employeeGender.SelectedIndex == -1)
                 {
                     MessageBox.Show("Missing Data!!!");
                 }
@@ -169,7 +170,6 @@ namespace Sklep_base
                     int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
                     string DateOfBith = timpic_dateOfBith.Text;
                     string JoinDate = timpic_joinDate.Text;
-                    int Salary = Convert.ToInt32(txbox_salary.Text);
 
                     string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,DepID,EmpBornDate,EmpJoingDate) " +
                         $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
@@ -180,7 +180,6 @@ namespace Sklep_base
                     txtbox_surname.Text = "";
                     combox_employeeGender.SelectedIndex = -1;
                     combox_employeeDepartment.SelectedIndex = -1;
-                    txbox_salary.Text = "";
 
                 }
             }
@@ -208,7 +207,6 @@ namespace Sklep_base
                     txtbox_surname.Text = "";
                     combox_employeeGender.SelectedIndex = -1;
                     combox_employeeDepartment.SelectedIndex = -1;
-                    txbox_salary.Text = "";
 
                 }
             }
@@ -220,64 +218,57 @@ namespace Sklep_base
 
         private void btn_update_Click(object sender, EventArgs e)
         {
-            try
+
+            if (txtbox_name.Text == "" || txtbox_surname.Text == ""
+                || combox_employeeGender.SelectedIndex == -1)
             {
-                if (txtbox_name.Text == "" || txtbox_surname.Text == ""
-                    || combox_employeeGender.SelectedIndex == -1 || txbox_salary.Text == "")
+                MessageBox.Show("Missing Data!!!");
+            }
+            else
+            {
+                string Name = txtbox_name.Text;
+                string Surname = txtbox_surname.Text;
+                string Gender = combox_employeeGender.SelectedItem.ToString();
+                int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
+                string DateOfBith = timpic_dateOfBith.Text;
+                string JoinDate = timpic_joinDate.Text;
+
+                string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',DepID = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}' WHERE ID = {Key}";
+                if (Key != null)
                 {
-                    MessageBox.Show("Missing Data!!!");
+                    try
+                    {
+                        conn.SetData(Query);
+                        ShowEmployee();
+                        MessageBox.Show("Employee Update!!!");
+                        Key = null;
+                    }
+                    catch (Exception Ex)
+                    {
+                        MessageBox.Show(Ex.Message);
+                    }
                 }
                 else
                 {
-                    string Name = txtbox_name.Text;
-                    string Surname = txtbox_surname.Text;
-                    string Gender = combox_employeeGender.SelectedItem.ToString();
-                    int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
-                    string DateOfBith = timpic_dateOfBith.Text;
-                    string JoinDate = timpic_joinDate.Text;
-                    int Salary = Convert.ToInt32(txbox_salary.Text);
-
-                    string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',DepID = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}' WHERE ID = {Key}";
-                    conn.SetData(Query);
-                    ShowEmployee();
-                    MessageBox.Show("Employee Update!!!");
-                    txtbox_name.Text = "";
-                    txtbox_surname.Text = "";
-                    combox_employeeGender.SelectedIndex = -1;
-                    combox_employeeDepartment.SelectedIndex = -1;
-                    txbox_salary.Text = "";
-
+                    MessageBox.Show("You need to choose somone from the list!");
                 }
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
+                    txtbox_name.Text = "";
+                txtbox_surname.Text = "";
+                combox_employeeGender.SelectedIndex = -1;
+                combox_employeeDepartment.SelectedIndex = -1;
+
             }
         }
-        int Key = 0;
+
         private void DGV_EmplList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            try
-            {
-                txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
-                txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
-                combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
-                combox_employeeDepartment.Text = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
-                timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
-                timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
-                if (txtbox_name.Text == "")
-                {
-                    Key = 0;
-                }
-                else
-                {
-                    Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error: " + ex.Message); 
-            }
+            txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
+            txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
+            combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
+            combox_employeeDepartment.Text = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
+            timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
+            timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
+            Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
         }
         private Point lastPoint;
         private void ClickOnWindow(object sender, MouseEventArgs e)
