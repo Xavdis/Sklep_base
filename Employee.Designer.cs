@@ -28,22 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             btn_update = new Button();
             btn_add = new Button();
             timpic_joinDate = new Guna.UI2.WinForms.Guna2DateTimePicker();
@@ -122,7 +122,7 @@
             timpic_joinDate.BorderColor = Color.White;
             timpic_joinDate.Checked = true;
             timpic_joinDate.Cursor = Cursors.Hand;
-            timpic_joinDate.CustomizableEdges = customizableEdges13;
+            timpic_joinDate.CustomizableEdges = customizableEdges1;
             timpic_joinDate.FillColor = Color.SeaGreen;
             timpic_joinDate.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_joinDate.ForeColor = Color.White;
@@ -131,7 +131,7 @@
             timpic_joinDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_joinDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_joinDate.Name = "timpic_joinDate";
-            timpic_joinDate.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            timpic_joinDate.ShadowDecoration.CustomizableEdges = customizableEdges2;
             timpic_joinDate.Size = new Size(180, 36);
             timpic_joinDate.TabIndex = 6;
             timpic_joinDate.TextAlign = HorizontalAlignment.Right;
@@ -167,7 +167,7 @@
             timpic_dateOfBith.BorderColor = Color.White;
             timpic_dateOfBith.Checked = true;
             timpic_dateOfBith.Cursor = Cursors.Hand;
-            timpic_dateOfBith.CustomizableEdges = customizableEdges15;
+            timpic_dateOfBith.CustomizableEdges = customizableEdges3;
             timpic_dateOfBith.FillColor = Color.SeaGreen;
             timpic_dateOfBith.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_dateOfBith.ForeColor = Color.White;
@@ -176,7 +176,7 @@
             timpic_dateOfBith.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_dateOfBith.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_dateOfBith.Name = "timpic_dateOfBith";
-            timpic_dateOfBith.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            timpic_dateOfBith.ShadowDecoration.CustomizableEdges = customizableEdges4;
             timpic_dateOfBith.Size = new Size(180, 36);
             timpic_dateOfBith.TabIndex = 5;
             timpic_dateOfBith.TextAlign = HorizontalAlignment.Right;
@@ -199,7 +199,7 @@
             // 
             combox_employeeGender.BackColor = Color.White;
             combox_employeeGender.Cursor = Cursors.Hand;
-            combox_employeeGender.CustomizableEdges = customizableEdges17;
+            combox_employeeGender.CustomizableEdges = customizableEdges5;
             combox_employeeGender.DrawMode = DrawMode.OwnerDrawFixed;
             combox_employeeGender.DropDownStyle = ComboBoxStyle.DropDownList;
             combox_employeeGender.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -210,7 +210,7 @@
             combox_employeeGender.Items.AddRange(new object[] { "Male", "Female" });
             combox_employeeGender.Location = new Point(236, 144);
             combox_employeeGender.Name = "combox_employeeGender";
-            combox_employeeGender.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            combox_employeeGender.ShadowDecoration.CustomizableEdges = customizableEdges6;
             combox_employeeGender.Size = new Size(180, 36);
             combox_employeeGender.TabIndex = 3;
             // 
@@ -231,7 +231,7 @@
             // 
             txtbox_name.BackColor = Color.White;
             txtbox_name.Cursor = Cursors.IBeam;
-            txtbox_name.CustomizableEdges = customizableEdges19;
+            txtbox_name.CustomizableEdges = customizableEdges7;
             txtbox_name.DefaultText = "";
             txtbox_name.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtbox_name.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -247,7 +247,7 @@
             txtbox_name.PasswordChar = '\0';
             txtbox_name.PlaceholderText = "";
             txtbox_name.SelectedText = "";
-            txtbox_name.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            txtbox_name.ShadowDecoration.CustomizableEdges = customizableEdges8;
             txtbox_name.Size = new Size(180, 36);
             txtbox_name.TabIndex = 1;
             // 
@@ -255,7 +255,7 @@
             // 
             txtbox_surname.BackColor = Color.White;
             txtbox_surname.Cursor = Cursors.IBeam;
-            txtbox_surname.CustomizableEdges = customizableEdges21;
+            txtbox_surname.CustomizableEdges = customizableEdges9;
             txtbox_surname.DefaultText = "";
             txtbox_surname.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtbox_surname.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -271,7 +271,7 @@
             txtbox_surname.PasswordChar = '\0';
             txtbox_surname.PlaceholderText = "";
             txtbox_surname.SelectedText = "";
-            txtbox_surname.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            txtbox_surname.ShadowDecoration.CustomizableEdges = customizableEdges10;
             txtbox_surname.Size = new Size(180, 36);
             txtbox_surname.TabIndex = 2;
             // 
@@ -279,7 +279,7 @@
             // 
             combox_employeeDepartment.BackColor = Color.White;
             combox_employeeDepartment.Cursor = Cursors.Hand;
-            combox_employeeDepartment.CustomizableEdges = customizableEdges23;
+            combox_employeeDepartment.CustomizableEdges = customizableEdges11;
             combox_employeeDepartment.DrawMode = DrawMode.OwnerDrawFixed;
             combox_employeeDepartment.DropDownStyle = ComboBoxStyle.DropDownList;
             combox_employeeDepartment.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -289,7 +289,7 @@
             combox_employeeDepartment.ItemHeight = 30;
             combox_employeeDepartment.Location = new Point(236, 185);
             combox_employeeDepartment.Name = "combox_employeeDepartment";
-            combox_employeeDepartment.ShadowDecoration.CustomizableEdges = customizableEdges24;
+            combox_employeeDepartment.ShadowDecoration.CustomizableEdges = customizableEdges12;
             combox_employeeDepartment.Size = new Size(180, 36);
             combox_employeeDepartment.TabIndex = 4;
             // 
@@ -505,43 +505,43 @@
             // 
             // DGV_EmplList
             // 
-            dataGridViewCellStyle5.BackColor = Color.Honeydew;
-            dataGridViewCellStyle5.NullValue = null;
-            DGV_EmplList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.Honeydew;
+            dataGridViewCellStyle1.NullValue = null;
+            DGV_EmplList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGV_EmplList.Anchor = AnchorStyles.None;
             DGV_EmplList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DGV_EmplList.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DGV_EmplList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DGV_EmplList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGV_EmplList.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            DGV_EmplList.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DGV_EmplList.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_EmplList.GridColor = Color.SeaGreen;
             DGV_EmplList.ImeMode = ImeMode.NoControl;
             DGV_EmplList.Location = new Point(424, 141);
             DGV_EmplList.MultiSelect = false;
             DGV_EmplList.Name = "DGV_EmplList";
             DGV_EmplList.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Honeydew;
-            dataGridViewCellStyle8.SelectionBackColor = Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            DGV_EmplList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DGV_EmplList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGV_EmplList.RowHeadersVisible = false;
             DGV_EmplList.RowHeadersWidth = 51;
             DGV_EmplList.RowTemplate.Height = 25;
@@ -586,7 +586,7 @@
             // 
             // Employee
             // 
-            AutoScaleDimensions = new SizeF(12F, 28F);
+            AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1400, 502);

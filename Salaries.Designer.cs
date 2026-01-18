@@ -184,13 +184,13 @@
             combox_Employee.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             combox_Employee.ForeColor = Color.SeaGreen;
             combox_Employee.ItemHeight = 30;
-            combox_Employee.Items.AddRange(new object[] { "Male", "Female" });
             combox_Employee.Location = new Point(198, 75);
             combox_Employee.Name = "combox_Employee";
             combox_Employee.ShadowDecoration.CustomizableEdges = customizableEdges6;
             combox_Employee.Size = new Size(171, 36);
             combox_Employee.TabIndex = 1;
             combox_Employee.SelectedValueChanged += combox_Employee_SelectedValueChanged;
+            combox_Employee.Click += combox_Employee_Click;
             // 
             // lbl_new
             // 
@@ -482,7 +482,7 @@
             // 
             // Salaries
             // 
-            AutoScaleDimensions = new SizeF(13F, 35F);
+            AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1400, 502);

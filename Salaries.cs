@@ -2,6 +2,7 @@
 
 namespace Sklep_base
 {
+
     public partial class Salaries : Form
     {
         SQLFunctions functions = new SQLFunctions();
@@ -22,12 +23,13 @@ namespace Sklep_base
 
         #region SQL DataBase Command
 
+
         int DaySalary = 0; //Here save employee salary
         string Period = "";
         private void GetSalary(int Key)
         {
 
-            string Query = $"SELECT ID, EmpSalary FROM EmployeeTbl WHERE EmpId = {Key}";
+            string Query = $"SELECT ID, EmpSalary FROM EmployeeTbl WHERE ID = {Key}";
             foreach (DataRow dr in functions.GetData(Query).Rows)
             {
                 DaySalary = Convert.ToInt32(dr["EmpSalary"].ToString());
@@ -208,6 +210,22 @@ namespace Sklep_base
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
 
+            }
+        }
+
+        private void combox_Employee_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string item;
+                functions.UpdateUserDataForComboBox(item);
+                combox_Employee.DataSource = ;
+                combox_Employee.DisplayMember = "Name"; // Поле, яке буде відображатися (Імена)
+                combox_Employee.ValueMember = "ID";
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
             }
         }
     }

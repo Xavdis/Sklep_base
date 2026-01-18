@@ -22,6 +22,20 @@ namespace Sklep_base
             cmd.Connection = conn;
         }
 
+        public void UpdateUserDataForComboBox()
+        {
+            string Query = "SELECT ID, EmpName FROM EmployeeTbl";
+
+            var items = new List<dynamic>();
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                while (reader.Read())
+                {
+                    items.Add(new { ID = reader["ID"], Name = reader["EmpName"].ToString() });
+                }
+            }
+        }
+
         public DataTable GetData(string Query)
         {
             dt = new DataTable();
