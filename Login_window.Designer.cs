@@ -52,10 +52,10 @@
             // 
             lbl_welcome.Font = new Font("Comic Sans MS", 28F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_welcome.ForeColor = Color.SeaGreen;
-            lbl_welcome.Location = new Point(232, 79);
+            lbl_welcome.Location = new Point(203, 59);
             lbl_welcome.Name = "lbl_welcome";
-            lbl_welcome.Padding = new Padding(0, 13, 0, 13);
-            lbl_welcome.Size = new Size(459, 88);
+            lbl_welcome.Padding = new Padding(0, 10, 0, 10);
+            lbl_welcome.Size = new Size(402, 66);
             lbl_welcome.TabIndex = 0;
             lbl_welcome.Text = "Welcome";
             lbl_welcome.TextAlign = ContentAlignment.MiddleCenter;
@@ -66,10 +66,10 @@
             // 
             lbl_login.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_login.ForeColor = Color.SeaGreen;
-            lbl_login.Location = new Point(253, 199);
+            lbl_login.Location = new Point(221, 149);
             lbl_login.Name = "lbl_login";
-            lbl_login.Padding = new Padding(0, 9, 0, 0);
-            lbl_login.Size = new Size(160, 39);
+            lbl_login.Padding = new Padding(0, 7, 0, 0);
+            lbl_login.Size = new Size(140, 29);
             lbl_login.TabIndex = 0;
             lbl_login.Text = "Login:";
             lbl_login.TextAlign = ContentAlignment.MiddleRight;
@@ -80,10 +80,10 @@
             // 
             lbl_pasw.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_pasw.ForeColor = Color.SeaGreen;
-            lbl_pasw.Location = new Point(253, 247);
+            lbl_pasw.Location = new Point(221, 185);
             lbl_pasw.Name = "lbl_pasw";
-            lbl_pasw.Padding = new Padding(0, 9, 0, 0);
-            lbl_pasw.Size = new Size(160, 39);
+            lbl_pasw.Padding = new Padding(0, 7, 0, 0);
+            lbl_pasw.Size = new Size(140, 29);
             lbl_pasw.TabIndex = 0;
             lbl_pasw.Text = "Password:";
             lbl_pasw.TextAlign = ContentAlignment.MiddleRight;
@@ -95,10 +95,9 @@
             txt_login.BackColor = Color.White;
             txt_login.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_login.ForeColor = Color.SeaGreen;
-            txt_login.Location = new Point(419, 197);
-            txt_login.Margin = new Padding(3, 4, 3, 4);
+            txt_login.Location = new Point(367, 148);
             txt_login.Name = "txt_login";
-            txt_login.Size = new Size(195, 35);
+            txt_login.Size = new Size(171, 30);
             txt_login.TabIndex = 1;
             // 
             // txt_password
@@ -106,11 +105,10 @@
             txt_password.BackColor = Color.White;
             txt_password.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txt_password.ForeColor = Color.SeaGreen;
-            txt_password.Location = new Point(419, 245);
-            txt_password.Margin = new Padding(3, 4, 3, 4);
+            txt_password.Location = new Point(367, 184);
             txt_password.Name = "txt_password";
             txt_password.PasswordChar = '*';
-            txt_password.Size = new Size(195, 35);
+            txt_password.Size = new Size(171, 30);
             txt_password.TabIndex = 2;
             // 
             // btn_createLogin
@@ -123,10 +121,9 @@
             btn_createLogin.FlatStyle = FlatStyle.Flat;
             btn_createLogin.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_createLogin.ForeColor = Color.SeaGreen;
-            btn_createLogin.Location = new Point(462, 372);
-            btn_createLogin.Margin = new Padding(3, 4, 3, 4);
+            btn_createLogin.Location = new Point(404, 279);
             btn_createLogin.Name = "btn_createLogin";
-            btn_createLogin.Size = new Size(114, 49);
+            btn_createLogin.Size = new Size(100, 37);
             btn_createLogin.TabIndex = 5;
             btn_createLogin.Text = "Sign up";
             btn_createLogin.UseVisualStyleBackColor = false;
@@ -142,10 +139,9 @@
             btn_login.FlatStyle = FlatStyle.Flat;
             btn_login.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_login.ForeColor = Color.SeaGreen;
-            btn_login.Location = new Point(341, 372);
-            btn_login.Margin = new Padding(3, 4, 3, 4);
+            btn_login.Location = new Point(298, 279);
             btn_login.Name = "btn_login";
-            btn_login.Size = new Size(114, 49);
+            btn_login.Size = new Size(100, 37);
             btn_login.TabIndex = 4;
             btn_login.Text = "Log in";
             btn_login.UseVisualStyleBackColor = false;
@@ -161,10 +157,9 @@
             btn_exit.FlatStyle = FlatStyle.Flat;
             btn_exit.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_exit.ForeColor = Color.SeaGreen;
-            btn_exit.Location = new Point(645, 12);
-            btn_exit.Margin = new Padding(3, 4, 3, 4);
+            btn_exit.Location = new Point(564, 9);
             btn_exit.Name = "btn_exit";
-            btn_exit.Size = new Size(40, 42);
+            btn_exit.Size = new Size(36, 37);
             btn_exit.TabIndex = 6;
             btn_exit.Text = "X";
             btn_exit.UseVisualStyleBackColor = false;
@@ -175,10 +170,10 @@
             lbl_clear.Cursor = Cursors.Hand;
             lbl_clear.Font = new Font("Comic Sans MS", 12F, FontStyle.Underline, GraphicsUnit.Point);
             lbl_clear.ForeColor = Color.SeaGreen;
-            lbl_clear.Location = new Point(419, 289);
+            lbl_clear.Location = new Point(367, 217);
             lbl_clear.Name = "lbl_clear";
-            lbl_clear.Padding = new Padding(0, 0, 0, 11);
-            lbl_clear.Size = new Size(67, 39);
+            lbl_clear.Padding = new Padding(0, 0, 0, 8);
+            lbl_clear.Size = new Size(59, 29);
             lbl_clear.TabIndex = 3;
             lbl_clear.Text = "Clear";
             lbl_clear.Click += lbl_clear_Click;
@@ -190,10 +185,9 @@
             pan_left.Controls.Add(lbl_server);
             pan_left.Controls.Add(lbl_version);
             pan_left.Controls.Add(lbl_net);
-            pan_left.Location = new Point(-1, -8);
-            pan_left.Margin = new Padding(3, 4, 3, 4);
+            pan_left.Location = new Point(-1, -6);
             pan_left.Name = "pan_left";
-            pan_left.Size = new Size(229, 497);
+            pan_left.Size = new Size(200, 373);
             pan_left.TabIndex = 14;
             pan_left.MouseDown += ClickOnWindow;
             pan_left.MouseMove += MoveWindow;
@@ -202,9 +196,9 @@
             // 
             lbl_employee.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_employee.ForeColor = Color.White;
-            lbl_employee.Location = new Point(53, 175);
+            lbl_employee.Location = new Point(46, 131);
             lbl_employee.Name = "lbl_employee";
-            lbl_employee.Size = new Size(114, 31);
+            lbl_employee.Size = new Size(100, 23);
             lbl_employee.TabIndex = 2;
             lbl_employee.Text = "Employee MS";
             lbl_employee.TextAlign = ContentAlignment.MiddleCenter;
@@ -215,9 +209,9 @@
             // 
             lbl_server.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_server.ForeColor = Color.White;
-            lbl_server.Location = new Point(53, 223);
+            lbl_server.Location = new Point(46, 167);
             lbl_server.Name = "lbl_server";
-            lbl_server.Size = new Size(114, 31);
+            lbl_server.Size = new Size(100, 23);
             lbl_server.TabIndex = 1;
             lbl_server.Text = "SQL Server";
             lbl_server.TextAlign = ContentAlignment.MiddleCenter;
@@ -228,12 +222,12 @@
             // 
             lbl_version.Font = new Font("Comic Sans MS", 7F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_version.ForeColor = Color.White;
-            lbl_version.Location = new Point(53, 457);
+            lbl_version.Location = new Point(46, 343);
             lbl_version.Name = "lbl_version";
-            lbl_version.Padding = new Padding(0, 11, 0, 0);
-            lbl_version.Size = new Size(114, 31);
+            lbl_version.Padding = new Padding(0, 8, 0, 0);
+            lbl_version.Size = new Size(100, 23);
             lbl_version.TabIndex = 0;
-            lbl_version.Text = "Version 1.8";
+            lbl_version.Text = "Version 1.28";
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             lbl_version.MouseDown += ClickOnWindow;
             lbl_version.MouseMove += MoveWindow;
@@ -242,9 +236,9 @@
             // 
             lbl_net.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_net.ForeColor = Color.White;
-            lbl_net.Location = new Point(53, 271);
+            lbl_net.Location = new Point(46, 203);
             lbl_net.Name = "lbl_net";
-            lbl_net.Size = new Size(114, 31);
+            lbl_net.Size = new Size(100, 23);
             lbl_net.TabIndex = 0;
             lbl_net.Text = "C#.NET";
             lbl_net.TextAlign = ContentAlignment.MiddleCenter;
@@ -257,22 +251,21 @@
             chbox_Visible.FlatStyle = FlatStyle.Flat;
             chbox_Visible.Font = new Font("Comic Sans MS", 12F, FontStyle.Underline, GraphicsUnit.Point);
             chbox_Visible.ForeColor = Color.SeaGreen;
-            chbox_Visible.Location = new Point(526, 287);
-            chbox_Visible.Margin = new Padding(3, 4, 3, 4);
+            chbox_Visible.Location = new Point(460, 215);
             chbox_Visible.Name = "chbox_Visible";
-            chbox_Visible.Size = new Size(95, 32);
+            chbox_Visible.Size = new Size(84, 27);
             chbox_Visible.TabIndex = 15;
-            chbox_Visible.Text = "Vidible";
+            chbox_Visible.Text = "Visiable";
             chbox_Visible.UseVisualStyleBackColor = true;
             chbox_Visible.CheckedChanged += chbox_Visible_CheckedChanged;
             // 
             // login_window
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             AutoSizeMode = AutoSizeMode.GrowAndShrink;
             BackColor = Color.White;
-            ClientSize = new Size(696, 480);
+            ClientSize = new Size(609, 360);
             Controls.Add(btn_exit);
             Controls.Add(chbox_Visible);
             Controls.Add(pan_left);
@@ -285,7 +278,6 @@
             Controls.Add(lbl_welcome);
             Controls.Add(btn_createLogin);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "login_window";
             RightToLeftLayout = true;
             ShowIcon = false;

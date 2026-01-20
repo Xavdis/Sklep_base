@@ -1,9 +1,9 @@
 ﻿namespace Sklep_base
 {
-    public partial class Departmants : Form
+    public partial class Departments : Form
     {
 
-        public Departmants()
+        public Departments()
         {
             InitializeComponent();
             conn = new SQLFunctions();

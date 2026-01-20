@@ -85,7 +85,7 @@ namespace Sklep_base
         private void btn_departmants_Click(object sender, EventArgs e)
         {
             this.Close();
-            new Departmants().Show();
+            new Departments().Show();
         }
 
         #region Changed color of button
@@ -215,7 +215,7 @@ namespace Sklep_base
 
         private void combox_Employee_Click(object sender, EventArgs e)
         {
-            try
+            /*try
             {
                 string item;
                 functions.UpdateUserDataForComboBox(item);
@@ -226,7 +226,7 @@ namespace Sklep_base
             catch (Exception Ex)
             {
                 MessageBox.Show(Ex.Message);
-            }
+            }*/
         }
     }
 }

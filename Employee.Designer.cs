@@ -64,6 +64,7 @@
             pan_down = new Panel();
             pan_top = new Panel();
             pan_left = new Panel();
+            button1 = new Button();
             btn_delete = new Button();
             lbl_employee = new Label();
             btn_departmants = new Button();
@@ -87,9 +88,9 @@
             btn_update.FlatStyle = FlatStyle.Flat;
             btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_update.ForeColor = Color.SeaGreen;
-            btn_update.Location = new Point(158, 335);
+            btn_update.Location = new Point(126, 342);
             btn_update.Name = "btn_update";
-            btn_update.Size = new Size(100, 42);
+            btn_update.Size = new Size(77, 37);
             btn_update.TabIndex = 9;
             btn_update.Text = "Update";
             btn_update.UseVisualStyleBackColor = false;
@@ -107,9 +108,9 @@
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(52, 335);
+            btn_add.Location = new Point(26, 342);
             btn_add.Name = "btn_add";
-            btn_add.Size = new Size(100, 42);
+            btn_add.Size = new Size(77, 37);
             btn_add.TabIndex = 8;
             btn_add.Text = "Add";
             btn_add.UseVisualStyleBackColor = false;
@@ -127,7 +128,7 @@
             timpic_joinDate.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_joinDate.ForeColor = Color.White;
             timpic_joinDate.Format = DateTimePickerFormat.Short;
-            timpic_joinDate.Location = new Point(236, 267);
+            timpic_joinDate.Location = new Point(236, 273);
             timpic_joinDate.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_joinDate.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_joinDate.Name = "timpic_joinDate";
@@ -140,11 +141,11 @@
             // lbl_new
             // 
             lbl_new.BackColor = Color.Honeydew;
-            lbl_new.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_new.Font = new Font("Segoe Print", 14F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_new.ForeColor = Color.SeaGreen;
-            lbl_new.Location = new Point(0, 13);
+            lbl_new.Location = new Point(0, 5);
             lbl_new.Name = "lbl_new";
-            lbl_new.Size = new Size(424, 35);
+            lbl_new.Size = new Size(424, 44);
             lbl_new.TabIndex = 14;
             lbl_new.Text = "Add new employee or update";
             lbl_new.TextAlign = ContentAlignment.MiddleCenter;
@@ -154,7 +155,7 @@
             lbl_department.BackColor = Color.Honeydew;
             lbl_department.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_department.ForeColor = Color.SeaGreen;
-            lbl_department.Location = new Point(0, 185);
+            lbl_department.Location = new Point(0, 191);
             lbl_department.Name = "lbl_department";
             lbl_department.Padding = new Padding(0, 7, 0, 0);
             lbl_department.Size = new Size(230, 36);
@@ -172,7 +173,7 @@
             timpic_dateOfBith.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_dateOfBith.ForeColor = Color.White;
             timpic_dateOfBith.Format = DateTimePickerFormat.Short;
-            timpic_dateOfBith.Location = new Point(236, 226);
+            timpic_dateOfBith.Location = new Point(236, 232);
             timpic_dateOfBith.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_dateOfBith.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_dateOfBith.Name = "timpic_dateOfBith";
@@ -187,7 +188,7 @@
             lbl_bith.BackColor = Color.Honeydew;
             lbl_bith.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_bith.ForeColor = Color.SeaGreen;
-            lbl_bith.Location = new Point(0, 226);
+            lbl_bith.Location = new Point(0, 232);
             lbl_bith.Name = "lbl_bith";
             lbl_bith.Padding = new Padding(0, 7, 0, 0);
             lbl_bith.Size = new Size(230, 36);
@@ -208,7 +209,7 @@
             combox_employeeGender.ForeColor = Color.SeaGreen;
             combox_employeeGender.ItemHeight = 30;
             combox_employeeGender.Items.AddRange(new object[] { "Male", "Female" });
-            combox_employeeGender.Location = new Point(236, 144);
+            combox_employeeGender.Location = new Point(236, 150);
             combox_employeeGender.Name = "combox_employeeGender";
             combox_employeeGender.ShadowDecoration.CustomizableEdges = customizableEdges6;
             combox_employeeGender.Size = new Size(180, 36);
@@ -219,7 +220,7 @@
             lbl_joinDate.BackColor = Color.Honeydew;
             lbl_joinDate.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_joinDate.ForeColor = Color.SeaGreen;
-            lbl_joinDate.Location = new Point(0, 267);
+            lbl_joinDate.Location = new Point(0, 273);
             lbl_joinDate.Name = "lbl_joinDate";
             lbl_joinDate.Padding = new Padding(0, 7, 0, 0);
             lbl_joinDate.Size = new Size(230, 36);
@@ -241,7 +242,7 @@
             txtbox_name.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtbox_name.ForeColor = Color.SeaGreen;
             txtbox_name.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_name.Location = new Point(236, 62);
+            txtbox_name.Location = new Point(236, 68);
             txtbox_name.Margin = new Padding(4, 5, 4, 5);
             txtbox_name.Name = "txtbox_name";
             txtbox_name.PasswordChar = '\0';
@@ -265,7 +266,7 @@
             txtbox_surname.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtbox_surname.ForeColor = Color.SeaGreen;
             txtbox_surname.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_surname.Location = new Point(236, 103);
+            txtbox_surname.Location = new Point(236, 109);
             txtbox_surname.Margin = new Padding(4, 5, 4, 5);
             txtbox_surname.Name = "txtbox_surname";
             txtbox_surname.PasswordChar = '\0';
@@ -287,7 +288,7 @@
             combox_employeeDepartment.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             combox_employeeDepartment.ForeColor = Color.SeaGreen;
             combox_employeeDepartment.ItemHeight = 30;
-            combox_employeeDepartment.Location = new Point(236, 185);
+            combox_employeeDepartment.Location = new Point(236, 191);
             combox_employeeDepartment.Name = "combox_employeeDepartment";
             combox_employeeDepartment.ShadowDecoration.CustomizableEdges = customizableEdges12;
             combox_employeeDepartment.Size = new Size(180, 36);
@@ -298,7 +299,7 @@
             lbl_gender.BackColor = Color.Honeydew;
             lbl_gender.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_gender.ForeColor = Color.SeaGreen;
-            lbl_gender.Location = new Point(0, 144);
+            lbl_gender.Location = new Point(0, 150);
             lbl_gender.Name = "lbl_gender";
             lbl_gender.Padding = new Padding(0, 7, 0, 0);
             lbl_gender.Size = new Size(230, 36);
@@ -311,7 +312,7 @@
             lbl_name.BackColor = Color.Honeydew;
             lbl_name.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_name.ForeColor = Color.SeaGreen;
-            lbl_name.Location = new Point(0, 62);
+            lbl_name.Location = new Point(0, 68);
             lbl_name.Name = "lbl_name";
             lbl_name.Padding = new Padding(0, 7, 0, 0);
             lbl_name.Size = new Size(230, 36);
@@ -324,7 +325,7 @@
             lbl_surname.BackColor = Color.Honeydew;
             lbl_surname.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             lbl_surname.ForeColor = Color.SeaGreen;
-            lbl_surname.Location = new Point(0, 103);
+            lbl_surname.Location = new Point(0, 109);
             lbl_surname.Name = "lbl_surname";
             lbl_surname.Padding = new Padding(0, 7, 0, 0);
             lbl_surname.Size = new Size(230, 36);
@@ -340,7 +341,7 @@
             lbl_system.Name = "lbl_system";
             lbl_system.Size = new Size(1409, 88);
             lbl_system.TabIndex = 0;
-            lbl_system.Text = "Emplojee managment system version 1.0";
+            lbl_system.Text = "Employee management system";
             lbl_system.TextAlign = ContentAlignment.MiddleCenter;
             lbl_system.MouseDown += ClickOnWindow;
             lbl_system.MouseMove += MoveWindow;
@@ -386,6 +387,7 @@
             // pan_left
             // 
             pan_left.BackColor = Color.Honeydew;
+            pan_left.Controls.Add(button1);
             pan_left.Controls.Add(btn_update);
             pan_left.Controls.Add(timpic_joinDate);
             pan_left.Controls.Add(btn_add);
@@ -407,6 +409,24 @@
             pan_left.Size = new Size(424, 419);
             pan_left.TabIndex = 33;
             // 
+            // button1
+            // 
+            button1.AutoSize = true;
+            button1.BackColor = Color.Honeydew;
+            button1.Cursor = Cursors.Hand;
+            button1.FlatAppearance.BorderColor = Color.SeaGreen;
+            button1.FlatAppearance.BorderSize = 2;
+            button1.FlatStyle = FlatStyle.Flat;
+            button1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            button1.ForeColor = Color.SeaGreen;
+            button1.Location = new Point(326, 342);
+            button1.Name = "button1";
+            button1.Size = new Size(77, 37);
+            button1.TabIndex = 22;
+            button1.Text = "Clear";
+            button1.UseVisualStyleBackColor = false;
+            button1.Click += button1_Click;
+            // 
             // btn_delete
             // 
             btn_delete.AutoSize = true;
@@ -417,9 +437,9 @@
             btn_delete.FlatStyle = FlatStyle.Flat;
             btn_delete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_delete.ForeColor = Color.SeaGreen;
-            btn_delete.Location = new Point(264, 335);
+            btn_delete.Location = new Point(226, 342);
             btn_delete.Name = "btn_delete";
-            btn_delete.Size = new Size(100, 42);
+            btn_delete.Size = new Size(77, 37);
             btn_delete.TabIndex = 10;
             btn_delete.Text = "Delete";
             btn_delete.UseVisualStyleBackColor = false;
@@ -430,7 +450,7 @@
             lbl_employee.BackColor = Color.SeaGreen;
             lbl_employee.Dock = DockStyle.Right;
             lbl_employee.FlatStyle = FlatStyle.Flat;
-            lbl_employee.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            lbl_employee.Font = new Font("Segoe Print", 14F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_employee.ForeColor = Color.White;
             lbl_employee.Location = new Point(101, 0);
             lbl_employee.Name = "lbl_employee";
@@ -448,13 +468,13 @@
             btn_departmants.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_departmants.FlatAppearance.BorderSize = 0;
             btn_departmants.FlatStyle = FlatStyle.Flat;
-            btn_departmants.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_departmants.Font = new Font("Segoe Print", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btn_departmants.ForeColor = Color.SeaGreen;
             btn_departmants.Location = new Point(301, 0);
             btn_departmants.Name = "btn_departmants";
             btn_departmants.Size = new Size(194, 57);
             btn_departmants.TabIndex = 12;
-            btn_departmants.Text = "Departmants";
+            btn_departmants.Text = "Departments";
             btn_departmants.TextAlign = ContentAlignment.BottomCenter;
             btn_departmants.UseVisualStyleBackColor = false;
             btn_departmants.Click += btn_departmants_Click;
@@ -469,7 +489,7 @@
             btn_logout.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_logout.FlatAppearance.BorderSize = 0;
             btn_logout.FlatStyle = FlatStyle.Flat;
-            btn_logout.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_logout.Font = new Font("Segoe Print", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btn_logout.ForeColor = Color.SeaGreen;
             btn_logout.Location = new Point(695, 0);
             btn_logout.Name = "btn_logout";
@@ -490,7 +510,7 @@
             btn_salary.FlatAppearance.BorderColor = Color.SeaGreen;
             btn_salary.FlatAppearance.BorderSize = 0;
             btn_salary.FlatStyle = FlatStyle.Flat;
-            btn_salary.Font = new Font("Segoe Print", 12F, FontStyle.Bold, GraphicsUnit.Point);
+            btn_salary.Font = new Font("Segoe Print", 14F, FontStyle.Bold, GraphicsUnit.Point);
             btn_salary.ForeColor = Color.SeaGreen;
             btn_salary.Location = new Point(495, 0);
             btn_salary.Name = "btn_salary";
@@ -505,6 +525,7 @@
             // 
             // DGV_EmplList
             // 
+            DGV_EmplList.AllowUserToResizeColumns = false;
             dataGridViewCellStyle1.BackColor = Color.Honeydew;
             dataGridViewCellStyle1.NullValue = null;
             DGV_EmplList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
@@ -640,5 +661,6 @@
         public Guna.UI2.WinForms.Guna2DataGridView DGV_EmplList;
         private Button btn_delete;
         private Panel panel1;
+        private Button button1;
     }
 }

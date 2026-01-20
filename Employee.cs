@@ -139,7 +139,7 @@ namespace Sklep_base
         private void btn_departmants_Click(object sender, EventArgs e)
         {
             this.Close();
-            new Departmants().Show();
+            new Departments().Show();
         }
 
         private void btn_logout_Click(object sender, EventArgs e)
@@ -151,6 +151,13 @@ namespace Sklep_base
                 new login_window().Show();
                 this.Close();
             }
+        }
+        private void ClearLebles()
+        {
+            txtbox_name.Text = "";
+            txtbox_surname.Text = "";
+            combox_employeeGender.SelectedIndex = -1;
+            combox_employeeDepartment.SelectedIndex = -1;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -168,19 +175,15 @@ namespace Sklep_base
                     string Surname = txtbox_surname.Text;
                     string Gender = combox_employeeGender.SelectedItem.ToString();
                     int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
-                    string DateOfBith = timpic_dateOfBith.Text;
-                    string JoinDate = timpic_joinDate.Text;
+                    string DateOfBith = timpic_dateOfBith.Text.ToString();
+                    string JoinDate = timpic_joinDate.Text.ToString();
 
                     string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,DepID,EmpBornDate,EmpJoingDate) " +
                         $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
                     conn.SetData(Query);
                     ShowEmployee();
                     MessageBox.Show("Employee Added!!!");
-                    txtbox_name.Text = "";
-                    txtbox_surname.Text = "";
-                    combox_employeeGender.SelectedIndex = -1;
-                    combox_employeeDepartment.SelectedIndex = -1;
-
+                    ClearLebles();
                 }
             }
             catch (Exception Ex)
@@ -203,11 +206,7 @@ namespace Sklep_base
                     conn.SetData(Query);
                     ShowEmployee();
                     MessageBox.Show("Employee Deleted!!!");
-                    txtbox_name.Text = "";
-                    txtbox_surname.Text = "";
-                    combox_employeeGender.SelectedIndex = -1;
-                    combox_employeeDepartment.SelectedIndex = -1;
-
+                    ClearLebles();
                 }
             }
             catch (Exception Ex)
@@ -252,10 +251,7 @@ namespace Sklep_base
                 {
                     MessageBox.Show("You need to choose somone from the list!");
                 }
-                    txtbox_name.Text = "";
-                txtbox_surname.Text = "";
-                combox_employeeGender.SelectedIndex = -1;
-                combox_employeeDepartment.SelectedIndex = -1;
+                ClearLebles();
 
             }
         }
@@ -288,6 +284,11 @@ namespace Sklep_base
                 this.Top += e.Y - lastPoint.Y;
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            ClearLebles();
         }
     }
 }
