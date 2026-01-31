@@ -100,7 +100,7 @@
             txtbox_salaryAmount.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtbox_salaryAmount.ForeColor = Color.SeaGreen;
             txtbox_salaryAmount.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_salaryAmount.Location = new Point(198, 240);
+            txtbox_salaryAmount.Location = new Point(137, 240);
             txtbox_salaryAmount.Margin = new Padding(4, 5, 4, 5);
             txtbox_salaryAmount.Name = "txtbox_salaryAmount";
             txtbox_salaryAmount.PasswordChar = '\0';
@@ -108,7 +108,7 @@
             txtbox_salaryAmount.ReadOnly = true;
             txtbox_salaryAmount.SelectedText = "";
             txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtbox_salaryAmount.Size = new Size(171, 36);
+            txtbox_salaryAmount.Size = new Size(232, 36);
             txtbox_salaryAmount.TabIndex = 4;
             // 
             // btn_update
@@ -160,14 +160,14 @@
             txtbox_daysAttended.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             txtbox_daysAttended.ForeColor = Color.SeaGreen;
             txtbox_daysAttended.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_daysAttended.Location = new Point(198, 158);
+            txtbox_daysAttended.Location = new Point(137, 158);
             txtbox_daysAttended.Margin = new Padding(4, 5, 4, 5);
             txtbox_daysAttended.Name = "txtbox_daysAttended";
             txtbox_daysAttended.PasswordChar = '\0';
             txtbox_daysAttended.PlaceholderText = "max. 31";
             txtbox_daysAttended.SelectedText = "";
             txtbox_daysAttended.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtbox_daysAttended.Size = new Size(171, 36);
+            txtbox_daysAttended.Size = new Size(232, 36);
             txtbox_daysAttended.TabIndex = 2;
             txtbox_daysAttended.TextChanged += txtbox_daysAttended_TextChanged;
             txtbox_daysAttended.KeyPress += txtbox_daysAttended_KeyPress;
@@ -184,13 +184,12 @@
             combox_Employee.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             combox_Employee.ForeColor = Color.SeaGreen;
             combox_Employee.ItemHeight = 30;
-            combox_Employee.Location = new Point(198, 117);
+            combox_Employee.Location = new Point(137, 117);
             combox_Employee.Name = "combox_Employee";
             combox_Employee.ShadowDecoration.CustomizableEdges = customizableEdges6;
-            combox_Employee.Size = new Size(171, 36);
+            combox_Employee.Size = new Size(232, 36);
             combox_Employee.TabIndex = 1;
             combox_Employee.SelectedValueChanged += combox_Employee_SelectedValueChanged;
-            combox_Employee.Click += combox_Employee_Click;
             // 
             // lbl_new
             // 
@@ -212,7 +211,7 @@
             lbl_department.Location = new Point(6, 199);
             lbl_department.Name = "lbl_department";
             lbl_department.Padding = new Padding(0, 7, 0, 0);
-            lbl_department.Size = new Size(190, 36);
+            lbl_department.Size = new Size(125, 36);
             lbl_department.TabIndex = 16;
             lbl_department.Text = "Period:";
             lbl_department.TextAlign = ContentAlignment.MiddleRight;
@@ -227,12 +226,12 @@
             timpic_period.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_period.ForeColor = Color.White;
             timpic_period.Format = DateTimePickerFormat.Short;
-            timpic_period.Location = new Point(198, 199);
+            timpic_period.Location = new Point(137, 199);
             timpic_period.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_period.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_period.Name = "timpic_period";
             timpic_period.ShadowDecoration.CustomizableEdges = customizableEdges8;
-            timpic_period.Size = new Size(171, 36);
+            timpic_period.Size = new Size(232, 36);
             timpic_period.TabIndex = 3;
             timpic_period.TextAlign = HorizontalAlignment.Right;
             timpic_period.Value = new DateTime(2024, 9, 2, 0, 0, 0, 0);
@@ -245,7 +244,7 @@
             lbl_joinDate.Location = new Point(6, 240);
             lbl_joinDate.Name = "lbl_joinDate";
             lbl_joinDate.Padding = new Padding(0, 7, 0, 0);
-            lbl_joinDate.Size = new Size(190, 36);
+            lbl_joinDate.Size = new Size(125, 36);
             lbl_joinDate.TabIndex = 20;
             lbl_joinDate.Text = "Salary amount:";
             lbl_joinDate.TextAlign = ContentAlignment.MiddleRight;
@@ -258,7 +257,7 @@
             lbl_gender.Location = new Point(6, 158);
             lbl_gender.Name = "lbl_gender";
             lbl_gender.Padding = new Padding(0, 7, 0, 0);
-            lbl_gender.Size = new Size(190, 36);
+            lbl_gender.Size = new Size(125, 36);
             lbl_gender.TabIndex = 15;
             lbl_gender.Text = "Days attended:";
             lbl_gender.TextAlign = ContentAlignment.MiddleRight;
@@ -271,7 +270,7 @@
             lbl_name.Location = new Point(6, 117);
             lbl_name.Name = "lbl_name";
             lbl_name.Padding = new Padding(0, 7, 0, 0);
-            lbl_name.Size = new Size(190, 36);
+            lbl_name.Size = new Size(125, 36);
             lbl_name.TabIndex = 10;
             lbl_name.Text = "Employee:";
             lbl_name.TextAlign = ContentAlignment.MiddleRight;
@@ -466,6 +465,7 @@
             DGV_SalaryList.ThemeStyle.RowsStyle.Height = 25;
             DGV_SalaryList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             DGV_SalaryList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DGV_SalaryList.CellClick += DGV_SalaryList_CellClick;
             // 
             // panel1
             // 

@@ -10,7 +10,7 @@ namespace Sklep_base
         {
             InitializeComponent();
             ShowSalary();
-            //GetEmployeeBase();
+            GetEmployeeBase();
             btn_departmants.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_departmants.MouseLeave += new EventHandler(Button_MouseLeave);
 
@@ -24,30 +24,19 @@ namespace Sklep_base
         #region SQL DataBase Command
 
 
-        int DaySalary = 0; //Here save employee salary
+        int DaySalary; //Here save employee salary
         string Period = "";
-        private void GetSalary(int Key)
-        {
-
-            string Query = $"SELECT ID, EmpSalary FROM EmployeeTbl WHERE ID = {Key}";
-            foreach (DataRow dr in functions.GetData(Query).Rows)
-            {
-                DaySalary = Convert.ToInt32(dr["EmpSalary"].ToString());
-            }
-            //txtbox_daysAttended.Text = DSal.ToString();
-
-        }
 
         private void ShowSalary()
         {
-            string Query = "SELECT * FROM SalaryTbl";
+            string Query = "SELECT ID as Code, EmployeeID as 'Employee Code', Attendance, Period, Amount, PayDate as Payday FROM SalaryTbl";
             DGV_SalaryList.DataSource = functions.GetData(Query);
         }
         private void GetEmployeeBase()
         {
-            string Query = "SELECT ID, EmpName + ' ' + EmpSurname AS FullName FROM EmployeeTbl";
-            combox_Employee.DisplayMember = functions.GetData(Query).Columns["FullName"].ToString();
-            combox_Employee.ValueMember = functions.GetData(Query).Columns["ID"].ToString();
+            string Query = "SELECT ID as Code, CAST(ID as VARCHAR(3)) + ' ' + EmpName + ' ' + EmpSurname AS 'Full Name' FROM EmployeeTbl";
+            combox_Employee.DisplayMember = functions.GetData(Query).Columns["Full Name"].ToString();
+            combox_Employee.ValueMember = functions.GetData(Query).Columns["Code"].ToString();
             combox_Employee.DataSource = functions.GetData(Query);
         }
 
@@ -138,7 +127,7 @@ namespace Sklep_base
                 {
                     Period = timpic_period.Value.Date.Year.ToString() + "." + timpic_period.Value.Date.Month.ToString();
                     string today = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
-                    int Amount = day * DaySalary;
+                    int Amount = day * (DaySalary = Convert.ToInt32(txtbox_daysAttended.Text));
                     int Days = Convert.ToInt32(txtbox_daysAttended.Text);
 
 
@@ -164,7 +153,7 @@ namespace Sklep_base
 
         private void combox_Employee_SelectedValueChanged(object sender, EventArgs e)
         {
-            GetSalary(Convert.ToInt32(combox_Employee.SelectedValue));
+            /*GetSalary(Convert.ToInt32(combox_Employee.SelectedValue));*/
             ChangeAmount();
         }
 
@@ -213,20 +202,9 @@ namespace Sklep_base
             }
         }
 
-        private void combox_Employee_Click(object sender, EventArgs e)
+        private void DGV_SalaryList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            /*try
-            {
-                string item;
-                functions.UpdateUserDataForComboBox(item);
-                combox_Employee.DataSource = ;
-                combox_Employee.DisplayMember = "Name"; // Поле, яке буде відображатися (Імена)
-                combox_Employee.ValueMember = "ID";
-            }
-            catch (Exception Ex)
-            {
-                MessageBox.Show(Ex.Message);
-            }*/
+
         }
     }
 }

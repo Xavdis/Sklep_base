@@ -1,3 +1,6 @@
+using Microsoft.VisualBasic;
+using System.Globalization;
+
 namespace Sklep_base
 {
     public partial class Employee : Form
@@ -25,8 +28,8 @@ namespace Sklep_base
         private void ShowEmployee()
         {
             string Query = "select " +
-                "EmployeeTbl.ID as Code, EmployeeTbl.EmpName, EmployeeTbl.EmpSurname, EmployeeTbl.EmpGender, DepartmantTbl.DepName, " +
-                "EmployeeTbl.EmpBornDate, EmployeeTbl.EmpJoingDate " +
+                "EmployeeTbl.ID as Code, EmployeeTbl.EmpName as Name, EmployeeTbl.EmpSurname as Surname, EmployeeTbl.EmpGender as Gender, DepartmantTbl.DepName as Department, " +
+                "EmployeeTbl.EmpBornDate as Birthday, EmployeeTbl.EmpJoingDate as 'Joing Date' " +
                 "FROM EmployeeTbl INNER JOIN DepartmantTbl on EmployeeTbl.DepID = DepartmantTbl.ID;";
             DGV_EmplList.DataSource = conn.GetData(Query);
         }
@@ -229,23 +232,24 @@ namespace Sklep_base
                 string Surname = txtbox_surname.Text;
                 string Gender = combox_employeeGender.SelectedItem.ToString();
                 int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
-                string DateOfBith = timpic_dateOfBith.Text;
-                string JoinDate = timpic_joinDate.Text;
+                string DateOfBith = DateTime.ParseExact(timpic_dateOfBith.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+                string JoinDate = DateTime.ParseExact(timpic_joinDate.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
 
                 string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',DepID = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}' WHERE ID = {Key}";
                 if (Key != null)
                 {
-                    try
-                    {
+                    //try
+                    //{
+                        
                         conn.SetData(Query);
                         ShowEmployee();
                         MessageBox.Show("Employee Update!!!");
                         Key = null;
-                    }
-                    catch (Exception Ex)
+                    //}
+                    /*catch (Exception Ex)
                     {
                         MessageBox.Show(Ex.Message);
-                    }
+                    }*/
                 }
                 else
                 {
@@ -254,17 +258,6 @@ namespace Sklep_base
                 ClearLebles();
 
             }
-        }
-
-        private void DGV_EmplList_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
-            txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
-            combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
-            combox_employeeDepartment.Text = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
-            timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
-            timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
-            Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
         }
         private Point lastPoint;
         private void ClickOnWindow(object sender, MouseEventArgs e)
@@ -289,6 +282,17 @@ namespace Sklep_base
         private void button1_Click(object sender, EventArgs e)
         {
             ClearLebles();
+        }
+
+        private void DGV_DepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtbox_name.Text = DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
+            txtbox_surname.Text = DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
+            combox_employeeGender.Text = DGV_EmplList.SelectedRows[0].Cells[3].Value.ToString();
+            combox_employeeDepartment.Text = DGV_EmplList.SelectedRows[0].Cells[4].Value.ToString();
+            timpic_dateOfBith.Text = DGV_EmplList.SelectedRows[0].Cells[5].Value.ToString();
+            timpic_joinDate.Text = DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
+            Key = Convert.ToInt32(DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
         }
     }
 }

@@ -114,7 +114,7 @@
         SQLFunctions conn;
         private void ShowDepartmants()
         {
-            string Query = "SELECT * FROM DepartmantTbl";
+            string Query = "SELECT ID as Code, DepName as Department FROM DepartmantTbl";
             DGV_DepList.DataSource = conn.GetData(Query);
 
         }
@@ -172,7 +172,7 @@
                 else
                 {
                     string Dep = txtBox_DepName.Text;
-                    string Query = "UPDATE DepartmantTbl SET DepName = '{0}' WHERE DepId = '{1}'";
+                    string Query = "UPDATE DepartmantTbl SET DepName = '{0}' WHERE ID = '{1}'";
                     Query = string.Format(Query, txtBox_DepName.Text, Key);
                     conn.SetData(Query);
                     ShowDepartmants();

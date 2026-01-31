@@ -590,7 +590,7 @@
             DGV_EmplList.ThemeStyle.RowsStyle.Height = 25;
             DGV_EmplList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             DGV_EmplList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            DGV_EmplList.CellContentClick += DGV_EmplList_CellContentClick;
+            DGV_EmplList.CellClick += DGV_DepList_CellContentClick;
             // 
             // panel1
             // 

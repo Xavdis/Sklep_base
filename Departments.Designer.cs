@@ -383,6 +383,7 @@
             DGV_DepList.ThemeStyle.RowsStyle.Height = 25;
             DGV_DepList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             DGV_DepList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DGV_DepList.CellClick += DGV_DepList_CellContentClick;
             DGV_DepList.CellContentClick += DGV_DepList_CellContentClick;
             // 
             // Departments
