@@ -1,4 +1,3 @@
-using Microsoft.VisualBasic;
 using System.Globalization;
 
 namespace Sklep_base
@@ -16,6 +15,7 @@ namespace Sklep_base
                 conn = new SQLFunctions();
                 ShowEmployee();
                 GetDepartmentBase();
+                ClearLebles();
             }
             catch (Exception ex)
             {
@@ -160,7 +160,12 @@ namespace Sklep_base
             txtbox_name.Text = "";
             txtbox_surname.Text = "";
             combox_employeeGender.SelectedIndex = -1;
-            combox_employeeDepartment.SelectedIndex = -1;
+            while (combox_employeeDepartment.SelectedIndex >= 0)
+            {
+                combox_employeeDepartment.SelectedIndex = -1;
+            }
+            timpic_dateOfBith.Value = DateTime.Now;
+            timpic_joinDate.Value = DateTime.Now;
         }
 
         private void btn_add_Click(object sender, EventArgs e)
@@ -178,8 +183,8 @@ namespace Sklep_base
                     string Surname = txtbox_surname.Text;
                     string Gender = combox_employeeGender.SelectedItem.ToString();
                     int Departmant = Convert.ToInt32(combox_employeeDepartment.SelectedValue.ToString());
-                    string DateOfBith = timpic_dateOfBith.Text.ToString();
-                    string JoinDate = timpic_joinDate.Text.ToString();
+                    string DateOfBith = DateTime.ParseExact(timpic_dateOfBith.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
+                    string JoinDate = DateTime.ParseExact(timpic_joinDate.Text, "dd.MM.yyyy", CultureInfo.InvariantCulture).ToString("yyyy-MM-dd");
 
                     string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,DepID,EmpBornDate,EmpJoingDate) " +
                         $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
@@ -209,8 +214,8 @@ namespace Sklep_base
                     conn.SetData(Query);
                     ShowEmployee();
                     MessageBox.Show("Employee Deleted!!!");
-                    ClearLebles();
                 }
+                ClearLebles();
             }
             catch (Exception Ex)
             {
@@ -238,24 +243,24 @@ namespace Sklep_base
                 string Query = $"UPDATE EmployeeTbl SET EmpName = '{Name}',EmpSurname = '{Surname}',EmpGender = '{Gender}',DepID = {Departmant},EmpBornDate = '{DateOfBith}',EmpJoingDate = '{JoinDate}' WHERE ID = {Key}";
                 if (Key != null)
                 {
-                    //try
-                    //{
-                        
+                    try
+                    {
+
                         conn.SetData(Query);
                         ShowEmployee();
                         MessageBox.Show("Employee Update!!!");
                         Key = null;
-                    //}
-                    /*catch (Exception Ex)
+                        ClearLebles();
+                    }
+                    catch (Exception Ex)
                     {
-                        MessageBox.Show(Ex.Message);
-                    }*/
+                        MessageBox.Show(Ex.Message + "Please call your administrator!");
+                    }
                 }
                 else
                 {
                     MessageBox.Show("You need to choose somone from the list!");
                 }
-                ClearLebles();
 
             }
         }
