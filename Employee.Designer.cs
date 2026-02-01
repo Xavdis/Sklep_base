@@ -279,6 +279,7 @@
             // combox_employeeDepartment
             // 
             combox_employeeDepartment.BackColor = Color.White;
+            combox_employeeDepartment.CausesValidation = false;
             combox_employeeDepartment.Cursor = Cursors.Hand;
             combox_employeeDepartment.CustomizableEdges = customizableEdges11;
             combox_employeeDepartment.DrawMode = DrawMode.OwnerDrawFixed;
@@ -287,6 +288,7 @@
             combox_employeeDepartment.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             combox_employeeDepartment.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             combox_employeeDepartment.ForeColor = Color.SeaGreen;
+            combox_employeeDepartment.FormattingEnabled = true;
             combox_employeeDepartment.ItemHeight = 30;
             combox_employeeDepartment.Location = new Point(236, 191);
             combox_employeeDepartment.Name = "combox_employeeDepartment";

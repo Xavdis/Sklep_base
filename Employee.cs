@@ -160,10 +160,11 @@ namespace Sklep_base
             txtbox_name.Text = "";
             txtbox_surname.Text = "";
             combox_employeeGender.SelectedIndex = -1;
-            while (combox_employeeDepartment.SelectedIndex >= 0)
-            {
-                combox_employeeDepartment.SelectedIndex = -1;
-            }
+
+            combox_employeeDepartment.SelectedItem = null;
+            combox_employeeDepartment.SelectedIndex = -1;
+            combox_employeeDepartment.Text = string.Empty;
+
             timpic_dateOfBith.Value = DateTime.Now;
             timpic_joinDate.Value = DateTime.Now;
         }
