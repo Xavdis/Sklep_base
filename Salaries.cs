@@ -29,7 +29,7 @@ namespace Sklep_base
 
         private void ShowSalary()
         {
-            string Query = "SELECT ID as Code, EmployeeID as 'Employee Code', Attendance, Period, Amount, PayDate as Payday FROM SalaryTbl";
+            string Query = "SELECT ID as Code, EmployeeID as 'Employee Code', MonthlyWorkDays, SalaryPerHour, Amount, PayDate as Payday FROM SalaryTbl";
             DGV_SalaryList.DataSource = functions.GetData(Query);
         }
         private void GetEmployeeBase()
