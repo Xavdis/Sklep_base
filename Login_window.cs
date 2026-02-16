@@ -113,7 +113,7 @@ namespace Sklep_base
                     else if (sqluser == username && sqlpass == password)
                     {
 
-                        new Employee().Show();
+                        new MainMenu().Show();
                         this.Hide();
 
                     }

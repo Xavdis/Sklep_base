@@ -72,6 +72,7 @@
             btn_salary = new Button();
             DGV_EmplList = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
+            lbl_version = new Label();
             pan_top.SuspendLayout();
             pan_left.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_EmplList).BeginInit();
@@ -88,7 +89,7 @@
             btn_update.FlatStyle = FlatStyle.Flat;
             btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_update.ForeColor = Color.SeaGreen;
-            btn_update.Location = new Point(126, 342);
+            btn_update.Location = new Point(126, 336);
             btn_update.Name = "btn_update";
             btn_update.Size = new Size(77, 37);
             btn_update.TabIndex = 9;
@@ -108,7 +109,7 @@
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(26, 342);
+            btn_add.Location = new Point(26, 336);
             btn_add.Name = "btn_add";
             btn_add.Size = new Size(77, 37);
             btn_add.TabIndex = 8;
@@ -143,7 +144,7 @@
             lbl_new.BackColor = Color.Honeydew;
             lbl_new.Font = new Font("Segoe Print", 14F, FontStyle.Bold, GraphicsUnit.Point);
             lbl_new.ForeColor = Color.SeaGreen;
-            lbl_new.Location = new Point(0, 5);
+            lbl_new.Location = new Point(0, 11);
             lbl_new.Name = "lbl_new";
             lbl_new.Size = new Size(424, 44);
             lbl_new.TabIndex = 14;
@@ -421,7 +422,7 @@
             button1.FlatStyle = FlatStyle.Flat;
             button1.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             button1.ForeColor = Color.SeaGreen;
-            button1.Location = new Point(326, 342);
+            button1.Location = new Point(326, 336);
             button1.Name = "button1";
             button1.Size = new Size(77, 37);
             button1.TabIndex = 22;
@@ -439,7 +440,7 @@
             btn_delete.FlatStyle = FlatStyle.Flat;
             btn_delete.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_delete.ForeColor = Color.SeaGreen;
-            btn_delete.Location = new Point(226, 342);
+            btn_delete.Location = new Point(226, 336);
             btn_delete.Name = "btn_delete";
             btn_delete.Size = new Size(77, 37);
             btn_delete.TabIndex = 10;
@@ -607,14 +608,28 @@
             panel1.Size = new Size(996, 57);
             panel1.TabIndex = 59;
             // 
+            // lbl_version
+            // 
+            lbl_version.BackColor = Color.Honeydew;
+            lbl_version.Font = new Font("Comic Sans MS", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_version.ForeColor = Color.SeaGreen;
+            lbl_version.Location = new Point(0, 475);
+            lbl_version.Name = "lbl_version";
+            lbl_version.Padding = new Padding(0, 8, 0, 0);
+            lbl_version.Size = new Size(418, 23);
+            lbl_version.TabIndex = 60;
+            lbl_version.Text = "Version 1.33";
+            lbl_version.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Employee
             // 
             AutoScaleDimensions = new SizeF(10F, 23F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1400, 502);
-            Controls.Add(DGV_EmplList);
             Controls.Add(pan_down);
+            Controls.Add(lbl_version);
+            Controls.Add(DGV_EmplList);
             Controls.Add(pan_top);
             Controls.Add(pan_left);
             Controls.Add(panel1);
@@ -664,5 +679,6 @@
         private Button btn_delete;
         private Panel panel1;
         private Button button1;
+        private Label lbl_version;
     }
 }

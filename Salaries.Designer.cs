@@ -28,21 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges15 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             pan_left = new Panel();
+            txtbox_salaryPerHour = new Guna.UI2.WinForms.Guna2TextBox();
+            lbl_seleryPerHour = new Label();
             txtbox_salaryAmount = new Guna.UI2.WinForms.Guna2TextBox();
             btn_update = new Button();
             btn_add = new Button();
@@ -64,8 +66,7 @@
             lbl_salary = new Label();
             DGV_SalaryList = new Guna.UI2.WinForms.Guna2DataGridView();
             panel1 = new Panel();
-            txtbox_salaryPerHour = new Guna.UI2.WinForms.Guna2TextBox();
-            lbl_seleryPerHour = new Label();
+            lbl_version = new Label();
             pan_left.SuspendLayout();
             pan_top.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGV_SalaryList).BeginInit();
@@ -93,10 +94,47 @@
             pan_left.Size = new Size(378, 419);
             pan_left.TabIndex = 38;
             // 
+            // txtbox_salaryPerHour
+            // 
+            txtbox_salaryPerHour.BackColor = Color.White;
+            txtbox_salaryPerHour.CustomizableEdges = customizableEdges1;
+            txtbox_salaryPerHour.DefaultText = "";
+            txtbox_salaryPerHour.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtbox_salaryPerHour.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtbox_salaryPerHour.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtbox_salaryPerHour.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtbox_salaryPerHour.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtbox_salaryPerHour.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            txtbox_salaryPerHour.ForeColor = Color.SeaGreen;
+            txtbox_salaryPerHour.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtbox_salaryPerHour.Location = new Point(156, 223);
+            txtbox_salaryPerHour.Margin = new Padding(4, 5, 4, 5);
+            txtbox_salaryPerHour.Name = "txtbox_salaryPerHour";
+            txtbox_salaryPerHour.PasswordChar = '\0';
+            txtbox_salaryPerHour.PlaceholderText = "";
+            txtbox_salaryPerHour.ReadOnly = true;
+            txtbox_salaryPerHour.SelectedText = "";
+            txtbox_salaryPerHour.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtbox_salaryPerHour.Size = new Size(219, 36);
+            txtbox_salaryPerHour.TabIndex = 21;
+            // 
+            // lbl_seleryPerHour
+            // 
+            lbl_seleryPerHour.BackColor = Color.Honeydew;
+            lbl_seleryPerHour.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_seleryPerHour.ForeColor = Color.SeaGreen;
+            lbl_seleryPerHour.Location = new Point(12, 223);
+            lbl_seleryPerHour.Name = "lbl_seleryPerHour";
+            lbl_seleryPerHour.Padding = new Padding(0, 7, 0, 0);
+            lbl_seleryPerHour.Size = new Size(138, 36);
+            lbl_seleryPerHour.TabIndex = 22;
+            lbl_seleryPerHour.Text = "Salary per hour:";
+            lbl_seleryPerHour.TextAlign = ContentAlignment.MiddleRight;
+            // 
             // txtbox_salaryAmount
             // 
             txtbox_salaryAmount.BackColor = Color.White;
-            txtbox_salaryAmount.CustomizableEdges = customizableEdges11;
+            txtbox_salaryAmount.CustomizableEdges = customizableEdges3;
             txtbox_salaryAmount.DefaultText = "";
             txtbox_salaryAmount.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtbox_salaryAmount.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -113,7 +151,7 @@
             txtbox_salaryAmount.PlaceholderText = "";
             txtbox_salaryAmount.ReadOnly = true;
             txtbox_salaryAmount.SelectedText = "";
-            txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges12;
+            txtbox_salaryAmount.ShadowDecoration.CustomizableEdges = customizableEdges4;
             txtbox_salaryAmount.Size = new Size(219, 36);
             txtbox_salaryAmount.TabIndex = 4;
             // 
@@ -127,7 +165,7 @@
             btn_update.FlatStyle = FlatStyle.Flat;
             btn_update.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_update.ForeColor = Color.SeaGreen;
-            btn_update.Location = new Point(195, 337);
+            btn_update.Location = new Point(197, 337);
             btn_update.Name = "btn_update";
             btn_update.Size = new Size(93, 42);
             btn_update.TabIndex = 6;
@@ -145,7 +183,7 @@
             btn_add.FlatStyle = FlatStyle.Flat;
             btn_add.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             btn_add.ForeColor = Color.White;
-            btn_add.Location = new Point(91, 337);
+            btn_add.Location = new Point(93, 337);
             btn_add.Name = "btn_add";
             btn_add.Size = new Size(93, 42);
             btn_add.TabIndex = 5;
@@ -156,7 +194,7 @@
             // txtbox_daysAttended
             // 
             txtbox_daysAttended.BackColor = Color.White;
-            txtbox_daysAttended.CustomizableEdges = customizableEdges13;
+            txtbox_daysAttended.CustomizableEdges = customizableEdges5;
             txtbox_daysAttended.DefaultText = "";
             txtbox_daysAttended.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
             txtbox_daysAttended.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
@@ -172,7 +210,7 @@
             txtbox_daysAttended.PasswordChar = '\0';
             txtbox_daysAttended.PlaceholderText = "max. 31";
             txtbox_daysAttended.SelectedText = "";
-            txtbox_daysAttended.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            txtbox_daysAttended.ShadowDecoration.CustomizableEdges = customizableEdges6;
             txtbox_daysAttended.Size = new Size(219, 36);
             txtbox_daysAttended.TabIndex = 2;
             txtbox_daysAttended.TextChanged += txtbox_daysAttended_TextChanged;
@@ -182,7 +220,7 @@
             // 
             combox_Employee.BackColor = Color.White;
             combox_Employee.Cursor = Cursors.Hand;
-            combox_Employee.CustomizableEdges = customizableEdges15;
+            combox_Employee.CustomizableEdges = customizableEdges7;
             combox_Employee.DrawMode = DrawMode.OwnerDrawFixed;
             combox_Employee.DropDownStyle = ComboBoxStyle.DropDownList;
             combox_Employee.FocusedColor = Color.FromArgb(94, 148, 255);
@@ -192,7 +230,7 @@
             combox_Employee.ItemHeight = 30;
             combox_Employee.Location = new Point(156, 97);
             combox_Employee.Name = "combox_Employee";
-            combox_Employee.ShadowDecoration.CustomizableEdges = customizableEdges16;
+            combox_Employee.ShadowDecoration.CustomizableEdges = customizableEdges8;
             combox_Employee.Size = new Size(219, 36);
             combox_Employee.TabIndex = 1;
             combox_Employee.SelectedValueChanged += combox_Employee_SelectedValueChanged;
@@ -227,7 +265,7 @@
             timpic_period.BorderColor = Color.White;
             timpic_period.Checked = true;
             timpic_period.Cursor = Cursors.Hand;
-            timpic_period.CustomizableEdges = customizableEdges17;
+            timpic_period.CustomizableEdges = customizableEdges9;
             timpic_period.FillColor = Color.SeaGreen;
             timpic_period.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
             timpic_period.ForeColor = Color.White;
@@ -236,7 +274,7 @@
             timpic_period.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
             timpic_period.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
             timpic_period.Name = "timpic_period";
-            timpic_period.ShadowDecoration.CustomizableEdges = customizableEdges18;
+            timpic_period.ShadowDecoration.CustomizableEdges = customizableEdges10;
             timpic_period.Size = new Size(219, 36);
             timpic_period.TabIndex = 3;
             timpic_period.TextAlign = HorizontalAlignment.Right;
@@ -407,43 +445,43 @@
             // 
             // DGV_SalaryList
             // 
-            dataGridViewCellStyle5.BackColor = Color.Honeydew;
-            dataGridViewCellStyle5.NullValue = null;
-            DGV_SalaryList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.BackColor = Color.Honeydew;
+            dataGridViewCellStyle1.NullValue = null;
+            DGV_SalaryList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             DGV_SalaryList.Anchor = AnchorStyles.None;
             DGV_SalaryList.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.AllCells;
             DGV_SalaryList.CellBorderStyle = DataGridViewCellBorderStyle.RaisedHorizontal;
-            dataGridViewCellStyle6.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = Color.SeaGreen;
-            dataGridViewCellStyle6.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle6.ForeColor = Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = Color.SeaGreen;
-            dataGridViewCellStyle6.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle6.WrapMode = DataGridViewTriState.False;
-            DGV_SalaryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle2.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            DGV_SalaryList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             DGV_SalaryList.ColumnHeadersHeight = 25;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(231, 229, 255);
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            DGV_SalaryList.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DGV_SalaryList.DefaultCellStyle = dataGridViewCellStyle3;
             DGV_SalaryList.GridColor = Color.SeaGreen;
             DGV_SalaryList.ImeMode = ImeMode.NoControl;
             DGV_SalaryList.Location = new Point(378, 141);
             DGV_SalaryList.MultiSelect = false;
             DGV_SalaryList.Name = "DGV_SalaryList";
             DGV_SalaryList.ReadOnly = true;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.SeaGreen;
-            dataGridViewCellStyle8.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = Color.Honeydew;
-            dataGridViewCellStyle8.SelectionBackColor = Color.SeaGreen;
-            dataGridViewCellStyle8.SelectionForeColor = Color.Honeydew;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            DGV_SalaryList.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle4.ForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.SelectionBackColor = Color.SeaGreen;
+            dataGridViewCellStyle4.SelectionForeColor = Color.Honeydew;
+            dataGridViewCellStyle4.WrapMode = DataGridViewTriState.False;
+            DGV_SalaryList.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             DGV_SalaryList.RowHeadersVisible = false;
             DGV_SalaryList.RowHeadersWidth = 51;
             DGV_SalaryList.RowTemplate.Height = 25;
@@ -486,42 +524,18 @@
             panel1.Size = new Size(1041, 57);
             panel1.TabIndex = 63;
             // 
-            // txtbox_salaryPerHour
+            // lbl_version
             // 
-            txtbox_salaryPerHour.BackColor = Color.White;
-            txtbox_salaryPerHour.CustomizableEdges = customizableEdges19;
-            txtbox_salaryPerHour.DefaultText = "";
-            txtbox_salaryPerHour.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtbox_salaryPerHour.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtbox_salaryPerHour.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtbox_salaryPerHour.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtbox_salaryPerHour.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_salaryPerHour.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            txtbox_salaryPerHour.ForeColor = Color.SeaGreen;
-            txtbox_salaryPerHour.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtbox_salaryPerHour.Location = new Point(156, 223);
-            txtbox_salaryPerHour.Margin = new Padding(4, 5, 4, 5);
-            txtbox_salaryPerHour.Name = "txtbox_salaryPerHour";
-            txtbox_salaryPerHour.PasswordChar = '\0';
-            txtbox_salaryPerHour.PlaceholderText = "";
-            txtbox_salaryPerHour.ReadOnly = true;
-            txtbox_salaryPerHour.SelectedText = "";
-            txtbox_salaryPerHour.ShadowDecoration.CustomizableEdges = customizableEdges20;
-            txtbox_salaryPerHour.Size = new Size(219, 36);
-            txtbox_salaryPerHour.TabIndex = 21;
-            // 
-            // lbl_seleryPerHour
-            // 
-            lbl_seleryPerHour.BackColor = Color.Honeydew;
-            lbl_seleryPerHour.Font = new Font("Comic Sans MS", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            lbl_seleryPerHour.ForeColor = Color.SeaGreen;
-            lbl_seleryPerHour.Location = new Point(12, 223);
-            lbl_seleryPerHour.Name = "lbl_seleryPerHour";
-            lbl_seleryPerHour.Padding = new Padding(0, 7, 0, 0);
-            lbl_seleryPerHour.Size = new Size(138, 36);
-            lbl_seleryPerHour.TabIndex = 22;
-            lbl_seleryPerHour.Text = "Salary per hour:";
-            lbl_seleryPerHour.TextAlign = ContentAlignment.MiddleRight;
+            lbl_version.BackColor = Color.Honeydew;
+            lbl_version.Font = new Font("Comic Sans MS", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_version.ForeColor = Color.SeaGreen;
+            lbl_version.Location = new Point(0, 473);
+            lbl_version.Name = "lbl_version";
+            lbl_version.Padding = new Padding(0, 8, 0, 0);
+            lbl_version.Size = new Size(372, 23);
+            lbl_version.TabIndex = 64;
+            lbl_version.Text = new Version().GetVersion;
+            lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Salaries
             // 
@@ -529,8 +543,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1400, 502);
-            Controls.Add(DGV_SalaryList);
             Controls.Add(pan_down);
+            Controls.Add(lbl_version);
+            Controls.Add(DGV_SalaryList);
             Controls.Add(pan_top);
             Controls.Add(pan_left);
             Controls.Add(panel1);
@@ -576,5 +591,6 @@
         private Button btn_update;
         private Guna.UI2.WinForms.Guna2TextBox txtbox_salaryPerHour;
         private Label lbl_seleryPerHour;
+        private Label lbl_version;
     }
 }

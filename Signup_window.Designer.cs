@@ -97,7 +97,7 @@
             lbl_version.Padding = new Padding(0, 11, 0, 0);
             lbl_version.Size = new Size(114, 31);
             lbl_version.TabIndex = 0;
-            lbl_version.Text = "Version 1.0";
+            lbl_version.Text = new Version().GetVersion;
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             lbl_version.MouseDown += ClickOnWindow;
             lbl_version.MouseMove += MoveWindow;

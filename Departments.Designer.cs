@@ -51,6 +51,7 @@
             lbl_departmants = new Label();
             panel1 = new Panel();
             DGV_DepList = new Guna.UI2.WinForms.Guna2DataGridView();
+            lbl_version = new Label();
             pan_top.SuspendLayout();
             pan_left.SuspendLayout();
             panel1.SuspendLayout();
@@ -386,14 +387,28 @@
             DGV_DepList.CellClick += DGV_DepList_CellContentClick;
             DGV_DepList.CellContentClick += DGV_DepList_CellContentClick;
             // 
+            // lbl_version
+            // 
+            lbl_version.BackColor = Color.Honeydew;
+            lbl_version.Font = new Font("Comic Sans MS", 7F, FontStyle.Regular, GraphicsUnit.Point);
+            lbl_version.ForeColor = Color.SeaGreen;
+            lbl_version.Location = new Point(0, 472);
+            lbl_version.Name = "lbl_version";
+            lbl_version.Padding = new Padding(0, 8, 0, 0);
+            lbl_version.Size = new Size(372, 23);
+            lbl_version.TabIndex = 62;
+            lbl_version.Text = new Version().GetVersion;
+            lbl_version.TextAlign = ContentAlignment.MiddleCenter;
+            // 
             // Departments
             // 
             AutoScaleDimensions = new SizeF(10F, 28F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1400, 502);
-            Controls.Add(DGV_DepList);
             Controls.Add(pan_down);
+            Controls.Add(lbl_version);
+            Controls.Add(DGV_DepList);
             Controls.Add(pan_top);
             Controls.Add(pan_left);
             Controls.Add(panel1);
@@ -431,5 +446,6 @@
         private Button btn_delete;
         private Panel panel1;
         public Guna.UI2.WinForms.Guna2DataGridView DGV_DepList;
+        private Label lbl_version;
     }
 }
