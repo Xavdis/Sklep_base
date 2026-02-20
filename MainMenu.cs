@@ -1,13 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Globalization;
 
 namespace Sklep_base
 {
@@ -19,7 +10,6 @@ namespace Sklep_base
         {
             try
             {
-
                 InitializeComponent();
                 conn = new SQLFunctions();
                 ShowEmployee();
@@ -45,18 +35,149 @@ namespace Sklep_base
                 this.Close();
             }
         }
-        
+
+        #region Panel with btn pages
+        // Hide and Open systme for EMPLOYEE page
+        private void hide_emoloyee_page()
+        {
+            lbl_employee.Visible = false;
+
+            employee_pan_left.Visible = false;
+            employee_DGV_EmplList.Visible = false;
+            employee_btn_update.Visible = false;
+            employee_btn_add.Visible = false;
+            employee_btn_delete.Visible = false;
+            employee_btn_clear.Visible = false;
+            employee_timpic_joinDate.Visible = false;
+            employee_timpic_dateOfBith.Visible = false;
+            employee_combox_employeeGender.Visible = false;
+            employee_combox_employeeDepartment.Visible = false;
+            employee_txtbox_name.Visible = false;
+            employee_txtbox_surname.Visible = false;
+            employee_lbl_gender.Visible = false;
+            employee_lbl_name.Visible = false;
+            employee_lbl_surname.Visible = false;
+            employee_lbl_department.Visible = false;
+            employee_lbl_title.Visible = false;
+            employee_lbl_bith.Visible = false;
+            employee_lbl_joinDate.Visible = false;
+            lbl_employee.Visible = false;
+        }
+        private void open_emoloyee_page()
+        {
+            lbl_employee.Visible = true;
+
+            employee_pan_left.Visible = true;
+            employee_DGV_EmplList.Visible = true;
+            employee_btn_update.Visible = true;
+            employee_btn_add.Visible = true;
+            employee_btn_delete.Visible = true;
+            employee_btn_clear.Visible = true;
+            employee_timpic_joinDate.Visible = true;
+            employee_timpic_dateOfBith.Visible = true;
+            employee_combox_employeeGender.Visible = true;
+            employee_combox_employeeDepartment.Visible = true;
+            employee_txtbox_name.Visible = true;
+            employee_txtbox_surname.Visible = true;
+            employee_lbl_gender.Visible = true;
+            employee_lbl_name.Visible = true;
+            employee_lbl_surname.Visible = true;
+            employee_lbl_department.Visible = true;
+            employee_lbl_title.Visible = true;
+            employee_lbl_bith.Visible = true;
+            employee_lbl_joinDate.Visible = true;
+        }
+        // Hide and Open systme for DEPARTMENT page
+        private void hide_departaments_page()
+        {
+            lbl_departmants.Visible = false;
+
+            department_pan_left.Visible = false;
+            department_btn_delete.Visible = false;
+            department_btn_update.Visible = false;
+            department_btn_add.Visible = false;
+            department_lbl_new.Visible = false;
+            department_txtBox_DepName.Visible = false;
+            department_lbl_name.Visible = false;
+            department_DGV_DepList.Visible = false;
+
+
+        }
+        private void open_departaments_page()
+        {
+            lbl_departmants.Visible = true;
+
+            department_pan_left.Visible = true;
+            department_btn_delete.Visible = true;
+            department_btn_update.Visible = true;
+            department_btn_add.Visible = true;
+            department_lbl_new.Visible = true;
+            department_txtBox_DepName.Visible = true;
+            department_lbl_name.Visible = true;
+            department_DGV_DepList.Visible = true;
+
+        }
+        // Hide and Open system for SALARY page
+        private void hide_salary_page()
+        {
+            lbl_salary.Visible = false;
+
+            salary_pan_left.Visible = false;
+            salary_txtbox_salaryPerHour.Visible = false;
+            salary_lbl_seleryPerHour.Visible = false;
+            salary_txtbox_salaryAmount.Visible = false;
+            salary_btn_update.Visible = false;
+            salary_btn_add.Visible = false;
+            salary_txtbox_daysAttended.Visible = false;
+            salary_combox_Employee.Visible = false;
+            salary_lbl_new.Visible = false;
+            salary_lbl_PeyDate.Visible = false;
+            salary_timpic_period.Visible = false;
+            salary_lbl_joinDate.Visible = false;
+            salary_lbl_gender.Visible = false;
+            salary_lbl_name.Visible = false;
+            salary_DGV_SalaryList.Visible = false;
+        }
+        private void open_salary_page()
+        {
+            lbl_salary.Visible = true;
+
+            salary_pan_left.Visible = true;
+            salary_txtbox_salaryPerHour.Visible = true;
+            salary_lbl_seleryPerHour.Visible = true;
+            salary_txtbox_salaryAmount.Visible = true;
+            salary_btn_update.Visible = true;
+            salary_btn_add.Visible = true;
+            salary_txtbox_daysAttended.Visible = true;
+            salary_combox_Employee.Visible = true;
+            salary_lbl_new.Visible = true;
+            salary_lbl_PeyDate.Visible = true;
+            salary_timpic_period.Visible = true;
+            salary_lbl_joinDate.Visible = true;
+            salary_lbl_gender.Visible = true;
+            salary_lbl_name.Visible = true;
+            salary_DGV_SalaryList.Visible = true;
+
+        }
+        private void btn_employee_Click(object sender, EventArgs e)
+        {
+            open_emoloyee_page();
+            hide_departaments_page();
+            hide_salary_page();
+        } 
         private void btn_salary_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new Salaries().Show();
+            open_salary_page();
+            hide_departaments_page();
+            hide_emoloyee_page();
         }
-
         private void btn_departmants_Click(object sender, EventArgs e)
         {
-            this.Close();
-            new Departments().Show();
+            open_departaments_page();
+            hide_salary_page();
+            hide_emoloyee_page();
         }
+        #endregion
 
         private void btn_logout_Click(object sender, EventArgs e)
         {
@@ -87,9 +208,71 @@ namespace Sklep_base
 
             }
         }
+
+        #region Change color of button 
+        private void btn_employee_MouseLeave(object sender, EventArgs e)
+        {
+            btn_employee.BackColor = Color.Honeydew;
+            btn_employee.ForeColor = Color.SeaGreen;
+        }
+        private void btn_employee_MouseEnter(object sender, EventArgs e)
+        {
+            btn_employee.BackColor = Color.MediumSeaGreen;
+            btn_employee.ForeColor = Color.Honeydew;
+        }
+        private void btn_salary_MouseLeave(object sender, EventArgs e)
+        {
+            btn_salary.BackColor = Color.Honeydew;
+            btn_salary.ForeColor = Color.SeaGreen;
+        }
+        private void btn_salary_MouseEnter(object sender, EventArgs e)
+        {
+            btn_salary.BackColor = Color.MediumSeaGreen;
+            btn_salary.ForeColor = Color.Honeydew;
+        }
+        private void btn_departmants_MouseEnter(object sender, EventArgs e)
+        {
+            btn_departmants.BackColor = Color.MediumSeaGreen;
+            btn_departmants.ForeColor = Color.Honeydew;
+        }
+        private void btn_departmants_MouseLeave(object sender, EventArgs e)
+        {
+            btn_departmants.BackColor = Color.Honeydew;
+            btn_departmants.ForeColor = Color.SeaGreen;
+        }
+        private void btn_exit_MouseEnter(object sender, EventArgs e)
+        {
+            btn_exit.BackColor = Color.MediumSeaGreen;
+            btn_exit.ForeColor = Color.Honeydew;
+        }
+        private void btn_exit_MouseLeave(object sender, EventArgs e)
+        {
+            btn_exit.BackColor = Color.SeaGreen;
+            btn_exit.ForeColor = Color.Honeydew;
+        }
+        private void btn_save_MouseEnter(object sender, EventArgs e)
+        {
+            employee_btn_add.BackColor = Color.MediumSeaGreen;
+        }
+        private void btn_save_MouseLeave(object sender, EventArgs e)
+        {
+            employee_btn_add.BackColor = Color.SeaGreen;
+        }
+        private void btn_update_MouseEnter(object sender, EventArgs e)
+        {
+            employee_btn_update.BackColor = Color.MediumSeaGreen;
+            employee_btn_update.ForeColor = Color.Honeydew;
+        }
+        private void btn_update_MouseLeave(object sender, EventArgs e)
+        {
+            employee_btn_update.BackColor = Color.Honeydew;
+            employee_btn_update.ForeColor = Color.SeaGreen;
+        }
+        #endregion
+
         #region Employee page
 
-        #region SQL DataBase Command
+        #region SQL DataBase Command For Employee Page
 
         private void ShowEmployee()
         {
@@ -109,68 +292,6 @@ namespace Sklep_base
         }
 
         #endregion 
-
-        #region Change color of button 
-
-        private void btn_salary_MouseLeave(object sender, EventArgs e)
-        {
-            btn_salary.BackColor = Color.Honeydew;
-            btn_salary.ForeColor = Color.SeaGreen;
-        }
-
-        private void btn_salary_MouseEnter(object sender, EventArgs e)
-        {
-            btn_salary.BackColor = Color.MediumSeaGreen;
-            btn_salary.ForeColor = Color.Honeydew;
-        }
-
-        private void btn_departmants_MouseEnter(object sender, EventArgs e)
-        {
-            btn_departmants.BackColor = Color.MediumSeaGreen;
-            btn_departmants.ForeColor = Color.Honeydew;
-        }
-
-        private void btn_departmants_MouseLeave(object sender, EventArgs e)
-        {
-            btn_departmants.BackColor = Color.Honeydew;
-            btn_departmants.ForeColor = Color.SeaGreen;
-        }
-
-        private void btn_exit_MouseEnter(object sender, EventArgs e)
-        {
-            btn_exit.BackColor = Color.MediumSeaGreen;
-            btn_exit.ForeColor = Color.Honeydew;
-        }
-
-        private void btn_exit_MouseLeave(object sender, EventArgs e)
-        {
-            btn_exit.BackColor = Color.SeaGreen;
-            btn_exit.ForeColor = Color.Honeydew;
-        }
-
-        private void btn_save_MouseEnter(object sender, EventArgs e)
-        {
-            employee_btn_add.BackColor = Color.MediumSeaGreen;
-        }
-
-        private void btn_save_MouseLeave(object sender, EventArgs e)
-        {
-            employee_btn_add.BackColor = Color.SeaGreen;
-        }
-
-        private void btn_update_MouseEnter(object sender, EventArgs e)
-        {
-            employee_btn_update.BackColor = Color.MediumSeaGreen;
-            employee_btn_update.ForeColor = Color.Honeydew;
-        }
-
-        private void btn_update_MouseLeave(object sender, EventArgs e)
-        {
-            employee_btn_update.BackColor = Color.Honeydew;
-            employee_btn_update.ForeColor = Color.SeaGreen;
-        }
-        #endregion
-
 
         private void btn_add_Click(object sender, EventArgs e)
         {
@@ -297,6 +418,7 @@ namespace Sklep_base
             employee_timpic_joinDate.Text = employee_DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
             Employee_Key = Convert.ToInt32(employee_DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
         }
+
         #endregion
     }
 }

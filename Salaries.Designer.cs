@@ -89,7 +89,7 @@
             pan_left.Controls.Add(lbl_joinDate);
             pan_left.Controls.Add(lbl_gender);
             pan_left.Controls.Add(lbl_name);
-            pan_left.Location = new Point(-6, 86);
+            pan_left.Location = new Point(12, 92);
             pan_left.Name = "pan_left";
             pan_left.Size = new Size(378, 419);
             pan_left.TabIndex = 38;
@@ -534,7 +534,7 @@
             lbl_version.Padding = new Padding(0, 8, 0, 0);
             lbl_version.Size = new Size(372, 23);
             lbl_version.TabIndex = 64;
-            lbl_version.Text = new Version().GetVersion;
+            lbl_version.Text = "Version 1.33";
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // Salaries
