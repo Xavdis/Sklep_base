@@ -144,7 +144,7 @@
             employee_btn_update.TabIndex = 9;
             employee_btn_update.Text = "Update";
             employee_btn_update.UseVisualStyleBackColor = false;
-            employee_btn_update.Click += btn_update_Click;
+            employee_btn_update.Click += employee_btn_update_Click;
             employee_btn_update.MouseEnter += btn_update_MouseEnter;
             employee_btn_update.MouseLeave += btn_update_MouseLeave;
             // 
@@ -164,7 +164,7 @@
             employee_btn_add.TabIndex = 8;
             employee_btn_add.Text = "Add";
             employee_btn_add.UseVisualStyleBackColor = false;
-            employee_btn_add.Click += btn_add_Click;
+            employee_btn_add.Click += employee_btn_add_Click;
             employee_btn_add.MouseEnter += btn_save_MouseEnter;
             employee_btn_add.MouseLeave += btn_save_MouseLeave;
             // 
@@ -477,7 +477,7 @@
             employee_btn_clear.TabIndex = 22;
             employee_btn_clear.Text = "Clear";
             employee_btn_clear.UseVisualStyleBackColor = false;
-            employee_btn_clear.Click += btn_clear_Click;
+            employee_btn_clear.Click += employee_btn_clear_Click;
             // 
             // employee_btn_delete
             // 
@@ -495,7 +495,7 @@
             employee_btn_delete.TabIndex = 10;
             employee_btn_delete.Text = "Delete";
             employee_btn_delete.UseVisualStyleBackColor = false;
-            employee_btn_delete.Click += btn_delete_Click;
+            employee_btn_delete.Click += employee_btn_delete_Click;
             // 
             // lbl_employee
             // 
@@ -620,7 +620,7 @@
             employee_DGV_EmplList.ThemeStyle.RowsStyle.Height = 25;
             employee_DGV_EmplList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             employee_DGV_EmplList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
-            employee_DGV_EmplList.CellClick += DGV_DepList_CellContentClick;
+            employee_DGV_EmplList.CellClick += employee_DGV_DepList_CellContentClick;
             // 
             // pan_choiсePage
             // 
@@ -730,6 +730,7 @@
             department_btn_delete.TabIndex = 30;
             department_btn_delete.Text = "Delete";
             department_btn_delete.UseVisualStyleBackColor = false;
+            department_btn_delete.Click += Department_btn_delete_Click;
             // 
             // department_btn_update
             // 
@@ -747,6 +748,7 @@
             department_btn_update.TabIndex = 30;
             department_btn_update.Text = "Update";
             department_btn_update.UseVisualStyleBackColor = false;
+            department_btn_update.Click += Department_btn_update_Click;
             // 
             // department_btn_add
             // 
@@ -764,6 +766,7 @@
             department_btn_add.TabIndex = 1;
             department_btn_add.Text = "Add";
             department_btn_add.UseVisualStyleBackColor = false;
+            department_btn_add.Click += Department_btn_add_Click;
             // 
             // department_lbl_new
             // 
@@ -880,6 +883,7 @@
             department_DGV_DepList.ThemeStyle.RowsStyle.Height = 25;
             department_DGV_DepList.ThemeStyle.RowsStyle.SelectionBackColor = Color.Honeydew;
             department_DGV_DepList.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            department_DGV_DepList.CellClick += Department_DGV_DepList_CellContentClick;
             // 
             // salary_pan_left
             // 

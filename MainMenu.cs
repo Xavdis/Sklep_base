@@ -13,6 +13,9 @@ namespace Sklep_base
                 InitializeComponent();
                 conn = new SQLFunctions();
                 ShowEmployee();
+                ShowDepartmants();
+                ShowSalary();
+                GetEmployeeBase();
                 GetDepartmentBase();
                 Employee_ClearLebles();
             }
@@ -66,7 +69,7 @@ namespace Sklep_base
         private void open_emoloyee_page()
         {
             lbl_employee.Visible = true;
-
+            
             employee_pan_left.Visible = true;
             employee_DGV_EmplList.Visible = true;
             employee_btn_update.Visible = true;
@@ -106,7 +109,7 @@ namespace Sklep_base
         private void open_departaments_page()
         {
             lbl_departmants.Visible = true;
-
+            
             department_pan_left.Visible = true;
             department_btn_delete.Visible = true;
             department_btn_update.Visible = true;
@@ -141,7 +144,7 @@ namespace Sklep_base
         private void open_salary_page()
         {
             lbl_salary.Visible = true;
-
+            
             salary_pan_left.Visible = true;
             salary_txtbox_salaryPerHour.Visible = true;
             salary_lbl_seleryPerHour.Visible = true;
@@ -159,6 +162,7 @@ namespace Sklep_base
             salary_DGV_SalaryList.Visible = true;
 
         }
+        //
         private void btn_employee_Click(object sender, EventArgs e)
         {
             open_emoloyee_page();
@@ -178,17 +182,6 @@ namespace Sklep_base
             hide_emoloyee_page();
         }
         #endregion
-
-        private void btn_logout_Click(object sender, EventArgs e)
-        {
-            confirmation_menu conf = new confirmation_menu();
-            conf.ShowDialog();
-            if (confirmation_menu.Confirm == true)
-            {
-                new login_window().Show();
-                this.Close();
-            }
-        }
 
         private Point lastPoint;
         private void ClickOnWindow(object sender, MouseEventArgs e)
@@ -293,7 +286,7 @@ namespace Sklep_base
 
         #endregion 
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void employee_btn_add_Click(object sender, EventArgs e)
         {
             try
             {
@@ -325,7 +318,7 @@ namespace Sklep_base
             }
         }
 
-        private void btn_delete_Click(object sender, EventArgs e)
+        private void employee_btn_delete_Click(object sender, EventArgs e)
         {
             try
             {
@@ -348,7 +341,7 @@ namespace Sklep_base
             }
         }
 
-        private void btn_update_Click(object sender, EventArgs e)
+        private void employee_btn_update_Click(object sender, EventArgs e)
         {
 
             if (employee_txtbox_name.Text == "" || employee_txtbox_surname.Text == ""
@@ -403,12 +396,12 @@ namespace Sklep_base
             employee_timpic_dateOfBith.Value = DateTime.Now;
             employee_timpic_joinDate.Value = DateTime.Now;
         }
-        private void btn_clear_Click(object sender, EventArgs e)
+        private void employee_btn_clear_Click(object sender, EventArgs e)
         {
             Employee_ClearLebles();
         }
 
-        private void DGV_DepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void employee_DGV_DepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             employee_txtbox_name.Text = employee_DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
             employee_txtbox_surname.Text = employee_DGV_EmplList.SelectedRows[0].Cells[2].Value.ToString();
@@ -419,6 +412,200 @@ namespace Sklep_base
             Employee_Key = Convert.ToInt32(employee_DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
         }
 
+        #endregion
+
+        #region Department page
+        private void ShowDepartmants()
+        {
+            string Query = "SELECT ID as Code, DepName as Department FROM DepartmantTbl";
+            department_DGV_DepList.DataSource = conn.GetData(Query);
+
+        }
+
+        private void Department_btn_add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (department_txtBox_DepName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Dep = department_txtBox_DepName.Text;
+                    string Query = "INSERT INTO DepartmantTbl values ('{0}')";
+                    Query = string.Format(Query, department_txtBox_DepName.Text);
+                    conn.SetData(Query);
+                    ShowDepartmants();
+                    MessageBox.Show("Departmant Added!!!");
+                    department_txtBox_DepName.Text = "";
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+        }
+
+        int Key = 0;
+
+        private void Department_DGV_DepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            department_txtBox_DepName.Text = department_DGV_DepList.SelectedRows[0].Cells[1].Value.ToString();
+            if (department_txtBox_DepName.Text == "")
+            {
+                Key = 0;
+            }
+            else
+            {
+                Key = Convert.ToInt32(department_DGV_DepList.SelectedRows[0].Cells[0].Value.ToString());
+            }
+
+        }
+
+        private void Department_btn_update_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (department_txtBox_DepName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Dep = department_txtBox_DepName.Text;
+                    string Query = "UPDATE DepartmantTbl SET DepName = '{0}' WHERE ID = '{1}'";
+                    Query = string.Format(Query, department_txtBox_DepName.Text, Key);
+                    conn.SetData(Query);
+                    ShowDepartmants();
+                    MessageBox.Show("Departmant Update!!!");
+                    department_txtBox_DepName.Text = "";
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void Department_btn_delete_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (department_txtBox_DepName.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    string Query = $"DELETE FROM DepartmantTbl WHERE DepName = '{department_txtBox_DepName.Text}'";
+                    conn.SetData(Query);
+                    ShowDepartmants();
+                    MessageBox.Show("Departmant Delete!!!");
+                    department_txtBox_DepName.Text = "";
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+
+        }
+        #endregion
+
+        #region Salary page
+
+        #region SQL DataBase Command
+        SQLFunctions functions = new SQLFunctions();
+
+        int DaySalary; //Here save employee salary
+        string Period = "";
+
+        private void ShowSalary()
+        {
+            string Query = "SELECT ID as Code, EmployeeID as 'Employee Code', MonthlyWorkDays, SalaryPerHour, Amount, PayDate as Payday FROM SalaryTbl";
+            salary_DGV_SalaryList.DataSource = functions.GetData(Query);
+        }
+        private void GetEmployeeBase()
+        {
+            string Query = "SELECT ID as Code, CAST(ID as VARCHAR(3)) + ' ' + EmpName + ' ' + EmpSurname AS 'Full Name' FROM EmployeeTbl";
+            salary_combox_Employee.DisplayMember = functions.GetData(Query).Columns["Full Name"].ToString();
+            salary_combox_Employee.ValueMember = functions.GetData(Query).Columns["Code"].ToString();
+            salary_combox_Employee.DataSource = functions.GetData(Query);
+        }
+
+        #endregion 
+
+        int day = 1;
+
+        private void btn_add_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (salary_combox_Employee.SelectedIndex == -1 || salary_txtbox_daysAttended.Text == "" || salary_txtbox_salaryAmount.Text == "")
+                {
+                    MessageBox.Show("Missing Data!!!");
+                }
+                else
+                {
+                    Period = salary_timpic_period.Value.Date.Year.ToString() + "." + salary_timpic_period.Value.Date.Month.ToString();
+                    string today = DateTime.Today.Year.ToString() + "-" + DateTime.Today.Month.ToString() + "-" + DateTime.Today.Day.ToString();
+                    int Amount = day * (DaySalary = Convert.ToInt32(salary_txtbox_daysAttended.Text));
+                    int Days = Convert.ToInt32(salary_txtbox_daysAttended.Text);
+
+
+                    string Query = $"INSERT INTO SalaryTbl (Employee,Attendance,Period,Amount,PayDate) " +
+                        $"VALUES ({salary_combox_Employee.SelectedValue},{Days},'{Period}',{Amount},'{today}')";
+                    functions.SetData(Query);
+                    ShowSalary();
+                    MessageBox.Show("Salary Paid!!!");
+
+
+                }
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show(Ex.Message);
+            }
+        }
+
+        private void salary_btn_update_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void salary_combox_Employee_SelectedValueChanged(object sender, EventArgs e)
+        {
+            /*GetSalary(Convert.ToInt32(combox_Employee.SelectedValue));*/
+            Salary_ChangeAmount();
+        }
+
+        private void salary_txtbox_daysAttended_TextChanged(object sender, EventArgs e)
+        {
+            Salary_ChangeAmount();
+        }
+        private void Salary_ChangeAmount()
+        {
+            if (salary_txtbox_daysAttended.Text == "")
+            {
+                salary_txtbox_salaryAmount.Text = "Set 'Days Attended'";
+            }
+            else if (Convert.ToInt32(salary_txtbox_daysAttended.Text) > 31)
+            {
+                salary_txtbox_salaryAmount.Text = "Max days 31!!!";
+            }
+            else
+            {
+                day = Convert.ToInt32(salary_txtbox_daysAttended.Text);
+                salary_txtbox_salaryAmount.Text = "$ " + (day * DaySalary);
+            }
+        }
+
+        private void salary_txtbox_daysAttended_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = !char.IsDigit(e.KeyChar);
+        }
         #endregion
     }
 }
