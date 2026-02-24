@@ -145,8 +145,8 @@
             employee_btn_update.Text = "Update";
             employee_btn_update.UseVisualStyleBackColor = false;
             employee_btn_update.Click += employee_btn_update_Click;
-            employee_btn_update.MouseEnter += btn_update_MouseEnter;
-            employee_btn_update.MouseLeave += btn_update_MouseLeave;
+            employee_btn_update.MouseEnter += btn_lightGreen_MouseEnter;
+            employee_btn_update.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // employee_btn_add
             // 
@@ -165,8 +165,8 @@
             employee_btn_add.Text = "Add";
             employee_btn_add.UseVisualStyleBackColor = false;
             employee_btn_add.Click += employee_btn_add_Click;
-            employee_btn_add.MouseEnter += btn_save_MouseEnter;
-            employee_btn_add.MouseLeave += btn_save_MouseLeave;
+            employee_btn_add.MouseEnter += btn_green_MouseEnter;
+            employee_btn_add.MouseLeave += btn_green_MouseLeave;
             // 
             // employee_timpic_joinDate
             // 
@@ -415,8 +415,8 @@
             btn_exit.Text = "X";
             btn_exit.UseVisualStyleBackColor = false;
             btn_exit.Click += btn_exit_Click;
-            btn_exit.MouseEnter += btn_exit_MouseEnter;
-            btn_exit.MouseLeave += btn_exit_MouseLeave;
+            btn_exit.MouseEnter += btn_green_MouseEnter;
+            btn_exit.MouseLeave += btn_green_MouseLeave;
             // 
             // pan_down
             // 
@@ -478,6 +478,8 @@
             employee_btn_clear.Text = "Clear";
             employee_btn_clear.UseVisualStyleBackColor = false;
             employee_btn_clear.Click += employee_btn_clear_Click;
+            employee_btn_clear.MouseEnter += btn_lightGreen_MouseEnter;
+            employee_btn_clear.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // employee_btn_delete
             // 
@@ -496,6 +498,8 @@
             employee_btn_delete.Text = "Delete";
             employee_btn_delete.UseVisualStyleBackColor = false;
             employee_btn_delete.Click += employee_btn_delete_Click;
+            employee_btn_delete.MouseEnter += btn_lightGreen_MouseEnter;
+            employee_btn_delete.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // lbl_employee
             // 
@@ -529,8 +533,8 @@
             btn_departmants.TextAlign = ContentAlignment.BottomCenter;
             btn_departmants.UseVisualStyleBackColor = false;
             btn_departmants.Click += btn_departmants_Click;
-            btn_departmants.MouseEnter += btn_departmants_MouseEnter;
-            btn_departmants.MouseLeave += btn_departmants_MouseLeave;
+            btn_departmants.MouseEnter += btn_lightGreen_MouseEnter;
+            btn_departmants.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // btn_salary
             // 
@@ -550,8 +554,8 @@
             btn_salary.TextAlign = ContentAlignment.BottomCenter;
             btn_salary.UseVisualStyleBackColor = false;
             btn_salary.Click += btn_salary_Click;
-            btn_salary.MouseEnter += btn_salary_MouseEnter;
-            btn_salary.MouseLeave += btn_salary_MouseLeave;
+            btn_salary.MouseEnter += btn_lightGreen_MouseEnter;
+            btn_salary.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // employee_DGV_EmplList
             // 
@@ -684,8 +688,8 @@
             btn_employee.TextAlign = ContentAlignment.BottomCenter;
             btn_employee.UseVisualStyleBackColor = false;
             btn_employee.Click += btn_employee_Click;
-            btn_employee.MouseEnter += btn_employee_MouseEnter;
-            btn_employee.MouseLeave += btn_employee_MouseLeave;
+            btn_employee.MouseEnter += btn_lightGreen_MouseEnter;
+            btn_employee.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // lbl_version
             // 
@@ -731,6 +735,8 @@
             department_btn_delete.Text = "Delete";
             department_btn_delete.UseVisualStyleBackColor = false;
             department_btn_delete.Click += Department_btn_delete_Click;
+            department_btn_delete.MouseEnter += btn_lightGreen_MouseEnter;
+            department_btn_delete.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // department_btn_update
             // 
@@ -749,6 +755,8 @@
             department_btn_update.Text = "Update";
             department_btn_update.UseVisualStyleBackColor = false;
             department_btn_update.Click += Department_btn_update_Click;
+            department_btn_update.MouseEnter += btn_lightGreen_MouseEnter;
+            department_btn_update.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // department_btn_add
             // 
@@ -767,6 +775,8 @@
             department_btn_add.Text = "Add";
             department_btn_add.UseVisualStyleBackColor = false;
             department_btn_add.Click += Department_btn_add_Click;
+            department_btn_add.MouseEnter += btn_green_MouseEnter;
+            department_btn_add.MouseLeave += btn_green_MouseLeave;
             // 
             // department_lbl_new
             // 
@@ -983,6 +993,8 @@
             salary_btn_update.TabIndex = 6;
             salary_btn_update.Text = "Update";
             salary_btn_update.UseVisualStyleBackColor = false;
+            salary_btn_update.MouseEnter += btn_lightGreen_MouseEnter;
+            salary_btn_update.MouseLeave += btn_lightGreen_MouseLeave;
             // 
             // salary_btn_add
             // 
@@ -1000,6 +1012,8 @@
             salary_btn_add.TabIndex = 5;
             salary_btn_add.Text = "Add";
             salary_btn_add.UseVisualStyleBackColor = false;
+            salary_btn_add.MouseEnter += btn_green_MouseEnter;
+            salary_btn_add.MouseLeave += btn_green_MouseLeave;
             // 
             // salary_txtbox_daysAttended
             // 
@@ -1229,6 +1243,16 @@
             salary_pan_left.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)salary_DGV_SalaryList).EndInit();
             ResumeLayout(false);
+        }
+
+        private void Salary_btn_update_MouseLeave(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
+        }
+
+        private void Salary_btn_update_MouseEnter(object sender, EventArgs e)
+        {
+            throw new NotImplementedException();
         }
 
         #endregion

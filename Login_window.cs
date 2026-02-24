@@ -14,7 +14,6 @@ namespace Sklep_base
 
     public partial class login_window : Form
     {
-
         public login_window()
         {
             InitializeComponent();
@@ -29,13 +28,12 @@ namespace Sklep_base
 
             lbl_clear.MouseEnter += new EventHandler(Lable_MouseEnter);
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
-        }
 
+        }
         private void login_window_Load(object sender, EventArgs e)
         {
-
+            
         }
-
         private void Lable_MouseEnter(object sender, EventArgs e)
         {
             Label hoveredButton = sender as Label;
@@ -113,8 +111,8 @@ namespace Sklep_base
                     else if (sqluser == username && sqlpass == password)
                     {
 
-                        new MainMenu().Show();
                         this.Hide();
+                        new MainMenu().Show();
 
                     }
                     else

@@ -227,7 +227,7 @@
             lbl_version.Padding = new Padding(0, 8, 0, 0);
             lbl_version.Size = new Size(100, 23);
             lbl_version.TabIndex = 0;
-            lbl_version.Text = new Version().GetVersion;
+            lbl_version.Text = "Version 1.33";
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             lbl_version.MouseDown += ClickOnWindow;
             lbl_version.MouseMove += MoveWindow;
@@ -248,6 +248,7 @@
             // chbox_Visible
             // 
             chbox_Visible.AutoSize = true;
+            chbox_Visible.Cursor = Cursors.Hand;
             chbox_Visible.FlatStyle = FlatStyle.Flat;
             chbox_Visible.Font = new Font("Comic Sans MS", 12F, FontStyle.Underline, GraphicsUnit.Point);
             chbox_Visible.ForeColor = Color.SeaGreen;

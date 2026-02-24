@@ -4,20 +4,30 @@ namespace Sklep_base
 {
     public partial class MainMenu : Form
     {
+        Loading load = new Loading();
         SQLFunctions conn;
         int? Employee_Key = null;
         public MainMenu()
         {
             try
             {
+                load.Show();
                 InitializeComponent();
+                load.progressBar.Value = 15;
                 conn = new SQLFunctions();
                 ShowEmployee();
+                load.progressBar.Value = 30;
                 ShowDepartmants();
+                load.progressBar.Value = 45;
                 ShowSalary();
+                load.progressBar.Value = 60;
                 GetEmployeeBase();
+                load.progressBar.Value = 75;
                 GetDepartmentBase();
+                load.progressBar.Value = 90;
                 Employee_ClearLebles();
+                load.progressBar.Value = 100;
+                load.Close();
             }
             catch (Exception ex)
             {
@@ -69,7 +79,7 @@ namespace Sklep_base
         private void open_emoloyee_page()
         {
             lbl_employee.Visible = true;
-            
+
             employee_pan_left.Visible = true;
             employee_DGV_EmplList.Visible = true;
             employee_btn_update.Visible = true;
@@ -109,7 +119,7 @@ namespace Sklep_base
         private void open_departaments_page()
         {
             lbl_departmants.Visible = true;
-            
+
             department_pan_left.Visible = true;
             department_btn_delete.Visible = true;
             department_btn_update.Visible = true;
@@ -144,7 +154,7 @@ namespace Sklep_base
         private void open_salary_page()
         {
             lbl_salary.Visible = true;
-            
+
             salary_pan_left.Visible = true;
             salary_txtbox_salaryPerHour.Visible = true;
             salary_lbl_seleryPerHour.Visible = true;
@@ -168,7 +178,7 @@ namespace Sklep_base
             open_emoloyee_page();
             hide_departaments_page();
             hide_salary_page();
-        } 
+        }
         private void btn_salary_Click(object sender, EventArgs e)
         {
             open_salary_page();
@@ -203,63 +213,37 @@ namespace Sklep_base
         }
 
         #region Change color of button 
-        private void btn_employee_MouseLeave(object sender, EventArgs e)
+        private void btn_green_MouseLeave(object sender, EventArgs e)
         {
-            btn_employee.BackColor = Color.Honeydew;
-            btn_employee.ForeColor = Color.SeaGreen;
+            if (sender is Button btn)
+            {
+                btn.BackColor = Color.SeaGreen;
+                btn.ForeColor = Color.Honeydew;
+            }
         }
-        private void btn_employee_MouseEnter(object sender, EventArgs e)
+        private void btn_green_MouseEnter(object sender, EventArgs e)
         {
-            btn_employee.BackColor = Color.MediumSeaGreen;
-            btn_employee.ForeColor = Color.Honeydew;
+            if (sender is Button btn)
+            {
+                btn.BackColor = Color.MediumSeaGreen;
+                btn.ForeColor = Color.SeaGreen;
+            }
         }
-        private void btn_salary_MouseLeave(object sender, EventArgs e)
+        private void btn_lightGreen_MouseLeave(object sender, EventArgs e)
         {
-            btn_salary.BackColor = Color.Honeydew;
-            btn_salary.ForeColor = Color.SeaGreen;
+            if (sender is Button btn)
+            {
+                btn.BackColor = Color.Honeydew;
+                btn.ForeColor = Color.SeaGreen;
+            }
         }
-        private void btn_salary_MouseEnter(object sender, EventArgs e)
+        private void btn_lightGreen_MouseEnter(object sender, EventArgs e)
         {
-            btn_salary.BackColor = Color.MediumSeaGreen;
-            btn_salary.ForeColor = Color.Honeydew;
-        }
-        private void btn_departmants_MouseEnter(object sender, EventArgs e)
-        {
-            btn_departmants.BackColor = Color.MediumSeaGreen;
-            btn_departmants.ForeColor = Color.Honeydew;
-        }
-        private void btn_departmants_MouseLeave(object sender, EventArgs e)
-        {
-            btn_departmants.BackColor = Color.Honeydew;
-            btn_departmants.ForeColor = Color.SeaGreen;
-        }
-        private void btn_exit_MouseEnter(object sender, EventArgs e)
-        {
-            btn_exit.BackColor = Color.MediumSeaGreen;
-            btn_exit.ForeColor = Color.Honeydew;
-        }
-        private void btn_exit_MouseLeave(object sender, EventArgs e)
-        {
-            btn_exit.BackColor = Color.SeaGreen;
-            btn_exit.ForeColor = Color.Honeydew;
-        }
-        private void btn_save_MouseEnter(object sender, EventArgs e)
-        {
-            employee_btn_add.BackColor = Color.MediumSeaGreen;
-        }
-        private void btn_save_MouseLeave(object sender, EventArgs e)
-        {
-            employee_btn_add.BackColor = Color.SeaGreen;
-        }
-        private void btn_update_MouseEnter(object sender, EventArgs e)
-        {
-            employee_btn_update.BackColor = Color.MediumSeaGreen;
-            employee_btn_update.ForeColor = Color.Honeydew;
-        }
-        private void btn_update_MouseLeave(object sender, EventArgs e)
-        {
-            employee_btn_update.BackColor = Color.Honeydew;
-            employee_btn_update.ForeColor = Color.SeaGreen;
+            if (sender is Button btn)
+            {
+                btn.BackColor = Color.MediumSeaGreen;
+                btn.ForeColor = Color.Honeydew;
+            }
         }
         #endregion
 
@@ -308,6 +292,7 @@ namespace Sklep_base
                         $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
                     conn.SetData(Query);
                     ShowEmployee();
+                    GetEmployeeBase();
                     MessageBox.Show("Employee Added!!!");
                     Employee_ClearLebles();
                 }
@@ -331,7 +316,9 @@ namespace Sklep_base
                     string Query = $"DELETE FROM EmployeeTbl WHERE ID = {Employee_Key}";
                     conn.SetData(Query);
                     ShowEmployee();
+                    GetEmployeeBase();
                     MessageBox.Show("Employee Deleted!!!");
+
                 }
                 Employee_ClearLebles();
             }
@@ -366,6 +353,7 @@ namespace Sklep_base
 
                         conn.SetData(Query);
                         ShowEmployee();
+                        GetEmployeeBase();
                         MessageBox.Show("Employee Update!!!");
                         Employee_Key = null;
                         Employee_ClearLebles();
@@ -400,7 +388,6 @@ namespace Sklep_base
         {
             Employee_ClearLebles();
         }
-
         private void employee_DGV_DepList_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             employee_txtbox_name.Text = employee_DGV_EmplList.SelectedRows[0].Cells[1].Value.ToString();
@@ -411,7 +398,6 @@ namespace Sklep_base
             employee_timpic_joinDate.Text = employee_DGV_EmplList.SelectedRows[0].Cells[6].Value.ToString();
             Employee_Key = Convert.ToInt32(employee_DGV_EmplList.SelectedRows[0].Cells[0].Value.ToString());
         }
-
         #endregion
 
         #region Department page
@@ -437,6 +423,7 @@ namespace Sklep_base
                     Query = string.Format(Query, department_txtBox_DepName.Text);
                     conn.SetData(Query);
                     ShowDepartmants();
+                    GetDepartmentBase();
                     MessageBox.Show("Departmant Added!!!");
                     department_txtBox_DepName.Text = "";
                 }
@@ -479,6 +466,7 @@ namespace Sklep_base
                     Query = string.Format(Query, department_txtBox_DepName.Text, Key);
                     conn.SetData(Query);
                     ShowDepartmants();
+                    GetDepartmentBase();
                     MessageBox.Show("Departmant Update!!!");
                     department_txtBox_DepName.Text = "";
                 }
@@ -502,6 +490,7 @@ namespace Sklep_base
                     string Query = $"DELETE FROM DepartmantTbl WHERE DepName = '{department_txtBox_DepName.Text}'";
                     conn.SetData(Query);
                     ShowDepartmants();
+                    GetDepartmentBase();
                     MessageBox.Show("Departmant Delete!!!");
                     department_txtBox_DepName.Text = "";
                 }
