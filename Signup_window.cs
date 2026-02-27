@@ -63,9 +63,21 @@ namespace Sklep_base
         }
         #endregion
 
-        private void btn_cencel_Click(object sender, EventArgs e)
+        private void btn_goToLogin_Click(object sender, EventArgs e)
         {
-            this.Close();
+            foreach (Form window in Application.OpenForms)
+            {
+                if (window is login_window)
+                {
+                    window.Show();
+                    window.Focus();
+                    return;
+                }
+                else
+                {
+                    new login_window().Show();
+                }
+            }
         }
 
         private void btn_createAccount_Click(object sender, EventArgs e)

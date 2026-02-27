@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.Net.NetworkInformation;
 using System.Reflection.Metadata;
+using System.Security.Cryptography.X509Certificates;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Button = System.Windows.Forms.Button;
@@ -14,6 +15,24 @@ namespace Sklep_base
 
     public partial class login_window : Form
     {
+        private void IsItOpen(string searchWindow)
+        {
+            foreach (Form window in Application.OpenForms)
+            {
+                if (window is login_window)
+                {
+                    window.Show();
+                    this.Hide();
+                    ClearLbl();
+                }
+            }
+        }
+        private void ClearLbl()
+        {
+            txt_login.Clear();
+            txt_password.Clear();
+            txt_login.Focus();
+        }
         public login_window()
         {
             InitializeComponent();
@@ -29,10 +48,7 @@ namespace Sklep_base
             lbl_clear.MouseEnter += new EventHandler(Lable_MouseEnter);
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
 
-        }
-        private void login_window_Load(object sender, EventArgs e)
-        {
-            
+
         }
         private void Lable_MouseEnter(object sender, EventArgs e)
         {
@@ -86,17 +102,14 @@ namespace Sklep_base
                 {
                     conn.Open();
 
-                    // Параметризований SQL-запит для уникнення SQL-ін'єкцій
                     string selectQuery = "SELECT username, password FROM Login_new WHERE username = @username AND password = @password";
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
 
-                    // Передаємо значення з TextBox до параметрів SQL-запиту
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
 
-                    // Виконуємо запит і зчитуємо дані
                     SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read()) // Перевіряємо, чи є результати
+                    if (dr.Read())
                     {
                         sqluser = dr["username"].ToString();
                         sqlpass = dr["password"].ToString();
@@ -113,6 +126,7 @@ namespace Sklep_base
 
                         this.Hide();
                         new MainMenu().Show();
+
 
                     }
                     else
@@ -136,11 +150,10 @@ namespace Sklep_base
             }
 
         }
-
         private void btn_createLogin_Click(object sender, EventArgs e)
         {
-            Signup_window sign_up = new Signup_window();
-            sign_up.Show();
+            string title = new Signup_window().GetType().Name;
+            Is_it_open.Check(title);
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -150,9 +163,8 @@ namespace Sklep_base
 
         private void lbl_clear_Click(object sender, EventArgs e)
         {
-            txt_login.Clear();
-            txt_password.Clear();
-            txt_login.Focus();
+            ClearLbl();
+
         }
 
         private void chbox_Visible_CheckedChanged(object sender, EventArgs e)
@@ -185,5 +197,6 @@ namespace Sklep_base
 
             }
         }
+
     }
 }

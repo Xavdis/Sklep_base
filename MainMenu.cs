@@ -40,12 +40,15 @@ namespace Sklep_base
         }
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            confirmation_menu conf = new confirmation_menu();
-            conf.ShowDialog();
-            if (confirmation_menu.Confirm == true)
+            Confirmation conf = new Confirmation();
+            Is_it_open.Check("Confirmation"); 
+            if (Confirmation.GoLogin == true)
             {
-                new login_window().Show();
-                this.Close();
+                Is_it_open.Check(new Confirmation().Name);
+            }
+            else
+            {
+                Application.Exit();
             }
         }
 

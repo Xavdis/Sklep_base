@@ -8,7 +8,7 @@ namespace Sklep_base
 {
     internal class Version
     {
-        private string version = "Version 1.36";
+        private string version = "Version 1.37";
         public string GetVersion
         {
             get { return version; }

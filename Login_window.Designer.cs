@@ -284,7 +284,6 @@
             ShowIcon = false;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Log in";
-            Load += login_window_Load;
             MouseDown += ClickOnWindow;
             MouseMove += MoveWindow;
             pan_left.ResumeLayout(false);

@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace Sklep_base
 {
-    public partial class confirmation_menu : Form
+    public partial class Confirmation : Form
     {
 
-        public static bool Confirm { get; set; }
+        public static bool GoLogin { get; set; }
         
 
-        public confirmation_menu()
+        public Confirmation()
         {
             InitializeComponent();
             btn_no.MouseEnter += new EventHandler(Button_MouseEnter);
@@ -49,13 +49,13 @@ namespace Sklep_base
 
         private void btn_no_Click(object sender, EventArgs e)
         {
-            Confirm = false;    
+            GoLogin = false;    
             this.Close();
         }
 
         private void btn_yes_Click(object sender, EventArgs e)
         {
-            Confirm = true;
+            GoLogin = true;
             this.Close();
         }
     }
