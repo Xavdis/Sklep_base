@@ -285,6 +285,8 @@
             RightToLeftLayout = true;
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Sign up";
+            MouseDown += ClickOnWindow;
+            MouseMove += MoveWindow;
             pan_left.ResumeLayout(false);
             ResumeLayout(false);
             PerformLayout();

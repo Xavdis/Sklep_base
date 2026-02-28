@@ -44,7 +44,7 @@ namespace Sklep_base
             Is_it_open.Check("Confirmation"); 
             if (Confirmation.GoLogin == true)
             {
-                Is_it_open.Check(new Confirmation().Name);
+                Is_it_open.Check(nameof(Confirmation));
             }
             else
             {

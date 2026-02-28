@@ -15,18 +15,6 @@ namespace Sklep_base
 
     public partial class login_window : Form
     {
-        private void IsItOpen(string searchWindow)
-        {
-            foreach (Form window in Application.OpenForms)
-            {
-                if (window is login_window)
-                {
-                    window.Show();
-                    this.Hide();
-                    ClearLbl();
-                }
-            }
-        }
         private void ClearLbl()
         {
             txt_login.Clear();
@@ -123,25 +111,19 @@ namespace Sklep_base
                     }
                     else if (sqluser == username && sqlpass == password)
                     {
-
                         this.Hide();
-                        new MainMenu().Show();
-
-
+                        Is_it_open.Check(nameof(MainMenu));
                     }
                     else
                     {
                         MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txt_login.Clear();
-                        txt_password.Clear();
+                        ClearLbl();
                     }
                 }
                 catch (Exception ex)
                 {
                     MessageBox.Show("Error: " + ex.Message);
-                    txt_login.Clear();
-                    txt_password.Clear();
-                    txt_login.Focus();
+                    ClearLbl();
                 }
                 finally
                 {
@@ -152,8 +134,8 @@ namespace Sklep_base
         }
         private void btn_createLogin_Click(object sender, EventArgs e)
         {
-            string title = new Signup_window().GetType().Name;
-            Is_it_open.Check(title);
+            Is_it_open.Check(nameof(Signup_window));
+            this.Hide();
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
@@ -164,7 +146,6 @@ namespace Sklep_base
         private void lbl_clear_Click(object sender, EventArgs e)
         {
             ClearLbl();
-
         }
 
         private void chbox_Visible_CheckedChanged(object sender, EventArgs e)

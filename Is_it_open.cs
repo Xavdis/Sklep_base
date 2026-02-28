@@ -1,63 +1,42 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data.Common;
+using System.Reflection.PortableExecutable;
+using System.Runtime.CompilerServices;
 
 namespace Sklep_base
 {
     public static class Is_it_open
     {
-         public static void Check(string lookingWidnow)
-        {
-            string confirmation = new Confirmation().Text;
-            switch (lookingWidnow)
-            {
-                case confirmation:
-                    Confirmation_Open();
-                    break;
-                case "Loading":
-                    Loading();
-                    break;
-                case "Login_window":
-                    Login_window();
-                    break;
-                case "MainMenu":
-                    MainMenu();
-                    break;
-                case "Signup_window":
-                    Signup_window();
-                    break;
-            }
-        }
-
-        private static void Confirmation_Open()
+        public static void Check(string lookingWidnow)
         {
             foreach (Form window in Application.OpenForms)
             {
-                if (window is Confirmation)
+                if (window.Name == lookingWidnow)
                 {
-                    window.ShowDialog();
+                    window.DesktopLocation = new Point((Screen.PrimaryScreen.WorkingArea.Width - window.Width)/2, (Screen.PrimaryScreen.WorkingArea.Height - window.Height) / 2);
+                    window.Show();
                     window.Focus();
                     return;
                 }
             }
-        }
-        private static void Loading()
-        {
-
-        }
-        private static void Login_window()
-        {
-
-        }
-        private static void MainMenu()
-        {
-
-        }
-        private static void Signup_window()
-        {
-
+            
+            switch (lookingWidnow)
+            {
+                case nameof(MainMenu):
+                    new MainMenu().Show();
+                    break;
+                case nameof(login_window):
+                    new login_window().Show();
+                    break;
+                case nameof(Signup_window):
+                    new Signup_window().Show();
+                    break;
+                case nameof(Confirmation):
+                    new Confirmation().Show();
+                    break;
+                case nameof(Loading):
+                    new Loading().Show();
+                    break;
+            } 
         }
     }
 }

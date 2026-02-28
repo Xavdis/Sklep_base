@@ -4,7 +4,7 @@ namespace Sklep_base
 {
     public partial class Signup_window : Form
     {
-        string code = "adm_adm";//add code for add new account 
+        string code = "adm_adm";
         SqlConnection conn = new SqlConnection(new SQLFunctions().ConnStr);
         SqlCommand cmd = new SqlCommand();
         SqlDataAdapter adapter = new SqlDataAdapter();
@@ -65,19 +65,8 @@ namespace Sklep_base
 
         private void btn_goToLogin_Click(object sender, EventArgs e)
         {
-            foreach (Form window in Application.OpenForms)
-            {
-                if (window is login_window)
-                {
-                    window.Show();
-                    window.Focus();
-                    return;
-                }
-                else
-                {
-                    new login_window().Show();
-                }
-            }
+            this.Close();
+            Is_it_open.Check(nameof(login_window));
         }
 
         private void btn_createAccount_Click(object sender, EventArgs e)
