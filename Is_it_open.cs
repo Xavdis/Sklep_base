@@ -31,7 +31,7 @@ namespace Sklep_base
                     new Signup_window().Show();
                     break;
                 case nameof(Confirmation):
-                    new Confirmation().Show();
+                    new Confirmation().ShowDialog();
                     break;
                 case nameof(Loading):
                     new Loading().Show();

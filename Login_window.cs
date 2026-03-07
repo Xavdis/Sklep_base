@@ -35,8 +35,6 @@ namespace Sklep_base
 
             lbl_clear.MouseEnter += new EventHandler(Lable_MouseEnter);
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
-
-
         }
         private void Lable_MouseEnter(object sender, EventArgs e)
         {
@@ -178,6 +176,5 @@ namespace Sklep_base
 
             }
         }
-
     }
 }

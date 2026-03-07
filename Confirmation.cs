@@ -24,7 +24,6 @@ namespace Sklep_base
 
             btn_yes.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_yes.MouseLeave += new EventHandler(Button_MouseLeave);
-            
         }
 
         private void Button_MouseEnter(object sender, EventArgs e)

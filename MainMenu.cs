@@ -11,8 +11,8 @@ namespace Sklep_base
         {
             try
             {
-                load.Show();
                 InitializeComponent();
+                load.Show();
                 load.progressBar.Value = 15;
                 conn = new SQLFunctions();
                 ShowEmployee();
@@ -40,13 +40,13 @@ namespace Sklep_base
         }
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            Confirmation conf = new Confirmation();
-            Is_it_open.Check("Confirmation"); 
+            Is_it_open.Check(nameof(Confirmation)); 
             if (Confirmation.GoLogin == true)
             {
-                Is_it_open.Check(nameof(Confirmation));
+                this.Hide();
+                Is_it_open.Check(nameof(login_window));
             }
-            else
+            else if (Confirmation.GoLogin == false)
             {
                 Application.Exit();
             }
@@ -199,7 +199,6 @@ namespace Sklep_base
         private Point lastPoint;
         private void ClickOnWindow(object sender, MouseEventArgs e)
         {
-
             if (e.Button == MouseButtons.Left)
             {
                 lastPoint = new Point(e.X, e.Y);
@@ -211,10 +210,9 @@ namespace Sklep_base
             {
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
-
             }
         }
-
+        
         #region Change color of button 
         private void btn_green_MouseLeave(object sender, EventArgs e)
         {
@@ -531,7 +529,7 @@ namespace Sklep_base
 
         int day = 1;
 
-        private void btn_add_Click(object sender, EventArgs e)
+        private void salary_btn_add_Click(object sender, EventArgs e)
         {
             try
             {
@@ -596,7 +594,10 @@ namespace Sklep_base
 
         private void salary_txtbox_daysAttended_KeyPress(object sender, KeyPressEventArgs e)
         {
-            e.Handled = !char.IsDigit(e.KeyChar);
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                e.Handled = true;
+            }
         }
         #endregion
     }

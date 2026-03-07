@@ -993,6 +993,7 @@
             salary_btn_update.TabIndex = 6;
             salary_btn_update.Text = "Update";
             salary_btn_update.UseVisualStyleBackColor = false;
+            salary_btn_update.Click += salary_btn_update_Click;
             salary_btn_update.MouseEnter += btn_lightGreen_MouseEnter;
             salary_btn_update.MouseLeave += btn_lightGreen_MouseLeave;
             // 
@@ -1012,6 +1013,7 @@
             salary_btn_add.TabIndex = 5;
             salary_btn_add.Text = "Add";
             salary_btn_add.UseVisualStyleBackColor = false;
+            salary_btn_add.Click += salary_btn_add_Click;
             salary_btn_add.MouseEnter += btn_green_MouseEnter;
             salary_btn_add.MouseLeave += btn_green_MouseLeave;
             // 
@@ -1037,6 +1039,7 @@
             salary_txtbox_daysAttended.ShadowDecoration.CustomizableEdges = customizableEdges20;
             salary_txtbox_daysAttended.Size = new Size(219, 36);
             salary_txtbox_daysAttended.TabIndex = 2;
+            salary_txtbox_daysAttended.KeyPress += salary_txtbox_daysAttended_KeyPress;
             // 
             // salary_combox_Employee
             // 
