@@ -43,44 +43,50 @@ namespace Sklep_base.DataAccess
             cnt = cmd.ExecuteNonQuery();
             return cnt;
         }
+
         public bool ValidateUser(string username, string password)
         {
+
+            string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username AND password = @password";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
+            int count;
             using (conn = new SqlConnection(connStr))
             {
-                string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username AND password = @password";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
                 conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                return count > 0;
+                count = (int)cmd.ExecuteScalar();
             }
+            return count > 0;
         }
 
         public bool IsUserExists(string username)
         {
+
+            string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            int count;
             using (conn = new SqlConnection(connStr))
             {
-                string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", username);
                 conn.Open();
-                int count = (int)cmd.ExecuteScalar();
-                if (count > 0)
-                    return true;
-                else
-                    return false;
+                count = (int)cmd.ExecuteScalar();
             }
+            if (count > 0)
+                return true;
+            else
+                return false;
         }
 
         public void CreateUser(string username, string password)
         {
+
+            string query = "INSERT INTO Login_new (username, password) VALUES (@username, @password)";
+            SqlCommand cmd = new SqlCommand(query, conn);
+            cmd.Parameters.AddWithValue("@username", username);
+            cmd.Parameters.AddWithValue("@password", password);
             using (conn = new SqlConnection(connStr))
             {
-                string query = "INSERT INTO Login_new (username, password) VALUES (@username, @password)";
-                SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@username", username);
-                cmd.Parameters.AddWithValue("@password", password);
                 conn.Open();
                 cmd.ExecuteNonQuery();
             }
