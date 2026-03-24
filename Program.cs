@@ -3,7 +3,7 @@ using System.Data.Sql;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 
-namespace Sklep_base
+namespace Sklep_base.Forms
 {
     internal static class Program
     {

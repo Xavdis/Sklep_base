@@ -1,4 +1,6 @@
-﻿using System.Data.SqlClient;
+﻿using Sklep_base.Helpers;
+using Sklep_base.DataAccess;
+using System.Data.SqlClient;
 
 namespace Sklep_base
 {

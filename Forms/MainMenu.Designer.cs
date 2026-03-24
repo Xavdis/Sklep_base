@@ -701,7 +701,7 @@
             lbl_version.Padding = new Padding(0, 8, 0, 0);
             lbl_version.Size = new Size(418, 23);
             lbl_version.TabIndex = 60;
-            lbl_version.Text = "Version 1.33";
+            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion ;
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // department_pan_left

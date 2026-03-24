@@ -96,7 +96,7 @@
             lbl_version.Padding = new Padding(0, 8, 0, 0);
             lbl_version.Size = new Size(100, 23);
             lbl_version.TabIndex = 0;
-            lbl_version.Text = "Version 1.36";
+            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion;
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             lbl_version.MouseDown += ClickOnWindow;
             lbl_version.MouseMove += MoveWindow;

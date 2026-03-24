@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Sklep_base
+namespace Sklep_base.Helpers
 {
     internal class Version
     {

@@ -1,4 +1,6 @@
-﻿using System.Data;
+﻿using Sklep_base.Helpers;
+using Sklep_base.DataAccess;
+using System.Data;
 using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;

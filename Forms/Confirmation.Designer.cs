@@ -1,4 +1,5 @@
-﻿namespace Sklep_base
+﻿using Sklep_base.Helpers;
+namespace Sklep_base
 {
     partial class Confirmation
     {
@@ -119,7 +120,7 @@
             lbl_version.Padding = new Padding(0, 8, 0, 0);
             lbl_version.Size = new Size(188, 23);
             lbl_version.TabIndex = 0;
-            lbl_version.Text = new Version().GetVersion;
+            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion;
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lbl_c

@@ -2,7 +2,7 @@
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Sklep_base
+namespace Sklep_base.DataAccess
 {
     internal class SQLFunctions
     {

@@ -2,7 +2,7 @@
 using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 
-namespace Sklep_base
+namespace Sklep_base.Helpers
 {
     public static class Is_it_open
     {
