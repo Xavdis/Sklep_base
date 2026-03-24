@@ -1,14 +1,7 @@
-﻿using Sklep_base.Helpers;
-using Sklep_base.DataAccess;
-using System.Data;
+﻿using Sklep_base.DataAccess;
+using Sklep_base.Helpers;
+using Sklep_base.Forms;
 using System.Data.SqlClient;
-using System.Diagnostics;
-using System.Drawing;
-using System.Net.NetworkInformation;
-using System.Reflection.Metadata;
-using System.Security.Cryptography.X509Certificates;
-using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using Button = System.Windows.Forms.Button;
 
 
@@ -78,58 +71,23 @@ namespace Sklep_base
 
         private void btn_login_Click(object sender, EventArgs e)
         {
+            var auth = new AuthService();
             string
                 username = txt_login.Text,
-                password = txt_password.Text,
-                sqluser = string.Empty,
-                sqlpass = string.Empty;
-
-            using (SqlConnection conn = new SqlConnection(new SQLFunctions().ConnStr))
+                password = txt_password.Text;
+            if (txt_login.Text == string.Empty || txt_password.Text == string.Empty)
             {
-                try
-                {
-                    conn.Open();
-
-                    string selectQuery = "SELECT username, password FROM Login_new WHERE username = @username AND password = @password";
-                    SqlCommand cmd = new SqlCommand(selectQuery, conn);
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
-
-                    SqlDataReader dr = cmd.ExecuteReader();
-                    if (dr.Read())
-                    {
-                        sqluser = dr["username"].ToString();
-                        sqlpass = dr["password"].ToString();
-
-                    }
-
-                    if (username == string.Empty || password == string.Empty)
-                    {
-                        MessageBox.Show("Please, enter your username and password", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        txt_login.Focus();
-                    }
-                    else if (sqluser == username && sqlpass == password)
-                    {
-                        this.Hide();
-                        Is_it_open.Check(nameof(MainMenu));
-                    }
-                    else
-                    {
-                        MessageBox.Show("Invalid login details", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        ClearLbl();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Error: " + ex.Message);
-                    ClearLbl();
-                }
-                finally
-                {
-                    conn.Close();
-                }
+                MessageBox.Show("Data missing!!!");
             }
-
+            else if (auth.Login(username, password))
+            {
+                this.Hide();
+                Is_it_open.Check(nameof(MainMenu));
+            }
+            else
+            {
+                MessageBox.Show("Logig or password isn`t correct!");
+            }
         }
         private void btn_createLogin_Click(object sender, EventArgs e)
         {

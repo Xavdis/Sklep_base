@@ -1,39 +1,27 @@
-﻿using Microsoft.VisualBasic.ApplicationServices;
-using System.Data;
+﻿using System.Data;
 using System.Data.SqlClient;
 
 namespace Sklep_base.DataAccess
 {
     internal class SQLFunctions
     {
+
         private SqlConnection conn;
         private SqlCommand cmd;
         private DataTable dt;
         private SqlDataAdapter sda;
         private string connStr = $"Data Source=100.105.83.111;Initial Catalog=EmployeeDataBase; Persist Security Info=True;User ID=sa;Password=admin!23;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
+
         public string ConnStr
         {
             get { return connStr; }
         }
+
         public SQLFunctions()
         {
             conn = new SqlConnection(connStr);
             cmd = new SqlCommand();
             cmd.Connection = conn;
-        }
-
-        public void UpdateUserDataForComboBox()
-        {
-            string Query = "SELECT ID, EmpName FROM EmployeeTbl";
-
-            var items = new List<dynamic>();
-            using (SqlDataReader reader = cmd.ExecuteReader())
-            {
-                while (reader.Read())
-                {
-                    items.Add(new { ID = reader["ID"], Name = reader["EmpName"].ToString() });
-                }
-            }
         }
 
         public DataTable GetData(string Query)
@@ -54,6 +42,48 @@ namespace Sklep_base.DataAccess
             cmd.CommandText = Query;
             cnt = cmd.ExecuteNonQuery();
             return cnt;
+        }
+        public bool ValidateUser(string username, string password)
+        {
+            using (conn = new SqlConnection(connStr))
+            {
+                string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username AND password = @password";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                return count > 0;
+            }
+        }
+
+        public bool IsUserExists(string username)
+        {
+            using (conn = new SqlConnection(connStr))
+            {
+                string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", username);
+                conn.Open();
+                int count = (int)cmd.ExecuteScalar();
+                if (count > 0)
+                    return true;
+                else
+                    return false;
+            }
+        }
+
+        public void CreateUser(string username, string password)
+        {
+            using (conn = new SqlConnection(connStr))
+            {
+                string query = "INSERT INTO Login_new (username, password) VALUES (@username, @password)";
+                SqlCommand cmd = new SqlCommand(query, conn);
+                cmd.Parameters.AddWithValue("@username", username);
+                cmd.Parameters.AddWithValue("@password", password);
+                conn.Open();
+                cmd.ExecuteNonQuery();
+            }
         }
     }
 }

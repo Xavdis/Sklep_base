@@ -7,9 +7,6 @@ namespace Sklep_base
     public partial class Signup_window : Form
     {
         string code = "adm_adm";
-        SqlConnection conn = new SqlConnection(new SQLFunctions().ConnStr);
-        SqlCommand cmd = new SqlCommand();
-        SqlDataAdapter adapter = new SqlDataAdapter();
         public Signup_window()
         {
 
@@ -73,7 +70,8 @@ namespace Sklep_base
 
         private void btn_createAccount_Click(object sender, EventArgs e)
         {
-            using (conn)
+            var auth = new AuthService();
+            using (SqlConnection conn = new SqlConnection(new SQLFunctions().ConnStr))
             {
                 if (txt_login.Text == "" || txt_password.Text == "" || txt_code.Text == "")
                 {
@@ -87,16 +85,17 @@ namespace Sklep_base
                 }
                 else if (txt_code.Text == code)
                 {
-                    string register = "INSERT INTO Login_new VALUES ('@login','@password')";
-                    cmd = new SqlCommand(register, conn);
-                    cmd.Parameters.AddWithValue("@login", txt_login);
-                    cmd.Parameters.AddWithValue("@password", txt_password);
-                    cmd.ExecuteNonQuery();
-
-                    MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    txt_code.Clear();
-                    txt_login.Clear();
-                    txt_password.Clear();
+                    if(auth.Register(txt_login.Text, txt_password.Text) == true)
+                    {
+                        MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        txt_code.Clear();
+                        txt_login.Clear();
+                        txt_password.Clear();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Your account has not been created. A user with that name already exists.", "Registration was interrupted", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
                 else
                 {
