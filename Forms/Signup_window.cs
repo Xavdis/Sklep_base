@@ -85,8 +85,10 @@ namespace Sklep_base
                 }
                 else if (txt_code.Text == code)
                 {
-                    string register = "INSERT INTO Login_new VALUES ('" + txt_login.Text + "','" + txt_password.Text + "')";
+                    string register = "INSERT INTO Login_new VALUES ('@login','@password')";
                     cmd = new SqlCommand(register, conn);
+                    cmd.Parameters.AddWithValue("@login", txt_login);
+                    cmd.Parameters.AddWithValue("@password", txt_password);
                     cmd.ExecuteNonQuery();
 
                     MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);

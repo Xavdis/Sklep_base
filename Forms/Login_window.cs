@@ -90,7 +90,6 @@ namespace Sklep_base
 
                     string selectQuery = "SELECT username, password FROM Login_new WHERE username = @username AND password = @password";
                     SqlCommand cmd = new SqlCommand(selectQuery, conn);
-
                     cmd.Parameters.AddWithValue("@username", username);
                     cmd.Parameters.AddWithValue("@password", password);
 
