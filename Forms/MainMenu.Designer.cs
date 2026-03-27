@@ -701,7 +701,7 @@
             lbl_version.Padding = new Padding(0, 8, 0, 0);
             lbl_version.Size = new Size(418, 23);
             lbl_version.TabIndex = 60;
-            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion ;
+            lbl_version.Text = "Version 1.42";
             lbl_version.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // department_pan_left
@@ -1232,7 +1232,6 @@
             Name = "MainMenu";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Menu";
-            Load += Menu_Load;
             pan_top.ResumeLayout(false);
             pan_top.PerformLayout();
             employee_pan_left.ResumeLayout(false);
@@ -1282,7 +1281,6 @@
         private Guna.UI2.WinForms.Guna2DateTimePicker employee_timpic_joinDate;
         private Guna.UI2.WinForms.Guna2DateTimePicker employee_timpic_dateOfBith;
         private Guna.UI2.WinForms.Guna2ComboBox employee_combox_employeeGender;
-        private Guna.UI2.WinForms.Guna2ComboBox employee_combox_employeeDepartment;
         private Guna.UI2.WinForms.Guna2TextBox employee_txtbox_name;
         private Guna.UI2.WinForms.Guna2TextBox employee_txtbox_surname;
         private Label employee_lbl_gender;
@@ -1317,5 +1315,6 @@
         private Label salary_lbl_gender;
         private Label salary_lbl_name;
         public Guna.UI2.WinForms.Guna2DataGridView salary_DGV_SalaryList;
+        public Guna.UI2.WinForms.Guna2ComboBox employee_combox_employeeDepartment;
     }
 }

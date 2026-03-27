@@ -132,7 +132,6 @@ namespace Sklep_base
             {
                 this.Left += e.X - lastPoint.X;
                 this.Top += e.Y - lastPoint.Y;
-
             }
         }
     }

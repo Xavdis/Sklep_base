@@ -5,24 +5,14 @@ namespace Sklep_base.DataAccess
 {
     internal class SQLFunctions
     {
-
-        private SqlConnection conn;
-        private SqlCommand cmd;
+        private SqlConnection localConn;
+        private SqlCommand localCmd;
         private DataTable dt;
         private SqlDataAdapter sda;
         private string connStr = $"Data Source=100.105.83.111;Initial Catalog=EmployeeDataBase; Persist Security Info=True;User ID=sa;Password=admin!23;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
 
-        public string ConnStr
-        {
-            get { return connStr; }
-        }
+        public string ConnStr => connStr;
 
-        public SQLFunctions()
-        {
-            conn = new SqlConnection(connStr);
-            cmd = new SqlCommand();
-            cmd.Connection = conn;
-        }
 
         public DataTable GetData(string Query)
         {
@@ -34,62 +24,78 @@ namespace Sklep_base.DataAccess
 
         public int SetData(string Query)
         {
-            int cnt = 0;
-            if (conn.State == ConnectionState.Closed)
+            using (localConn = new SqlConnection(connStr))
             {
-                conn.Open();
+                using (localCmd = new SqlCommand(Query, localConn))
+                {
+                    int cnt = 0;
+                    if (localConn.State == ConnectionState.Closed)
+                    {
+                        localConn.Open();
+                    }
+                    localCmd.CommandText = Query;
+                    cnt = localCmd.ExecuteNonQuery();
+                    return cnt;
+                }
             }
-            cmd.CommandText = Query;
-            cnt = cmd.ExecuteNonQuery();
-            return cnt;
         }
 
         public bool ValidateUser(string username, string password)
         {
-
-            string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username AND password = @password";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
-            int count;
-            using (conn = new SqlConnection(connStr))
+            string Query = "SELECT COUNT(*) FROM Login_new WHERE username = @username AND password = @password";
+            using (localConn = new SqlConnection(connStr))
             {
-                conn.Open();
-                count = (int)cmd.ExecuteScalar();
+                using (localCmd = new SqlCommand(Query, localConn))
+                {
+                    localCmd.Parameters.AddWithValue("@username", username);
+                    localCmd.Parameters.AddWithValue("@password", password);
+                    localConn.Open();
+                    int count;
+                    count = (int)localCmd.ExecuteScalar();
+                    return count > 0;
+                }
             }
-            return count > 0;
         }
 
         public bool IsUserExists(string username)
         {
-
-            string query = "SELECT COUNT(*) FROM Login_new WHERE username = @username";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            int count;
-            using (conn = new SqlConnection(connStr))
+            string Query = "SELECT COUNT(*) FROM Login_new WHERE username = @username";
+            using (localConn = new SqlConnection(connStr))
             {
-                conn.Open();
-                count = (int)cmd.ExecuteScalar();
+                using (localCmd = new SqlCommand(Query, localConn))
+                {
+                    SqlCommand cmd = new SqlCommand(Query, localConn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    int count;
+                    localConn.Open();
+                    count = (int)cmd.ExecuteScalar();
+                    if (count > 0)
+                        return true;
+                    else
+                        return false;
+                }
             }
-            if (count > 0)
-                return true;
-            else
-                return false;
         }
 
         public void CreateUser(string username, string password)
         {
-
-            string query = "INSERT INTO Login_new (username, password) VALUES (@username, @password)";
-            SqlCommand cmd = new SqlCommand(query, conn);
-            cmd.Parameters.AddWithValue("@username", username);
-            cmd.Parameters.AddWithValue("@password", password);
-            using (conn = new SqlConnection(connStr))
+            string Query = "INSERT INTO Login_new (username, password) VALUES (@username, @password)";
+            using (localConn = new SqlConnection(connStr))
             {
-                conn.Open();
-                cmd.ExecuteNonQuery();
+                using (localCmd = new SqlCommand(Query, localConn))
+                {
+                    SqlCommand cmd = new SqlCommand(Query, localConn);
+                    cmd.Parameters.AddWithValue("@username", username);
+                    cmd.Parameters.AddWithValue("@password", password);
+                    localConn.Open();
+                    cmd.ExecuteNonQuery();
+                }
             }
         }
+
+        #region SQL DataBase Command For Department Page
+        
+
+        #endregion
     }
 }

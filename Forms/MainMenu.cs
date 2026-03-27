@@ -1,22 +1,24 @@
 ﻿using Sklep_base.DataAccess;
 using Sklep_base.Helpers;
+using System.Data.SqlClient;
+using System.Data.SqlTypes;
 using System.Globalization;
 
 namespace Sklep_base
 {
     public partial class MainMenu : Form
     {
-        Loading load = new Loading();
-        SQLFunctions conn;
+        SQLFunctions sqlFunc;
         int? Employee_Key = null;
         public MainMenu()
         {
             try
             {
+                Loading load = new Loading();
                 InitializeComponent();
                 load.Show();
                 load.progressBar.Value = 15;
-                conn = new SQLFunctions();
+                sqlFunc = new SQLFunctions();
                 ShowEmployee();
                 load.progressBar.Value = 30;
                 ShowDepartmants();
@@ -36,13 +38,10 @@ namespace Sklep_base
                 MessageBox.Show("Error: " + ex.Message);
             }
         }
-        private void Menu_Load(object sender, EventArgs e)
-        {
 
-        }
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            Is_it_open.Check(nameof(Confirmation)); 
+            Is_it_open.Check(nameof(Confirmation));
             if (Confirmation.GoLogin == true)
             {
                 this.Hide();
@@ -214,7 +213,7 @@ namespace Sklep_base
                 this.Top += e.Y - lastPoint.Y;
             }
         }
-        
+
         #region Change color of button 
         private void btn_green_MouseLeave(object sender, EventArgs e)
         {
@@ -252,27 +251,26 @@ namespace Sklep_base
 
         #region Employee page
 
-        #region SQL DataBase Command For Employee Page
-
-        private void ShowEmployee()
+        public void ShowEmployee()
         {
-            string Query = "select " +
-                "EmployeeTbl.ID as Code, EmployeeTbl.EmpName as Name, EmployeeTbl.EmpSurname as Surname, EmployeeTbl.EmpGender as Gender, DepartmantTbl.DepName as Department, " +
-                "EmployeeTbl.EmpBornDate as Birthday, EmployeeTbl.EmpJoingDate as 'Joing Date' " +
-                "FROM EmployeeTbl INNER JOIN DepartmantTbl on EmployeeTbl.DepID = DepartmantTbl.ID;";
-            employee_DGV_EmplList.DataSource = conn.GetData(Query);
+            using (SqlConnection conn = new SqlConnection(sqlFunc.ConnStr))
+            {
+                conn.Open();
+                string Query = "select " +
+                    "EmployeeTbl.ID as Code, EmployeeTbl.EmpName as Name, EmployeeTbl.EmpSurname as Surname, EmployeeTbl.EmpGender as Gender, DepartmantTbl.DepName as Department, " +
+                    "EmployeeTbl.EmpBornDate as Birthday, EmployeeTbl.EmpJoingDate as 'Joing Date' " +
+                    "FROM EmployeeTbl INNER JOIN DepartmantTbl on EmployeeTbl.DepID = DepartmantTbl.ID;";
+                employee_DGV_EmplList.DataSource = sqlFunc.GetData(Query);
+            }
         }
 
-        private void GetDepartmentBase()
+        public void GetDepartmentBase()
         {
             string Query = "SELECT * FROM DepartmantTbl";
-            employee_combox_employeeDepartment.DisplayMember = conn.GetData(Query).Columns["DepName"].ToString();
-            employee_combox_employeeDepartment.ValueMember = conn.GetData(Query).Columns["ID"].ToString();
-            employee_combox_employeeDepartment.DataSource = conn.GetData(Query);
+            employee_combox_employeeDepartment.DisplayMember = sqlFunc.GetData(Query).Columns["DepName"].ToString();
+            employee_combox_employeeDepartment.ValueMember = sqlFunc.GetData(Query).Columns["ID"].ToString();
+            employee_combox_employeeDepartment.DataSource = sqlFunc.GetData(Query);
         }
-
-        #endregion 
-
         private void employee_btn_add_Click(object sender, EventArgs e)
         {
             try
@@ -293,7 +291,7 @@ namespace Sklep_base
 
                     string Query = $"INSERT INTO EmployeeTbl (EmpName,EmpSurname,EmpGender,DepID,EmpBornDate,EmpJoingDate) " +
                         $"VALUES ('{Name}','{Surname}','{Gender}',{Departmant},'{DateOfBith}','{JoinDate}')";
-                    conn.SetData(Query);
+                    sqlFunc.SetData(Query);
                     ShowEmployee();
                     GetEmployeeBase();
                     MessageBox.Show("Employee Added!!!");
@@ -317,7 +315,7 @@ namespace Sklep_base
                 else
                 {
                     string Query = $"DELETE FROM EmployeeTbl WHERE ID = {Employee_Key}";
-                    conn.SetData(Query);
+                    sqlFunc.SetData(Query);
                     ShowEmployee();
                     GetEmployeeBase();
                     MessageBox.Show("Employee Deleted!!!");
@@ -354,7 +352,7 @@ namespace Sklep_base
                     try
                     {
 
-                        conn.SetData(Query);
+                        sqlFunc.SetData(Query);
                         ShowEmployee();
                         GetEmployeeBase();
                         MessageBox.Show("Employee Update!!!");
@@ -404,13 +402,11 @@ namespace Sklep_base
         #endregion
 
         #region Department page
-        private void ShowDepartmants()
+        public void ShowDepartmants()
         {
             string Query = "SELECT ID as Code, DepName as Department FROM DepartmantTbl";
-            department_DGV_DepList.DataSource = conn.GetData(Query);
-
+            department_DGV_DepList.DataSource = sqlFunc.GetData(Query);
         }
-
         private void Department_btn_add_Click(object sender, EventArgs e)
         {
             try
@@ -424,7 +420,7 @@ namespace Sklep_base
                     string Dep = department_txtBox_DepName.Text;
                     string Query = "INSERT INTO DepartmantTbl values ('{0}')";
                     Query = string.Format(Query, department_txtBox_DepName.Text);
-                    conn.SetData(Query);
+                    sqlFunc.SetData(Query);
                     ShowDepartmants();
                     GetDepartmentBase();
                     MessageBox.Show("Departmant Added!!!");
@@ -467,7 +463,7 @@ namespace Sklep_base
                     string Dep = department_txtBox_DepName.Text;
                     string Query = "UPDATE DepartmantTbl SET DepName = '{0}' WHERE ID = '{1}'";
                     Query = string.Format(Query, department_txtBox_DepName.Text, Key);
-                    conn.SetData(Query);
+                    sqlFunc.SetData(Query);
                     ShowDepartmants();
                     GetDepartmentBase();
                     MessageBox.Show("Departmant Update!!!");
@@ -491,7 +487,8 @@ namespace Sklep_base
                 else
                 {
                     string Query = $"DELETE FROM DepartmantTbl WHERE DepName = '{department_txtBox_DepName.Text}'";
-                    conn.SetData(Query);
+                    
+                    sqlFunc.SetData(Query);
                     ShowDepartmants();
                     GetDepartmentBase();
                     MessageBox.Show("Departmant Delete!!!");

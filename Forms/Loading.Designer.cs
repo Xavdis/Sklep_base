@@ -59,6 +59,5 @@
 
         #endregion
         public ProgressBar progressBar;
-        private ProgressBar progressBar1;
     }
 }
