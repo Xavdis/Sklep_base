@@ -19,6 +19,8 @@ namespace Sklep_base
         public login_window()
         {
             InitializeComponent();
+            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion;
+
             btn_exit.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_exit.MouseLeave += new EventHandler(Button_MouseLeave);
 

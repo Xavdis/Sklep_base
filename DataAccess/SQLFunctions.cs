@@ -11,9 +11,6 @@ namespace Sklep_base.DataAccess
         private DataTable dt;
         private SqlDataAdapter sda;
         private readonly string connStr;
-
-        public string ConnStr => connStr;
-
         public SQLFunctions()
         {
             var config = new ConfigurationBuilder()
@@ -22,6 +19,7 @@ namespace Sklep_base.DataAccess
 
             connStr = config.GetConnectionString("DefaultConnection");
         }
+        public string ConnStr => connStr;
 
         public DataTable GetData(string Query)
         {
@@ -51,17 +49,21 @@ namespace Sklep_base.DataAccess
 
         public bool ValidateUser(string username, string password)
         {
-            string Query = "SELECT COUNT(*) FROM Login_new WHERE username = @username AND password = @password";
+            string Query = "SELECT password FROM Login_new WHERE username = @username";
+
             using (localConn = new SqlConnection(connStr))
             {
                 using (localCmd = new SqlCommand(Query, localConn))
                 {
                     localCmd.Parameters.AddWithValue("@username", username);
-                    localCmd.Parameters.AddWithValue("@password", password);
                     localConn.Open();
-                    int count;
-                    count = (int)localCmd.ExecuteScalar();
-                    return count > 0;
+                    var passwordHash = (string)localCmd.ExecuteScalar();
+                    
+                    if (passwordHash == null)
+                        return false;
+
+                    bool isPasswordCorrect = BCrypt.Net.BCrypt.Verify(password, passwordHash);
+                    return isPasswordCorrect;
                 }
             }
         }
@@ -89,13 +91,14 @@ namespace Sklep_base.DataAccess
         public void CreateUser(string username, string password)
         {
             string Query = "INSERT INTO Login_new (username, password) VALUES (@username, @password)";
+            string passwordHash = BCrypt.Net.BCrypt.HashPassword(password);
             using (localConn = new SqlConnection(connStr))
             {
                 using (localCmd = new SqlCommand(Query, localConn))
                 {
                     SqlCommand cmd = new SqlCommand(Query, localConn);
                     cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@password", password);
+                    cmd.Parameters.AddWithValue("@password", passwordHash);
                     localConn.Open();
                     cmd.ExecuteNonQuery();
                 }

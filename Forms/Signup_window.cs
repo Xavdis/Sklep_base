@@ -1,16 +1,21 @@
-﻿using Sklep_base.Helpers;
-using Sklep_base.DataAccess;
+﻿using Sklep_base.DataAccess;
+using Microsoft.Extensions.Configuration;
+using Sklep_base.Helpers;
+using System.Configuration;
 using System.Data.SqlClient;
 
 namespace Sklep_base
 {
     public partial class Signup_window : Form
     {
-        string code = "adm_adm";
+
+        private readonly string code;
         public Signup_window()
         {
 
             InitializeComponent();
+
+            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion;
 
             btn_createAccount.MouseEnter += new EventHandler(Button_MouseEnter);
             btn_createAccount.MouseLeave += new EventHandler(Button_MouseLeave);
@@ -21,6 +26,12 @@ namespace Sklep_base
             lbl_clear.MouseEnter += new EventHandler(Lable_MouseEnter);
             lbl_clear.MouseLeave += new EventHandler(Lable_MouseLeave);
             txt_password.PasswordChar = '*';
+
+            var config = new ConfigurationBuilder()
+                .AddJsonFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json"))
+                .Build();
+
+            code = config["Security:Code"];
         }
 
         #region Changed color of button
@@ -68,6 +79,13 @@ namespace Sklep_base
             WindowManager.Check(nameof(login_window));
         }
 
+        private void ClearLbl()
+        {
+            txt_code.Clear();
+            txt_login.Clear();
+            txt_password.Clear();
+        }
+
         private void btn_createAccount_Click(object sender, EventArgs e)
         {
             var auth = new AuthService();
@@ -85,12 +103,10 @@ namespace Sklep_base
                 }
                 else if (txt_code.Text == code)
                 {
-                    if(auth.Register(txt_login.Text, txt_password.Text) == true)
+                    if (auth.Register(txt_login.Text, txt_password.Text) == true)
                     {
                         MessageBox.Show("Your Account has been Successfully Created", "Registration Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        txt_code.Clear();
-                        txt_login.Clear();
-                        txt_password.Clear();
+                        ClearLbl();
                     }
                     else
                     {
@@ -134,6 +150,11 @@ namespace Sklep_base
             {
                 txt_password.PasswordChar = '*';
             }
+        }
+
+        private void lbl_clear_Click(object sender, EventArgs e)
+        {
+            ClearLbl();
         }
     }
 }

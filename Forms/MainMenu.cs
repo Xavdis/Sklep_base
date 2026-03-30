@@ -37,6 +37,7 @@ namespace Sklep_base
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+            lbl_version.Text = new Sklep_base.Helpers.Version().GetVersion;
         }
 
         private void btn_exit_Click(object sender, EventArgs e)
