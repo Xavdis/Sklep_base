@@ -41,11 +41,11 @@ namespace Sklep_base
 
         private void btn_exit_Click(object sender, EventArgs e)
         {
-            Is_it_open.Check(nameof(Confirmation));
+            WindowManager.Check(nameof(Confirmation));
             if (Confirmation.GoLogin == true)
             {
                 this.Hide();
-                Is_it_open.Check(nameof(login_window));
+                WindowManager.Check(nameof(login_window));
             }
             else if (Confirmation.GoLogin == false)
             {

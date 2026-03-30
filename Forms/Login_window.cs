@@ -82,7 +82,7 @@ namespace Sklep_base
             else if (auth.Login(username, password))
             {
                 this.Hide();
-                Is_it_open.Check(nameof(MainMenu));
+                WindowManager.Check(nameof(MainMenu));
             }
             else
             {
@@ -91,7 +91,7 @@ namespace Sklep_base
         }
         private void btn_createLogin_Click(object sender, EventArgs e)
         {
-            Is_it_open.Check(nameof(Signup_window));
+            WindowManager.Check(nameof(Signup_window));
             this.Hide();
         }
 

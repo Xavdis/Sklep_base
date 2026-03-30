@@ -98,6 +98,13 @@ StyleCopReport.xml
 *.svclog
 *.scc
 
+# Configuration files with sensitive data
+appsettings.json
+appsettings.*.json
+
+# Local app settings
+*.local.json
+
 # Chutzpah Test files
 _Chutzpah*
 

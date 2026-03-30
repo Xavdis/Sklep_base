@@ -65,7 +65,7 @@ namespace Sklep_base
         private void btn_goToLogin_Click(object sender, EventArgs e)
         {
             this.Close();
-            Is_it_open.Check(nameof(login_window));
+            WindowManager.Check(nameof(login_window));
         }
 
         private void btn_createAccount_Click(object sender, EventArgs e)

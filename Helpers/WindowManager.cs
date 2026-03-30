@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace Sklep_base.Helpers
 {
-    public static class Is_it_open
+    public static class WindowManager
     {
         public static void Check(string lookingWidnow)
         {

@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Microsoft.Extensions.Configuration;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace Sklep_base.DataAccess
@@ -9,10 +10,18 @@ namespace Sklep_base.DataAccess
         private SqlCommand localCmd;
         private DataTable dt;
         private SqlDataAdapter sda;
-        private string connStr = $"Data Source=100.105.83.111;Initial Catalog=EmployeeDataBase; Persist Security Info=True;User ID=sa;Password=admin!23;Pooling=False;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=True;";
+        private readonly string connStr;
 
         public string ConnStr => connStr;
 
+        public SQLFunctions()
+        {
+            var config = new ConfigurationBuilder()
+                .AddJsonFile(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "appsettings.json"))
+                .Build();
+
+            connStr = config.GetConnectionString("DefaultConnection");
+        }
 
         public DataTable GetData(string Query)
         {
@@ -94,7 +103,7 @@ namespace Sklep_base.DataAccess
         }
 
         #region SQL DataBase Command For Department Page
-        
+
 
         #endregion
     }
